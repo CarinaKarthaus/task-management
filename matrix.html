@@ -1,18 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIN - task matrix</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+    <div class="side-bar">
+        <img src="img/logo.png">
+        <p>Matrix</p>
+        <p>View List</p>
+        <img src="img/profile.jpg" class="profile-pic">
+    </div>
+    <div class="main">
+        <div class='urgence-arrow'>
+            <h3>HIGH</h2>
+                <h2 id='left-arrow'>&larr;
+            </h3>
+            <h3>URGENCY</h3>
+            <h3 id='right-arrow'>&rarr;</h3>
+            <h3>LOW</h2>
+        </div>
+        <div class='importance-arrow'>
+            <h3 id='up-arrow'>&uarr;</h3>
+            <h3>IMPORTANCE</h3>
+            <h3>LOW</h3>
+            <h3 id='down-arrow'>&darr;</h3>
+        </div>
+        <div class='matrix'>
+            <div>
+                <h2>DO</h2>
+                <div class='content-box'>
+                    <div class='task'></div>
+                </div>
+            </div>
+            <div>
+                <h2>SCHEDULE</h2>
+                <div class='content-box'>
+                    <div class='task'></div>
+                </div>
+            </div>
+            <div>
+                <h2>DELEGATE</h2>
+                <div class='content-box'>
+                    <div class='task'></div>
+                </div>
+            </div>
+            <div>
+                <h2>ELIMINATE</h2>
+                <div class='content-box'>
+                    <div class='task'></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-    
 </body>
 </html>
