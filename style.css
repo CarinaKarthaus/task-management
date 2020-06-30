@@ -1,5 +1,22 @@
 body {
     font-family: 'PT Sans', sans-serif;
+    display: flex;
+}
+form {
+    background-color: #F4F3FB;
+    height: 70vH;
+    width: 80vW;
+    border-radius: 8px;
+    margin-top: 2em;
+    padding: 2em;
+}
+h2 {
+    font-weight: bold;
+}
+label {
+    color: #1E3190;
+    font-weight: bolder;
+    font-size: large;
 }
 
 .side-bar {
@@ -8,6 +25,7 @@ body {
     background-color: #1E3190;
     padding: 2em;
     color: #D7D8D8;
+    font-size: 1.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +36,23 @@ body {
 }
 
 .profile-pic {
-    width: 80%;
+    width: 90%;
     object-fit: contain;
     border-radius: 100%;
-   margin-top: 40vH;
+    margin-top: 45vH;
 }
+.subheading {
+    color: #1E3190;
+    font-size: small;
+}
+.main-box {
+    padding: 2em;
+}
+.btn-primary {
+    background-color: #1E3190;
+    border-color: #1E3190;
+}
+/* .form-padding {
+    padding-right: 2em;
+    padding-left: 2em;
+} */
