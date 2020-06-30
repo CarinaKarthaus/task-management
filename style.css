@@ -1,3 +1,25 @@
 body {
     font-family: 'PT Sans', sans-serif;
 }
+
+.side-bar {
+    width: 10%;
+    height: 100vH;
+    background-color: #1E3190;
+    padding: 2em;
+    color: #D7D8D8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-bar img {
+    margin-bottom: 4em;
+}
+
+.profile-pic {
+    width: 80%;
+    object-fit: contain;
+    border-radius: 100%;
+   margin-top: 40vH;
+}
