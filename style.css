@@ -7,8 +7,8 @@ form {
     height: 70vH;
     width: 80vW;
     border-radius: 8px;
-    margin-top: 2em;
-    padding: 2em;
+    margin-top: 4%;
+    padding: 4%;
 }
 h2 {
     font-weight: bold;
@@ -16,7 +16,7 @@ h2 {
 label {
     color: #1E3190;
     font-weight: bolder;
-    font-size: large;
+    font-size: larger;
 }
 
 .side-bar {
@@ -30,29 +30,55 @@ label {
     flex-direction: column;
     align-items: center;
 }
-
 .side-bar img {
     margin-bottom: 4em;
 }
 
 .profile-pic {
-    width: 90%;
+    width: 80%;
     object-fit: contain;
     border-radius: 100%;
     margin-top: 45vH;
 }
 .subheading {
     color: #1E3190;
-    font-size: small;
+    font-size: medium;
 }
 .main-box {
-    padding: 2em;
+    padding: 2%;
+    font-size: large;
 }
 .btn-primary {
     background-color: #1E3190;
     border-color: #1E3190;
 }
-/* .form-padding {
-    padding-right: 2em;
-    padding-left: 2em;
-} */
+.custom-padding {
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+} 
+.form-control {
+    font-size: 1.2rem;
+}
+.form-group {
+    margin-bottom: 2rem;
+}
+.assigned-pic {
+    width: 30%;
+    object-fit: contain;
+    border-radius: 100%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+}
+.plus {
+    width: 20%;
+    object-fit: contain;
+}
+
+.btn-row {
+    display: block;
+    justify-content: right;
+    margin-top: 5%;
+}
+.btn-row button {
+    float: right;
+}

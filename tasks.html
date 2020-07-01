@@ -24,25 +24,25 @@
 
         <form>
             <div class="form-row">
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="#######">TITLE</label>
-                    <input type="text" class="form-control" id="####">
+                    <input type="text" placeholder="Management meeting preparation" class="form-control" id="####">
                 </div>
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="####">DUE DATE</label>
                     <input type="date" class="form-control" id="#####">
                 </div>
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="####">CATEGORY</label>
                     <select id="#######" class="form-control">
                         <option selected>Management</option>
                         <option>...</option>
                     </select>
                 </div>
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="####">URGENCY</label>
                     <select id="####" class="form-control">
                         <option selected>High</option>
@@ -51,28 +51,25 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="#######">DESCRIPTION</label>
-                    <input type="text" class="form-control" id="####">
+                    <textarea class="form-control" rows="3"
+                        placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. " id="####"
+                        required></textarea>
                 </div>
-                <div class="form-group col-md-6 form-padding">
+                <div class="form-group col-md-6 custom-padding">
                     <label for="####">ASSIGNED TO</label>
                     <div class="form-group col-md-6">
-                        <!--
-                        <img src="img/profile2.jpg">
-                        <img src="img/icons8-plus.png"> -->
-                        <button type="submit" class="btn">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Create task</button>
+                        <img class="assigned-pic" src="img/profile2.jpg">
+                        <img class="plus" src="img/icon plus.png">
+                        <div class="btn-row">
+                            <button type="submit" class="btn btn-primary">Create task</button>
+                            <button type="submit" class="btn">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
         </form>
-
     </div>
-
-
 </body>
-
 </html>
