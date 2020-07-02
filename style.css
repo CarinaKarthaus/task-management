@@ -1,3 +1,4 @@
+/* Style for all sites */
 body {
     font-family: 'PT Sans', sans-serif;
     display: flex;
@@ -18,7 +19,6 @@ label {
     font-weight: bolder;
     font-size: larger;
 }
-
 .side-bar {
     width: 10%;
     height: 100vH;
@@ -33,15 +33,17 @@ label {
 .side-bar img {
     margin-bottom: 4em;
 }
-
 .profile-pic {
-    width: 4em;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-top: 45vH;
-    border: white solid;
+    width: 4em;	
+    object-fit: cover;	
+    border-radius: 50%;	
+    margin-top: 45vH;	
+    border: white solid;	
     margin-bottom: 4em;
-
+}
+.page-selected {
+    font-weight: bold;
+    color: white;
 }
 .subheading {
     color: #1E3190;
@@ -59,6 +61,9 @@ label {
     padding-right: 3% !important;
     padding-left: 3% !important;
 } 
+
+
+/* Style for Add-Task site */
 .form-control {
     font-size: 1.2rem;
 }
@@ -76,7 +81,6 @@ label {
     width: 20%;
     object-fit: contain;
 }
-
 .btn-row {
     display: block;
     justify-content: right;
@@ -86,94 +90,93 @@ label {
     float: right;
 }
 
-/* Style for the Matrix Site */
 
-.matrix-main-box {
-    padding: 1em;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 10% 40% 40% auto;
-    grid-template-rows: 5% 40% 40% 10%;
-    grid-template-areas: "urgency urgency urgency urgency"
-                        "importance main main ."
-                        'importance main main .'
-                        'importance main main .';
-}
-    /* Importance, urgency and low letter styles */
-h4 {
-    color: grey;
-    font-weight: lighter;
-    margin: 3%;
-}
-.urgency-arrow {
-    grid-area: urgency;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.importance-arrow {
-    grid-area: importance;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.importance-arrow h4:nth-child(3) {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-}
-    /* Horizontal and vertical lines and arrows */
-.line-horizontal {
-    width: 80%;
-    border: black  1px solid;
-}
-.line-vertical {
-    height: 80%;
-    border: black  1px solid;
-}
-.arrow {
-    border-left: transparent 10px solid;
-    border-top: transparent 10px solid;
-    border-right: black 10px solid;
-    border-bottom: transparent 10px solid;
-}
-
-    /* Content inside the matrix */
-h3 {
-    font-size: 24px;
-    border: 1%;
-}
-.matrix-box {
-    text-align: center;
-    grid-area: main;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "one two"
-                        "three four";
-}
-.blue-box {
-    height: 100%;
-    width: 100%;
-    background-color: #F4F3FB;
-}
-.do-box {
-    margin-bottom: 10%;
-    margin-right: 5%;
-    grid-area: one;
-}
-.schedule-box {
-    margin-bottom: 10%;
-    margin-left: 5%;
-    grid-area: two;
-}
-.delegate-box {
-    margin-bottom: 5%;
-    margin-right: 5%;
-    grid-area: three;
-}
-.eliminate-box {
-    margin-bottom: 5%;
-    margin-left: 5%;
-    grid-area: four;
+/* Style for the Matrix Site */	
+.matrix-main-box {	
+    padding: 1em;	
+    width: 100%;	
+    display: grid;	
+    grid-template-columns: 10% 40% 40% auto;	
+    grid-template-rows: 5% 40% 40% 10%;	
+    grid-template-areas: "urgency urgency urgency urgency"	
+                        "importance main main ."	
+                        'importance main main .'	
+                        'importance main main .';	
+}	
+    /* Importance, urgency and low letter styles */	
+h4 {	
+    color: grey;	
+    font-weight: lighter;	
+    margin: 3%;	
+}	
+.urgency-arrow {	
+    grid-area: urgency;	
+    display: flex;	
+    justify-content: space-between;	
+    align-items: center;	
+}	
+.importance-arrow {	
+    grid-area: importance;	
+    display: flex;	
+    flex-direction: column;	
+    justify-content: space-between;	
+    align-items: center;	
+}	
+.importance-arrow h4:nth-child(3) {	
+    writing-mode: vertical-rl;	
+    transform: rotate(180deg);	
+}	
+    /* Horizontal and vertical lines and arrows */	
+.line-horizontal {	
+    width: 80%;	
+    border: black  1px solid;	
+}	
+.line-vertical {	
+    height: 80%;	
+    border: black  1px solid;	
+}	
+.arrow {	
+    border-left: transparent 10px solid;	
+    border-top: transparent 10px solid;	
+    border-right: black 10px solid;	
+    border-bottom: transparent 10px solid;	
+}	
+    /* Content inside the matrix */	
+h3 {	
+    font-size: 24px;	
+    border: 1%;	
+}	
+.matrix-box {	
+    text-align: center;	
+    grid-area: main;	
+    display: grid;	
+    grid-template-columns: 1fr 1fr;	
+    grid-template-rows: 1fr 1fr;	
+    grid-template-areas: "one two"	
+                        "three four";	
+}	
+.blue-box {	
+    height: 100%;	
+    width: 100%;	
+    background-color: #F4F3FB;	
+}	
+.do-box {	
+    margin-bottom: 10%;	
+    margin-right: 5%;	
+    grid-area: one;	
+}	
+.schedule-box {	
+    margin-bottom: 10%;	
+    margin-left: 5%;	
+    grid-area: two;	
+}	
+.delegate-box {	
+    margin-bottom: 5%;	
+    margin-right: 5%;	
+    grid-area: three;	
+}	
+.eliminate-box {	
+    margin-bottom: 5%;	
+    margin-left: 5%;	
+    grid-area: four;	
 }
