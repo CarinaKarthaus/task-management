@@ -19,48 +19,51 @@
         <p>View List</p>
         <img src="img/profile.jpg" class="profile-pic">
     </div>
-    <div class="main">
-        <div class='urgence-arrow'>
-            <h3>HIGH</h2>
-                <h2 id='left-arrow'>&larr;
-            </h3>
-            <h3>URGENCY</h3>
-            <h3 id='right-arrow'>&rarr;</h3>
-            <h3>LOW</h2>
+    <div class="matrix-main-box">
+        <div class='urgency-arrow'>
+            <h4>HIGH</h4>
+            <div class='arrow'></div>
+            <div class='line-horizontal'>
+            </div>
+            <h4>URGENCY</h4>
+            <div class='line-horizontal'></div>
+            <h4>LOW</h4>
         </div>
         <div class='importance-arrow'>
-            <h3 id='up-arrow'>&uarr;</h3>
-            <h3>IMPORTANCE</h3>
-            <h3>LOW</h3>
-            <h3 id='down-arrow'>&darr;</h3>
+            <div class='arrow' style='transform: rotate(90deg);'></div>
+            <div class='line-vertical'></div>
+            <h4>IMPORTANCE</h4>
+            <div class='line-vertical'></div>
+            <h4>LOW</h4>
+
         </div>
-        <div class='matrix'>
-            <div>
-                <h2>DO</h2>
-                <div class='content-box'>
+        <div class='matrix-box'>
+            <div class='do-box'>
+                <h3>DO</h3>
+                <div class='blue-box'>
                     <div class='task'></div>
                 </div>
             </div>
-            <div>
-                <h2>SCHEDULE</h2>
-                <div class='content-box'>
+            <div class='schedule-box'>
+                <h3>SCHEDULE</h3>
+                <div class='blue-box'>
                     <div class='task'></div>
                 </div>
             </div>
-            <div>
-                <h2>DELEGATE</h2>
-                <div class='content-box'>
+            <div class="delegate-box">
+                <h3>DELEGATE</h3>
+                <div class='blue-box'>
                     <div class='task'></div>
                 </div>
             </div>
-            <div>
-                <h2>ELIMINATE</h2>
-                <div class='content-box'>
+            <div class='eliminate-box'>
+                <h3>ELIMINATE</h3>
+                <div class='blue-box'>
                     <div class='task'></div>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
+
 </html>
