@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIN - the task manager</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <divp class="side-bar">
+    <div class="side-bar">
         <img src="img/logo.png">
         <p>Matrix</p>
         <p class="page-selected">View List</p>
         <img src="img/profile.jpg" class="profile-pic">
     </div>
+    <div class="main-box">
+        <h2>Your project</h2>
+        <p class="subheading">Learning Management System Project</p>
 
+        <div class="list-box">
+            <label>ASSIGNED TO</label>
+            <label class="task-category">CATEGORY</label>
+            <label>DETAILS</label>
 
-    
+            <div class="task-listed">
+                <div class="category-marker"></div>
+                <div class="person-assigned">
+                    <img src="img/profile.jpg">
+                    <div class="contact-data">
+                        <p>Darrin S. Jones</p>
+                        <p class="email">Darrin@gmail.com</p>
+                    </div>
+                </div>
+                <p class="task-category">Marketing</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="task-listed">
+                <div class="category-marker ctg-product"></div>
+                <div class="person-assigned">
+                    <img src="img/profile2.jpg">
+                    <div class="contact-data">
+                        <p>Robert D. Cover</p>
+                        <p class="email">Robert@gmail.com</p>
+                    </div>
+                </div>
+                <p class="task-category">Product</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="task-listed">
+                <div class="category-marker ctg-sales"></div>
+                <div class="person-assigned">
+                    <img src="img/profile3.jpg">
+                    <div class="contact-data">
+                        <p>Terri W. Beck</p>
+                        <p class="email">Terri@gmail.com</p>
+                    </div>
+                </div>
+                <p class="task-category">Sales</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
