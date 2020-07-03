@@ -26,21 +26,25 @@ label {
     padding: 2em;
     color: #F4F3FB;
     font-size: 1.2em;
+    display: grid;
+    position: fixed;
+    grid-template-rows: 20% 70% 10%;
+}
+.align-center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
 }
+
 .side-bar img {
-    margin-bottom: 4em;
-}
+    margin-left: auto;
+    margin-right: auto;
+} 
 .profile-pic {
     width: 4em;	
     object-fit: cover;	
     border-radius: 50%;	
-    margin-top: 45vH;	
-    border: white solid;	
-    margin-bottom: 4em;
+    border: white solid;
 }
 .page-selected {
     font-weight: bold;
@@ -223,7 +227,11 @@ h3 {
     background-color: #F4F3FB;
     border-radius: 8px;
     height: 90%;
+    transition: all 125ms ease-in-out;
 } 
+.task-listed:hover {
+    transform: scale(1.005);
+}
 .task-listed p {
     margin: unset;
     display: flex;
