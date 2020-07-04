@@ -34,7 +34,7 @@ label {
     font-size: 1.2em;
     display: grid;
     position: fixed;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-rows: 20% 65% 15%;
 }
 .align-center {
     display: flex;
@@ -159,6 +159,7 @@ label {
     height: 100vh;
     position: absolute;
     left: 10vw;
+    overflow-x: hidden;
     display: grid;	
     grid-template-columns: 10% 40% 40% auto;	
     grid-template-rows: 5% 40% 40% 10%;	
@@ -352,8 +353,8 @@ div.task-category {
 .email:hover {
     text-decoration: underline;
 }
-p.task-category {
+p.task-category, label.task-category {
         display: flex;
-        justify-content: center;
-    
+        justify-content: center; 
 }
+
