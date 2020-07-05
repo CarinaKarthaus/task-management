@@ -284,12 +284,23 @@ div.task-category {
     color: white;
     font-size: small;
     border-radius: 8%;
-    bottom: 0;
+    bottom: 0px;
     left: 10px;
     width: fit-content;
     height: fit-content;
     margin-top: 8px;
     padding: 4px 16px 4px 16px;
+}
+.task-box-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.task-box-bottom img {
+    margin-top: 10px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin-right: 2em;
 }
 .task-box-bottom {
     display: flex;
