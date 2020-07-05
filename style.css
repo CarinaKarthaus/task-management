@@ -221,10 +221,11 @@ h3 {
                         "three four";	
 }	
 .blue-box {	
-    height: 18em;	
+    height: 20em;	
     width: 100%;	
     background-color: #F4F3FB;	
     overflow: scroll;
+    overflow-x: hidden;
 }	
 .do-box, .schedule-box, .delegate-box, .eliminate-box {
     display: flex;
@@ -258,14 +259,14 @@ h3 {
     margin: 1em;
     margin-top: 0.5em;
     width: 90%;
-    height: 45%;
+    height: auto;
     border-left: #FFB071 10px solid;
     border-radius: 3%;
     display: flex;
     flex-direction: column;
     justify-items: left;
     text-align: left;
-    padding: 1em;
+    padding: 8px;
 }
 .task-date {
     height:5%;
@@ -276,7 +277,7 @@ h3 {
 .task-description {
     height: 30%;
     color: grey;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 div.task-category {
     background-color: #5279FC;
@@ -286,8 +287,20 @@ div.task-category {
     bottom: 0;
     left: 10px;
     width: fit-content;
+    height: fit-content;
+    margin-top: 8px;
+    padding: 4px 16px 4px 16px;
+}
+.task-box-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.task-box-bottom img {
     margin-top: 10px;
-    padding: 3px 15px 3px 15px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin-right: 2em;
 }
 
 /* Styles for task-list (index.html) */
@@ -358,3 +371,12 @@ p.task-category, label.task-category {
         justify-content: center; 
 }
 
+/* Easy access classes */
+
+.d-none {
+    display: none;
+}
+
+.selected-person-pic {
+    border: 2px #28a745 solid;
+}

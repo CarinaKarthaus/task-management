@@ -9,9 +9,10 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="loadAllTasks()" >
     <div class="side-bar">
         <img src="img/logo.png">
         <div class="align-center">
@@ -23,7 +24,7 @@
             </a>
             <p class="page-selected">Add Task</p>
         </div>
-        <img src="img/profile.jpg" class="profile-pic">
+        <img src="img/profile1.jpg" class="profile-pic">
     </div>
     <div class="main-box">
         <h2>Add Task</h2>
@@ -32,30 +33,30 @@
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="#######">TITLE</label>
-                    <input type="text" placeholder="Management meeting preparation" class="form-control" id="####">
+                    <label >TITLE</label>
+                    <input type="text" placeholder="Management meeting preparation" class="form-control" id="task-title">
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="####">DUE DATE</label>
-                    <input type="date" class="form-control" id="#####">
+                    <label >DUE DATE</label>
+                    <input type="date" class="form-control" id="task-due-date">
                     <div class="calendar-icon"><img src="./img/icons8-calendar-150.png"></div>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="####">CATEGORY</label>
-                    <select id="#######" class="form-control">
+                    <label >CATEGORY</label>
+                    <select id="task-category" class="form-control">
                         <option selected>Management</option>
                         <option>Marketing</option>
                         <option>Product</option>
-                        <option>Sale</option>
+                        <option>Sales</option>
                     </select>
                     <div class="chevron-icon"><img src="./img/chevron.png"></div>
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="urgency">URGENCY</label>
-                    <select id="urgency" class="form-control">
+                    <label >URGENCY</label>
+                    <select id="task-urgency" class="form-control">
                         <option selected>High</option>
                         <option>Medium</option>
                         <option>Low</option>
@@ -65,16 +66,19 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="details">DESCRIPTION</label>
+                    <label >DESCRIPTION</label>
                     <textarea class="form-control" rows="3"
-                        placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. " id="details"
+                        placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. " id="task-details"
                         required></textarea>
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label for="person-assigned">ASSIGNED TO</label>
+                    <label >ASSIGNED TO</label>
+
                     <div class="form-group col-md-6">
-                        <img class="assigned-pic" src="img/profile2.jpg">
-                        <img class="plus" src="img/icon plus.png">
+                        <img onclick='selectPerson(this.id)' class="assigned-pic" src="img/profile2.jpg" id='2'>
+                        <img onclick='selectPerson(this.id)' class="assigned-pic d-none" src="img/profile3.jpg" id='3'>
+                        <img onclick='selectPerson(this.id)' class="assigned-pic d-none" src="img/profile1.jpg" id='1'>
+                        <img onclick='showMorePeople()' id='plus-btn' class="plus" src="img/icon plus.png">
                     </div>
                     <div class="btn-row">
                         <button type="submit" onclick="addTask()" class="btn btn-primary">Create task</button>
