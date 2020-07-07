@@ -15,28 +15,26 @@ let specialCategory;
 function showMorePeople() {	
     for (i = morePeopleCount; i <  morePeopleCount + 2 ; i++){
         document.getElementById('plus-btn').insertAdjacentHTML('beforebegin' ,`<img onclick='selectPerson(this.id)' class='assigned-pic' src='img/profile${i}.jpg' id='${i}'>`);
-            //document.getElementById(i).classList.remove('d-none');
         }
         morePeopleCount += 2;
         if(morePeopleCount > contacts.length) document.getElementById('plus-btn').classList.add('d-none');
 }	
 //if person is already selected, remove selection and remove from peopleAssigned array; else select & add to array	
-function selectPerson(id) {	
-    if (document.getElementById(id).classList.contains('selected-person-pic')){	
-        document.getElementById(id).classList.remove('selected-person-pic');	
-       // document.getElementById(id).classList.add('d-none');	
-       // document.getElementById('plus-btn').classList.remove('d-none');	
-        for (i = 0; i <= peopleAssigned.length -1; i++){	
-            if(peopleAssigned[i] == document.getElementById(id).id){	
-                peopleAssigned.splice(i,1);	
-            }	
-        }	
-    } else if(!document.getElementById(id).classList.contains('selected-person-pic')){	
-        document.getElementById(id).classList.add('selected-person-pic');	
-        peopleAssigned.push(document.getElementById(id).id);	
-        console.log(peopleAssigned);	
-    }	
-}	
+function selectPerson(id) {
+        if (document.getElementById(id).classList.contains('selected-person-pic')){
+            document.getElementById(id).classList.remove('selected-person-pic');
+            for (i = 0; i < peopleAssigned.length; i++){
+                if(peopleAssigned[i] == id ){
+                    peopleAssigned.splice(i,1);
+                     console.log(peopleAssigned);
+                }
+            }
+        } else if(!document.getElementById(id).classList.contains('selected-person-pic')){
+            document.getElementById(id).classList.add('selected-person-pic');
+            peopleAssigned.push(id);
+            console.log(peopleAssigned);
+        }
+    }
 function addTask(){	
     let title = document.getElementById('task-title').value;	
     let dueDate = document.getElementById('task-due-date').value;	
