@@ -48,7 +48,7 @@ function addTask(){
         'category' : category,	
         'urgency' : urgency,	
         'details' : details,	
-        'peopleAssigned' : peopleAssigned 	
+        'peopleAssigned' : peopleAssigned	
     };	
     allTasks.push(task);	
     let allTasksAsString = JSON.stringify(allTasks);	
@@ -60,11 +60,16 @@ function loadAllTasks(){
     console.log('Loaded all tasks: ', allTasks);	
     console.log('People assigned: ' + peopleAssigned);	
 }	
+
+
+
 //JS for task-list (index.html)	
+
     // Load, append and show all tasks in task-list 	
     function showTasks(){	
         loadAllTasks();	
         let list = document.getElementById('list-box');	
+        console.log(allTasks.length);
         // Load data of each task	
         for (i=0; i< allTasks.length; i++) {	
             let task = allTasks[i];	
@@ -72,7 +77,7 @@ function loadAllTasks(){
             let category = task.category;	
             let details = task.details;	
             	
-            categoryCheck(category); 	
+            specialCategory = categoryCheck(category); 	
             console.log('Special category: ', specialCategory);	
         	
             newTaskHTML = `	
@@ -80,8 +85,8 @@ function loadAllTasks(){
                     <div class="category-marker ${specialCategory}"></div>  	
                         <div class="person-assigned">`;	
             	
-            for (i=0; i< peopleAssigned.length; i++){	
-                compileContactData(peopleAssigned, newTaskHTML); 	
+            for (j=0; i< peopleAssigned.length -1; j++){	
+                newTaskHTML = compileContactData(peopleAssigned, newTaskHTML, j); 	
             }	
             newTaskHTML += `</div> 	
                 <p class="task-category">${category}</p> 	
@@ -93,35 +98,36 @@ function loadAllTasks(){
     }	
     // Check task-category to assign correct color for category-marker	
     function categoryCheck(category){	
-    console.log('Category: ', category);	
-    if (category = 'Marketing'){	
-        specialCategory = '';	
-    } else if (category == 'Sales'){	
-        specialCategory = 'ctg-sales';	
-    }else if (category == 'Product'){	
-        specialCategory = 'ctg-product';	
-    }else if (category == 'Management'){	
-        specialCategory = 'ctg-mgmt';	
-    };     	
-    return specialCategory; 	
+        console.log('Category: ', category);	
+        if (category == 'Marketing'){	
+            specialCategory = 'Marketing';	
+        } else if (category == 'Sales'){	
+            specialCategory = 'ctg-sales';	
+        }else if (category == 'Product'){	
+            specialCategory = 'ctg-product';	
+        }else if (category == 'Management'){	
+            specialCategory = 'ctg-mgmt';	
+        };     	
+        return specialCategory; 	
     }	
     // compiile contact data section for the task and return it to showTasks()	
-    function compileContactData(peopleAssigned, newTaskHTML) {	
-    if (peopleAssigned[i] == '1'){	
-        taskContact = contacts[0];	
-    } else if (peopleAssigned[i] == '2') {	
-        taskContact = contacts[1];	
-    } else {	
-        taskContact = contacts[2]; 	
-    }	
-    contactName = taskContact[1];	
-    contactEmail = taskContact[2];	
-    contactImg = taskContact[3];	
-    newTaskHTML += `<img src=${contactImg}> 	
-    <div class="contact-data"> 	
-        <p>${contactName}</p> 	
-        <p class="email">${contactEmail}</p> 	
-    </div>  `;	
-    console.log(newTaskHTML);	
-    return newTaskHTML;	
+    function compileContactData(peopleAssigned, newTaskHTML, j) {	
+        let taskContact;
+        if (peopleAssigned[j] == '1'){	
+            taskContact = contacts[0];	
+        } else if (peopleAssigned[j] == '2') {	
+            taskContact = contacts[1];	
+        } else {	
+            taskContact = contacts[2]; 	
+        }	
+        contactName = taskContact[1];	
+        contactEmail = taskContact[2];	
+        contactImg = taskContact[3];	
+        newTaskHTML += `<img src=${contactImg}> 	
+        <div class="contact-data"> 	
+            <p>${contactName}</p> 	
+            <p class="email">${contactEmail}</p> 	
+        </div>  `;	
+        console.log(newTaskHTML);	
+        return newTaskHTML;	
     }
