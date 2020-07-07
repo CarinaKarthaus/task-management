@@ -85,7 +85,7 @@ function loadAllTasks(){
                     <div class="category-marker ${specialCategory}"></div>  	
                         <div class="person-assigned">`;	
             	
-            for (j=0; i< peopleAssigned.length -1; j++){	
+            for (j=0; j< peopleAssigned.length; j++){	
                 newTaskHTML = compileContactData(peopleAssigned, newTaskHTML, j); 	
             }	
             newTaskHTML += `</div> 	
