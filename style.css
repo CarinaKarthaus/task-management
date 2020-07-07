@@ -323,24 +323,28 @@ div.task-category {
     width: 100%;	
     height: 100%;
     display: grid;	
-    grid-template-columns: 20% 20% 60%;
-    grid-template-rows: 5% 12%;
-    grid-auto-rows: 12%;
+    grid-template-columns: 25% 20% 55%;
+    grid-template-rows: 5%;   /* default: 5% 12% */
+    grid-auto-rows: min-content;  /* default: 12% */
     grid-template-areas: "label label label"
                         "task task task";
     align-items: center;
+    row-gap: 1.5%;
     padding: 0.5em; 
+}
+.list-box label {
+    text-transform: uppercase;
 }
 
     /* Style for row in task-list */
 .task-listed {
     grid-area: task;
     display: grid;
-    grid-template-columns: 2% 18% 20% 60%;
+    grid-template-columns: 1.5% 23.5% 20% 55%;
     grid-row: auto;
     background-color: #F4F3FB;
     border-radius: 8px;
-    height: 90%;
+    height: 100%;
     transition: all 125ms ease-in-out;
 } 
 .task-listed:hover {
@@ -351,15 +355,32 @@ div.task-category {
     display: flex;
     align-items: center;
 }
-.person-assigned {
+.assignee-section {
     display: flex;
     align-items: center;
+    padding: 2% 0;
 }
-.person-assigned img {
-    width: 25%;
+.assignee-pic-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* max-width: 50%; */
+}
+.assignee-pic-section img {
+    width: 75%;
     object-fit: contain;
     border-radius: 50%;
     margin-right: 1em;
+    padding: 6% 0;
+}
+.contact-data-section {
+    min-width: 75%;
+    padding-left: 3%;
+    display: flex;
+    flex-direction: column;
+}
+.contact-data {
+    padding: 3% 0;
 }
     /* color indicating task-category; default is Marketing (orange) */
 .category-marker {

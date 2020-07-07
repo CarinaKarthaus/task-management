@@ -7,9 +7,9 @@ let contacts = [
     [3,'Terri W. Bec','terri@gmail.com', 'img/profile3.jpg' ]	
 ];	
 let newTaskHTML;	
-let contactName;	
-let contactEmail; 	
-let contactImg; 	
+//let contactName;	
+//let contactEmail; 	
+//let contactImg; 	
 let specialCategory;	
 //When plus-button is clicked, more people will be shown	
 function showMorePeople() {	
@@ -65,40 +65,63 @@ function loadAllTasks(){
 
 //JS for task-list (index.html)	
 
-    // Load, append and show all tasks in task-list 	
+
+        // Main function to load tasks from array and append them to task-list 	
     function showTasks(){	
+            // Load array of allTasks and access task-list
         loadAllTasks();	
         let list = document.getElementById('list-box');	
-        console.log(allTasks.length);
-        // Load data of each task	
+
+            // Load data of each specific task and add it to task-list	
         for (i=0; i< allTasks.length; i++) {	
             let task = allTasks[i];	
             let peopleAssigned = task.peopleAssigned;	
             let category = task.category;	
             let details = task.details;	
-            	
-            specialCategory = categoryCheck(category); 	
-            console.log('Special category: ', specialCategory);	
-        	
-            newTaskHTML = `	
-                <div class="task-listed"> 	
-                    <div class="category-marker ${specialCategory}"></div>  	
-                        <div class="person-assigned">`;	
-            	
-            for (j=0; j< peopleAssigned.length; j++){	
-                newTaskHTML = compileContactData(peopleAssigned, newTaskHTML, j); 	
-            }	
-            newTaskHTML += `</div> 	
-                <p class="task-category">${category}</p> 	
-                <p>${details}</p> 	
-            </div>`;	
-            	
-            list.insertAdjacentHTML("beforeend", newTaskHTML);	
+                // Compile HTML-code for the new task-list-item
+            newTaskHTML = compileListItemHTML(category, peopleAssigned, details);
+                // Append HTML-code of a specific task to task list
+            list.insertAdjacentHTML("beforeend", newTaskHTML);
         }	
     }	
-    // Check task-category to assign correct color for category-marker	
+    function compileListItemHTML(category, peopleAssigned, details) {   
+            // Create first part of HTML-code for task-list-item 
+        newTaskHTML = compileListItemStart(category);      	
+            
+        let picSectionHTML ='';
+        let contactDataHTML = '';
+            
+            // Create HTML-code for the picture & contact section based on who has been assigned 
+        for (j=0; j< peopleAssigned.length; j++){	
+            picSectionHTML = compilePicSection(peopleAssigned[j], picSectionHTML); 	
+            contactDataHTML = compileContactData(peopleAssigned[j], contactDataHTML);
+        };	
+        // Put together all HTML-code-elements
+        newTaskHTML += picSectionHTML + ` </div> <div class="contact-data-section">` + contactDataHTML;
+       
+        newTaskHTML += `
+                        </div>
+                    </div> 	
+                    <p class="task-category">${category}</p> 	
+                    <p>${details}</p> 	
+                </div>`;	
+
+        return newTaskHTML;
+}
+
+        // Create first part of HTML-code for task-list-item
+    function compileListItemStart(category) {
+        specialCategory = categoryCheck(category); 	
+        newTaskHTML = `	
+            <div class="task-listed"> 	
+                <div class="category-marker ${specialCategory}"></div>  	
+                    <div class="assignee-section">
+                        <div class= "assignee-pic-section" >`;
+        return newTaskHTML;
+    }
+
+        // Check task-category to assign correct color for category-marker	
     function categoryCheck(category){	
-        console.log('Category: ', category);	
         if (category == 'Marketing'){	
             specialCategory = 'Marketing';	
         } else if (category == 'Sales'){	
@@ -110,24 +133,35 @@ function loadAllTasks(){
         };     	
         return specialCategory; 	
     }	
-    // compiile contact data section for the task and return it to showTasks()	
-    function compileContactData(peopleAssigned, newTaskHTML, j) {	
-        let taskContact;
-        if (peopleAssigned[j] == '1'){	
+        // compile pictures of assigned people for task and return it	
+    function compilePicSection(personAssigned, picSectionHTML) {	
+        let taskContact = findContact(personAssigned);
+        let contactImg = taskContact[3];
+        picSectionHTML += `<img src=${contactImg}>`;
+        return picSectionHTML;
+    }  
+        // compile contact data of assigned people
+    function compileContactData(personAssigned, contactDataHTML) {
+        let taskContact = findContact(personAssigned);
+        let contactName = taskContact[1];	
+        let contactEmail = taskContact[2];	
+     
+        contactDataHTML += `<div class="contact-data">
+                            <p>${contactName}</p> 	
+                            <p class="email">${contactEmail}</p> 	
+                        </div>`;	
+        return contactDataHTML;	
+    }
+
+    function findContact(personAssigned) {
+        if (personAssigned == '1'){	
             taskContact = contacts[0];	
-        } else if (peopleAssigned[j] == '2') {	
+        } else if (personAssigned == '2') {	
             taskContact = contacts[1];	
-        } else {	
+        } else if (personAssigned == '3') {	
             taskContact = contacts[2]; 	
         }	
-        contactName = taskContact[1];	
-        contactEmail = taskContact[2];	
-        contactImg = taskContact[3];	
-        newTaskHTML += `<img src=${contactImg}> 	
-        <div class="contact-data"> 	
-            <p>${contactName}</p> 	
-            <p class="email">${contactEmail}</p> 	
-        </div>  `;	
-        console.log(newTaskHTML);	
-        return newTaskHTML;	
+        return taskContact;
     }
+
+    
