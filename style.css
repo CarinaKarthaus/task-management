@@ -97,6 +97,10 @@ label {
     margin-right: 2%;
     margin-bottom: 5%;
     transition: all 125ms ease-out;
+    opacity: 0.5;
+}
+.assigned-people-box {
+    display: flex;
 }
 .assigned-pic:hover {
     transform: scale(1.1);
@@ -369,6 +373,9 @@ div.task-category {
 .ctg-sales {
     background-color: #58AF69;
 }
+.ctg-mgmt {
+    background-color: #e83e8c;
+}
 .email {
     color: #5279FC;
     cursor: pointer;
@@ -390,4 +397,5 @@ p.task-category, label.task-category {
 
 .selected-person-pic {
     border: 2px #28a745 solid;
+    opacity: 1;
 }
