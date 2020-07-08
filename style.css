@@ -260,17 +260,15 @@ h3 {
 }
 .task-box {
     background-color: white;
-    margin: 1em;
-    margin-top: 0.5em;
+    margin: 0.5em 1em 0.5em 1em;
+    padding-left: 2px;
     width: 90%;
     height: auto;
-    border-left: #FFB071 10px solid;
     border-radius: 3%;
     display: flex;
     flex-direction: column;
     justify-items: left;
     text-align: left;
-    padding: 8px;
 }
 .task-date {
     height:5%;
@@ -292,31 +290,29 @@ div.task-category {
     left: 10px;
     width: fit-content;
     height: fit-content;
-    margin-top: 8px;
     padding: 4px 16px 4px 16px;
 }
 .task-box-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 10px;
 }
 .task-box-bottom img {
-    margin-top: 10px;
-    width: 2em;
-    height: 2em;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    margin-right: 2em;
+    margin:2px;
 }
-.task-box-bottom {
+.task-box-bottom-pictures {
     display: flex;
     justify-content: space-between;
+    width: auto;
+    margin: 2px;
+    overflow-x: scroll;
 }
-.task-box-bottom img {
-    margin-top: 10px;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    margin-right: 2em;
-}
+
+
 
 /* Styles for task-list (index.html) */
 .list-box {
@@ -419,4 +415,17 @@ p.task-category, label.task-category {
 .selected-person-pic {
     border: 2px #28a745 solid;
     opacity: 1;
+}
+
+.category-1 {
+    border-left: #FFB071 5px solid;
+}
+.category-2 {
+    border-left: #E271FF 5px solid;
+}
+.category-3 {
+    border-left:  #58AF69 5px solid;
+}
+.category-4 {
+    border-left:   #e83e8c 5px solid;
 }

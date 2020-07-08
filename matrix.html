@@ -12,7 +12,7 @@
     <script src="Script.js"></script>
 </head>
 
-<body>
+<body onload="loadTasksMatrix()">
 
     <div class="side-bar">
         <img src="img/logo.png">
@@ -48,43 +48,22 @@
         <div class='matrix-box'>
             <div class='do-box'>
                 <h3>DO</h3>
-                <div class='blue-box'>
-                    <div class='task-box'>
-                        <div class='task-date'>13.07.2020</div>
-                        <div class="task-title">Prepare Presentation</div>
-                        <div class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
-                        <div class='task-box-bottom'>
-                            <div class="task-category">Marketing</div>
-                            <img src="img/profile1.jpg">
-                        </div>
-                    </div>
-                    <div class='task-box'>
-                        <div class='task-date'>13.07.2020</div>
-                        <div class="task-title">Prepare Presentation</div>
-                        <div class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</div>
-                        <div class='task-box-bottom'>
-                            <div class="task-category">Marketing</div>
-                            <img src="img/profile1.jpg">
-                        </div>
-                    </div>
+                <div class='blue-box' id='do-blue-box'>
                 </div>
             </div>
             <div class='schedule-box'>
                 <h3>SCHEDULE</h3>
-                <div class='blue-box'>
-                    <div class='task'></div>
+                <div class='blue-box' id='schedule-blue-box'>
                 </div>
             </div>
             <div class="delegate-box">
                 <h3>DELEGATE</h3>
-                <div class='blue-box'>
-                    <div class='task'></div>
+                <div class='blue-box' id='delegate-blue-box'>
                 </div>
             </div>
             <div class='eliminate-box'>
                 <h3>ELIMINATE</h3>
-                <div class='blue-box'>
-                    <div class='task'></div>
+                <div class='blue-box' id='eliminate-blue-box'>
                 </div>
             </div>
         </div>
