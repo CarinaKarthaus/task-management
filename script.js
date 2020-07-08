@@ -135,25 +135,25 @@ function loadAllTasks(){
     }	
         // compile pictures of assigned people for task and return it	
     function compilePicSection(personAssigned, picSectionHTML) {	
-        let taskContact = findContact(personAssigned);
-        let contactImg = taskContact[3];
+        let contactData = fetchContactData(personAssigned);
+        let contactImg = contactData[3];
         picSectionHTML += `<img src=${contactImg}>`;
         return picSectionHTML;
     }  
         // compile contact data of assigned people
     function compileContactData(personAssigned, contactDataHTML) {
-        let taskContact = findContact(personAssigned);
-        let contactName = taskContact[1];	
-        let contactEmail = taskContact[2];	
+        let contactData = fetchContactData(personAssigned);
+        let contactName = contactData[1];	
+        let contactEmail = contactData[2];	
      
         contactDataHTML += `<div class="contact-data">
-                            <p>${contactName}</p> 	
-                            <p class="email">${contactEmail}</p> 	
-                        </div>`;	
+                                <p>${contactName}</p> 	
+                                <p class="email">${contactEmail}</p> 	
+                            </div>`;	
         return contactDataHTML;	
     }
 
-    function findContact(personAssigned) {
+    function fetchContactData(personAssigned) {
         if (personAssigned == '1'){	
             taskContact = contacts[0];	
         } else if (personAssigned == '2') {	
