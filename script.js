@@ -115,7 +115,7 @@ function compileListItemHTML(category, peopleAssigned, details) {
                         </div>
                     </div> 	
                     <p class="task-category">${category}</p> 	
-                    <p>${details}</p> 	
+                    <p class="details">${details}</p> 	
                 </div>`;
 
     return newTaskHTML;

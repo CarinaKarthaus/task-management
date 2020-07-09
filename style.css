@@ -472,7 +472,7 @@ p.task-category, label.task-category {
     .main-box h2 {
         z-index: 2;
         position: absolute;
-        margin: 20px 100px;
+        margin: 20px auto 20px 80px;
         color: white;
     }
     .assigned-people-box {
@@ -485,6 +485,63 @@ p.task-category, label.task-category {
         margin-bottom: 12px;
         margin-left: 6px;
     }
+
+    /* index.html specific adaption */
+    .list-box {
+        margin-top: 64px;
+        padding: unset;
+        grid-template-columns: 36% 31% 33%;
+        row-gap: 1%;
+        grid-template-rows: 4%;
+    }
+    .list-box label {
+        font-size: large;
+        margin: 2%;
+    }
+    .task-listed {
+        /* display: flex; */
+        grid-template-columns: 1.5% 40.5% 58%;;
+        grid-template-areas:   "marker assignee category"
+                                "marker assignee details"
+                                "marker assignee details"
+                                "marker assignee details";
+     
+    }
+    p.task-category {
+        justify-content: left;
+        grid-area: category;
+        font-weight: bold;
+        align-items: center;
+        padding-left: 5%;
+    }
+    p.details {
+        grid-area: details;
+        align-items: flex-start;
+        padding-left: 5%;
+        font-size: medium;
+    }
+
+    .category-marker {
+        grid-area: marker;
+    }
+    .assignee-section {
+        grid-area: assignee;
+        flex-direction: column;
+        align-items: flex-start; 
+        padding: 4% 2%;
+    }
+    .assignee-pic-section {
+        flex-direction: row;
+    }
+    .assignee-pic-section img {
+        width: 46%;
+        padding: 2%;
+        margin-right: 1%;
+    }
+    .contact-data  {
+        font-size: medium;
+    }
+    
 
 
 
