@@ -26,6 +26,7 @@ label {
     color: #1E3190;
     font-weight: bolder;
     font-size: larger;
+    text-transform: uppercase;
 }
 .side-bar {
     width: 10vw;
@@ -63,6 +64,7 @@ label {
 .subheading {
     color: #1E3190;
     font-size: medium;
+    text-transform: uppercase;
 }
 .main-box {
     padding: 2%;
@@ -124,14 +126,14 @@ label {
     font-size: large;
 }
 
-    /* --PROVISIONAL-- Calendar und list input icons  */
+    /* --PROVISIONAL-- Calendar und list input icons  
 .calendar-icon, .chevron-icon {
     position: absolute;
     background-color: white;
     border: lightgrey 1.5px solid;
     border-radius: 10%;
-    pointer-events: none;
-}
+    pointer-events: none;  
+} */
 .calendar-icon {
     transform: scale(0.7);
     right: 11px;
@@ -428,4 +430,62 @@ p.task-category, label.task-category {
 }
 .category-4 {
     border-left:   #e83e8c 5px solid;
+}
+
+
+
+/* For Smartphones (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    form {
+        width: 92vw;
+        height: unset;
+        margin-top: 72px;
+        margin-bottom: 24px;
+
+    }
+
+    .side-bar {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        z-index: 1;
+    }
+    .side-bar div {
+        display: none;
+    }
+    .side-bar img {
+        margin: 0 24px;
+        object-fit: contain;
+        height: 64px;
+    }    
+    .profile-pic {
+        width: 64px;
+    }
+    .main-box {
+        left: 2vw;
+        width: unset;
+    }
+    .main-box h2 {
+        z-index: 2;
+        position: absolute;
+        margin: 20px 100px;
+        color: white;
+    }
+    .assigned-people-box {
+        display: block;
+    }
+    .assigned-pic {
+        width: 30%;
+    }
+    .plus {
+        margin-bottom: 12px;
+        margin-left: 6px;
+    }
+
+
+
 }

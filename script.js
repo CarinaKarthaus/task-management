@@ -46,14 +46,14 @@ function addTask() {
     let title = document.getElementById('task-title').value;
     let dueDate = document.getElementById('task-due-date').value;
     let category = document.getElementById('task-category').value;
-    let urgency = document.getElementById('task-urgency').value;
+    let importance = document.getElementById('task-importance').value;
     let details = document.getElementById('task-details').value;
     let task = {
         'title': title,
         'createdAt': new Date().getTime(),
         'dueDate': dueDate,
         'category': category,
-        'urgency': urgency,
+        'importance': importance,
         'details': details,
         'peopleAssigned': peopleAssigned
     };
