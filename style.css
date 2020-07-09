@@ -474,6 +474,7 @@ p.task-category, label.task-category {
         position: absolute;
         margin: 20px auto 20px 80px;
         color: white;
+        font-size: x-large;
     }
     .assigned-people-box {
         display: block;
@@ -495,7 +496,7 @@ p.task-category, label.task-category {
         grid-template-rows: 4%;
     }
     .list-box label {
-        font-size: large;
+        font-size: medium;
         margin: 2%;
     }
     .task-listed {
@@ -529,6 +530,7 @@ p.task-category, label.task-category {
         flex-direction: column;
         align-items: flex-start; 
         padding: 4% 2%;
+        overflow: auto;
     }
     .assignee-pic-section {
         flex-direction: row;
