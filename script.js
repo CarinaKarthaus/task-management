@@ -198,10 +198,11 @@ function loadTasksMatrix() {
 // Check and return urgency level
 function checkUrgency(i) {
     let currentDate = new Date();
-    let taskDate = new Date(allTasks[i].dueDate);
-    console.log(taskDate);
-    if (taskDate.getFullYear() == currentDate.getFullYear() && taskDate.getMonth() == currentDate.getMonth() && taskDate.getDay() <= (currentDate.getDay() + 7)) {
-        console.log('High urgency');
+    let taskDueDate = new Date(allTasks[i].dueDate);
+    console.log(taskDueDate);
+    if (taskDueDate.getFullYear() == currentDate.getFullYear() && taskDueDate.getMonth() == currentDate.getMonth() && taskDueDate.getDate() <= (currentDate.getDate() + 7)) {
+        console.log('High urgency' + currentDate.getDate());
+        console.log('High urgency' + taskDueDate.getDate());
         return 'High';
     } else {
         console.log('Low urgency');
@@ -211,8 +212,9 @@ function checkUrgency(i) {
 
 //HTML code for each task to add to the matrix
 function compileTaskMatrixHTML(id, taskId, i) {
+    let dueDate = new Date(allTasks[i].dueDate);
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
-    <div class='task-date'>${allTasks[i].dueDate}</div>
+    <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()}-${dueDate.getFullYear()}</div>
     <div class='task-title'>${allTasks[i].title}</div>
     <div class='task-description'>${allTasks[i].details}</div>
     <div class='task-box-bottom'>
