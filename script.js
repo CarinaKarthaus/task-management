@@ -189,7 +189,7 @@ function loadTasksMatrix() {
         if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i);
         else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i);
         else if (urgency == "Low" && importance == "High") compileTaskMatrixHTML("schedule-blue-box", i + 1, i);
-        else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i);
+        else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("eliminate-blue-box", i + 1, i);
 
         assignCategory(allTasks[i].category, i + 1, i);
     }
