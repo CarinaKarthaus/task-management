@@ -126,37 +126,6 @@ label {
     font-size: large;
 }
 
-    /* --PROVISIONAL-- Calendar und list input icons  
-.calendar-icon, .chevron-icon {
-    position: absolute;
-    background-color: white;
-    border: lightgrey 1.5px solid;
-    border-radius: 10%;
-    pointer-events: none;  
-} */
-.calendar-icon {
-    transform: scale(0.7);
-    right: 11px;
-    top: 31px;
-    padding: 0.4em;
-    padding-right: 0.8em;
-}
-.calendar-icon img {
-    padding-left: 0.5em;
-}
-.chevron-icon img {
-    width: 70%;
-    height: 60%;
-    padding-top: 0.8em;
-    padding-left: 0.5em;
-}
-.chevron-icon {
-    right: 28px;
-    top: 40px;
-    width: 2em;
-    height: 2.4em;
-}
-
 
 /* Style for the Matrix Site */	
 .matrix-main-box {	
@@ -277,6 +246,9 @@ h3 {
     font-size: small;
     color: grey;
     margin-bottom: 8px;
+}
+.task-title {
+    font-weight: bold;
 }
 .task-description {
     height: 30%;
@@ -407,7 +379,10 @@ p.task-category, label.task-category {
         display: flex;
         justify-content: center; 
 }
-
+.details {
+    word-break: break-word;
+    padding: 2% 2%;
+}
 /* Easy access classes */
 
 .d-none {
@@ -440,9 +415,8 @@ p.task-category, label.task-category {
     form {
         width: 92vw;
         height: unset;
-        margin-top: 72px;
+        margin-top: 24px;
         margin-bottom: 24px;
-
     }
 
     .side-bar {
@@ -476,6 +450,11 @@ p.task-category, label.task-category {
         color: white;
         font-size: x-large;
     }
+    .subheading {
+        position: relative;
+        margin: 90px auto 10px auto;
+        text-align: center;
+    }
     .assigned-people-box {
         display: block;
     }
@@ -489,7 +468,7 @@ p.task-category, label.task-category {
 
     /* index.html specific adaption */
     .list-box {
-        margin-top: 64px;
+        margin-top: 24px;
         padding: unset;
         grid-template-columns: 36% 31% 33%;
         row-gap: 1%;
