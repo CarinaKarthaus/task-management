@@ -176,19 +176,39 @@ function fetchContactData(personAssigned) {
     return taskContact;
 }
 
-
-
 // JS for the matrix seite
 
-//Load all tasks to the matrix
+//Load all tasks to the different boxes in the matrix
 function loadTasksMatrix() {
     loadAllTasks();
+    let urgency;
+    let importance;
     for (i = 0; i < allTasks.length; i++) {
-        compileTaskMatrixHTML("do-blue-box",i+1, i);
-        assignCategory(allTasks[i].category, i+1, i);
-        console.log(`task${i}`);
+        urgency = checkUrgency(i);
+        importance = allTasks[i].importance;
+        if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i);
+        else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i);
+        else if (urgency == "Low" && importance == "High") compileTaskMatrixHTML("schedule-blue-box", i + 1, i);
+        else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i);
+
+        assignCategory(allTasks[i].category, i + 1, i);
     }
 }
+
+// Check and return urgency level
+function checkUrgency(i) {
+    let currentDate = new Date();
+    let taskDate = new Date(allTasks[i].dueDate);
+    console.log(taskDate);
+    if (taskDate.getFullYear() == currentDate.getFullYear() && taskDate.getMonth() == currentDate.getMonth() && taskDate.getDay() <= (currentDate.getDay() + 7)) {
+        console.log('High urgency');
+        return 'High';
+    } else {
+        console.log('Low urgency');
+        return 'Low';
+    }
+}
+
 //HTML code for each task to add to the matrix
 function compileTaskMatrixHTML(id, taskId, i) {
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
@@ -213,11 +233,10 @@ function peopleAssignedPictures(task) {
 
 //Assings a color for the task border depending on the category
 function assignCategory(category, id, i) {
-    let cssCategories= ['category-1','category-2','category-3','category-4'];
-    for(i=0;i < categories.length; i++){
-      if (category == categories[i]){
-        document.getElementById(`task${id}`).classList.add(cssCategories[i]);
-      }
+    let cssCategories = ['category-1', 'category-2', 'category-3', 'category-4'];
+    for (i = 0; i < cssCategories.length; i++) {
+        if (category == cssCategories[i]) {
+            document.getElementById(`task${id}`).classList.add(cssCategories[i]);
+        }
     }
-    
 }
