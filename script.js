@@ -11,9 +11,6 @@ let contacts = [
     [6, 'Terri W. Bec', 'terri@gmail.com', 'img/profile3.jpg']
 ];
 let newTaskHTML;
-//let contactName;	
-//let contactEmail; 	
-//let contactImg; 	
 let specialCategory;
 //When plus-button is clicked, more people will be shown	
 function showMorePeople() {
@@ -157,7 +154,7 @@ function compileContactData(personAssigned, contactDataHTML) {
     let taskContact = fetchContactData(personAssigned);
     let contactName = taskContact[1];
     let contactEmail = taskContact[2];
-
+    console.log(contactName);
     contactDataHTML += `<div class="contact-data">
                             <p>${contactName}</p> 	
                             <p class="email">${contactEmail}</p> 	
@@ -166,14 +163,16 @@ function compileContactData(personAssigned, contactDataHTML) {
 }
 
 function fetchContactData(personAssigned) {
-    if (personAssigned == '1'){	
-        taskContact = contacts[0];	
-    } else if (personAssigned == '2') {	
-        taskContact = contacts[1];	
-    } else if (personAssigned == '3') {	
-        taskContact = contacts[2]; 	
-    }	
-    return taskContact;
+    let personAssignedInt = parseInt(personAssigned);
+ 
+    for (k = 1; k <= contacts.length; k++){
+        if (personAssignedInt == k) {
+            taskContact = contacts[k-1];
+        } else {
+            continue
+        }
+        return taskContact;
+    }
 }
 
 // JS for the matrix seite
@@ -200,7 +199,13 @@ function checkUrgency(i) {
     let currentDate = new Date();
     let taskDueDate = new Date(allTasks[i].dueDate);
     console.log(taskDueDate);
-    if (taskDueDate.getFullYear() == currentDate.getFullYear() && taskDueDate.getMonth() == currentDate.getMonth() && taskDueDate.getDate() <= (currentDate.getDate() + 7)) {
+
+    // Transfer dates and times into millisecond-value
+    let sevenDaysInMs = 7*24*60*60*1000;
+    let currentDateInMs = currentDate.getTime();
+    let taskDueDateInMs = taskDueDate.getTime();
+
+    if (taskDueDateInMs < (currentDateInMs + sevenDaysInMs)) {
         console.log('High urgency' + currentDate.getDate());
         console.log('High urgency' + taskDueDate.getDate());
         return 'High';
