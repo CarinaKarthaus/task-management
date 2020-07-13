@@ -5,20 +5,13 @@
 body {
     font-family: 'PT Sans', sans-serif;
     display: flex;
+    height: 100vH;
 }
 a:hover, a, a:active{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.685);
 }
 
-form {
-    background-color: #F4F3FB;
-    height: 70vH;
-    width: 80vW;
-    border-radius: 8px;
-    margin-top: 4%;
-    padding: 4%;
-}
 h2 {
     font-weight: bold;
 }
@@ -30,11 +23,11 @@ label {
 }
 .side-bar {
     width: 10vw;
-    height: 100vH;
-    background-color: #1E3190;
-    font-size: 1.2em;
-    display: grid;
+    height: 100%;
     position: fixed;
+    background-color: #1E3190;
+    font-size: 1.5vw;
+    display: grid;
     grid-template-rows: 20% 65% 15%;
 }
 .align-center {
@@ -45,9 +38,10 @@ label {
 }
 .side-bar img {
     margin: auto;
+    width: 8vh;
 } 
 .profile-pic {
-    width: 4em;	
+    width: 10vh !important;	
     object-fit: cover;	
     border-radius: 50%;	
     border: white solid;
@@ -59,8 +53,6 @@ label {
     width:100%;
     border-left: 5px white solid;
 }
-
-
 .subheading {
     color: #1E3190;
     font-size: medium;
@@ -91,6 +83,15 @@ label {
 }
 .form-group {
     margin-bottom: 2rem;
+}
+form {
+    background-color: #F4F3FB;
+    height: 70vH;
+    width: 80vW;
+    overflow: scroll;
+    border-radius: 8px;
+    margin-top: 4%;
+    padding: 4%;
 }
 .assigned-pic {
     width: 30%;
@@ -127,24 +128,24 @@ label {
 }
 
 
-/* Style for the Matrix Site */	
-.matrix-main-box {	
-    padding: 1em;	
-    width: 90vw;	
-    height: 100vh;
+/* Style for the Matrix Site *//* Style for the Matrix Site */	
+.matrix-main-box {
     position: absolute;
-    left: 10vw;
-    overflow-x: hidden;
+    left: 15vh;
+    padding: 15px;
+    width: 88vw;
+    height: 100%;
     display: grid;	
     grid-template-columns: 10% 40% 40% auto;	
-    grid-template-rows: 5% 40% 40% 10%;	
+    grid-template-rows: 5% 40% 40% auto;	
     grid-template-areas: "urgency urgency urgency urgency"	
-                        "importance main main ."	
-                        'importance main main .'	
-                        'importance main main .';	
+                        "importance main main main"	
+                        'importance main main main'	
+                        'importance main main main';	
 }	
     /* Importance, urgency and low letter styles */	
 h4 {	
+    font-size: 4vh;
     color: grey;	
     font-weight: lighter;	
     margin: 3%;	
@@ -157,7 +158,8 @@ h4 {
 }	
 .importance-arrow {	
     grid-area: importance;	
-    display: flex;	
+    height: 100%;
+    display: flex;
     flex-direction: column;	
     justify-content: space-between;	
     align-items: center;	
@@ -183,56 +185,56 @@ h4 {
 }	
     /* Content inside the matrix */	
 h3 {	
-    font-size: 24px;	
+    font-size: 4vh;	
+    position: sticky;
+    top: 0;
     border: 1%;	
 }	
 .matrix-box {	
     text-align: center;	
-    grid-area: main;	
-    display: grid;	
+    grid-area: main;
+    overflow: scroll;
+    height: 100%;	
+    display: grid;
     grid-template-columns: 1fr 1fr;	
-    grid-template-rows: 1fr 1fr;	
     grid-template-areas: "one two"	
-                        "three four";	
+                        "three four"; 
 }	
 .blue-box {	
-    height: 20em;	
+    max-height: 20em;
     width: 100%;	
     background-color: #F4F3FB;	
     overflow: scroll;
-    overflow-x: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }	
 .do-box, .schedule-box, .delegate-box, .eliminate-box {
+    margin-top: 10px;
     display: flex;
-    height: 100%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: fit-content;
 }
 .do-box {	
-    margin-bottom: 10%;	
     margin-right: 5%;	
     grid-area: one;	
 }	
 .schedule-box {	
-    margin-bottom: 10%;	
     margin-left: 5%;	
     grid-area: two;	
 }	
 .delegate-box {	
-    margin-bottom: 5%;	
     margin-right: 5%;	
     grid-area: three;	
 }	
 .eliminate-box {	
-    margin-bottom: 5%;	
     margin-left: 5%;	
     grid-area: four;	
 }
 .task-box {
     background-color: white;
-    margin: 0.5em 1em 0.5em 1em;
-    padding-left: 2px;
     width: 90%;
     height: auto;
     border-radius: 3%;
@@ -240,6 +242,11 @@ h3 {
     flex-direction: column;
     justify-items: left;
     text-align: left;
+    margin: 5px;
+    box-shadow: 2px 2px grey;
+}
+.task-box:hover {
+    transform: scale(1.01);
 }
 .task-date {
     height:5%;
@@ -266,6 +273,9 @@ div.task-category {
     height: fit-content;
     padding: 4px 16px 4px 16px;
 }
+div.task-category:hover {
+    cursor: pointer;
+}
 .task-box-bottom {
     display: flex;
     justify-content: space-between;
@@ -273,8 +283,8 @@ div.task-category {
     margin: 10px;
 }
 .task-box-bottom img {
-    width: 35px;
-    height: 35px;
+    width: 5vh;
+    height: 5vh;
     border-radius: 50%;
     margin:2px;
 }
@@ -283,9 +293,8 @@ div.task-category {
     justify-content: space-between;
     width: auto;
     margin: 2px;
-    overflow-x: scroll;
+    overflow: scroll;
 }
-
 
 
 /* Styles for task-list (index.html) */
@@ -293,6 +302,7 @@ div.task-category {
     width: 100%;	
     height: 100%;
     display: grid;	
+    overflow: scroll;
     grid-template-columns: 25% 20% 55%;
     grid-template-rows: 5%;   /* default: 5% 12% */
     grid-auto-rows: min-content;  /* default: 12% */
