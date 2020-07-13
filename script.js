@@ -60,6 +60,7 @@ function addTask() {
         allTasks.push(task);
         let allTasksAsString = JSON.stringify(allTasks);
         localStorage.setItem('allTasks', allTasksAsString);
+        window.location.href = 'index.html';
     }
 }
 function loadAllTasks() {
@@ -79,6 +80,9 @@ function loadAllTasks() {
 function showTasks() {
     // Load array of allTasks and access task-list
     loadAllTasks();
+    if (allTasks.length != 0) {
+        document.getElementById('empty-task-list').classList.add('d-none');
+    }
     let list = document.getElementById('list-box');
 
     // Load data of each specific task and add it to task-list	
