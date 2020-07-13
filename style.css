@@ -41,7 +41,7 @@ label {
     width: 8vh;
 } 
 .profile-pic {
-    width: 10vh !important;	
+    width: 10vh;	
     object-fit: cover;	
     border-radius: 50%;	
     border: white solid;
@@ -88,7 +88,6 @@ form {
     background-color: #F4F3FB;
     height: 70vH;
     width: 80vW;
-    overflow: scroll;
     border-radius: 8px;
     margin-top: 4%;
     padding: 4%;
@@ -193,7 +192,7 @@ h3 {
 .matrix-box {	
     text-align: center;	
     grid-area: main;
-    overflow: scroll;
+    overflow: hidden;
     height: 100%;	
     display: grid;
     grid-template-columns: 1fr 1fr;	
@@ -201,11 +200,13 @@ h3 {
                         "three four"; 
 }	
 .blue-box {	
-    max-height: 20em;
+    max-height: 40vh;
+    min-height: 30vh;
     width: 100%;	
     background-color: #F4F3FB;	
-    overflow: scroll;
+    overflow-y: scroll;
     border-radius: 10px;
+    border: 4px solid #F4F3FB;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,6 +244,7 @@ h3 {
     justify-items: left;
     text-align: left;
     margin: 5px;
+    padding: 1% 3%;
     box-shadow: 2px 2px grey;
 }
 .task-box:hover {
@@ -283,8 +285,8 @@ div.task-category:hover {
     margin: 10px;
 }
 .task-box-bottom img {
-    width: 5vh;
-    height: 5vh;
+    width: 6vh;
+    height: 6vh;
     border-radius: 50%;
     margin:2px;
 }
@@ -293,7 +295,7 @@ div.task-category:hover {
     justify-content: space-between;
     width: auto;
     margin: 2px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 
@@ -302,10 +304,10 @@ div.task-category:hover {
     width: 100%;	
     height: 100%;
     display: grid;	
-    overflow: scroll;
+    /* overflow: scroll; */
     grid-template-columns: 25% 20% 55%;
-    grid-template-rows: 5%;   /* default: 5% 12% */
-    grid-auto-rows: min-content;  /* default: 12% */
+    grid-template-rows: 5%;   
+    grid-auto-rows: min-content; 
     grid-template-areas: "label label label"
                         "task task task";
     align-items: center;
