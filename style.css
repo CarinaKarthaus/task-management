@@ -349,7 +349,7 @@ div.task-category:hover {
 .task-listed {
     grid-area: task;
     display: grid;
-    grid-template-columns: 1.5% 23.5% 20% 55%;
+    grid-template-columns: 1.5% 23.5% 20% 50% 5%;
     grid-row: auto;
     background-color: #F4F3FB;
     border-radius: 8px;
