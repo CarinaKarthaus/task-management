@@ -324,6 +324,7 @@ div.task-category:hover {
     font-size: x-large;
     color: white;
     padding: 4%;
+    width: fit-content;
 }
 .empty-task-list img {
     width: 8vw;
@@ -422,6 +423,10 @@ p.task-category, label.task-category {
     word-break: break-word;
     padding: 2% 2%;
 }
+button.close {
+    margin: 0 auto;
+}
+
 /* Easy access classes */
 
 .d-none {
