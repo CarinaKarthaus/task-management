@@ -12,7 +12,9 @@ let contacts = [
 ];
 let newTaskHTML;
 let specialCategory;
-//When plus-button is clicked, more people will be shown	
+/**
+ * When plus-button is clicked, more people will be shown
+ */
 function showMorePeople() {
     if (contacts.length != null) {
         for (i = 0; i < 3; i++) {
@@ -23,7 +25,9 @@ function showMorePeople() {
         }
     }
 }
-//if person is already selected, remove selection and remove from peopleAssigned array; else select & add to array	
+/**
+ * if person is already selected, remove selection and remove from peopleAssigned array; else select & add to array	
+ */
 function selectPerson(id) {
     if (document.getElementById(id).classList.contains('selected-person-pic')) {
         document.getElementById(id).classList.remove('selected-person-pic');
@@ -76,7 +80,9 @@ function loadAllTasks() {
 //JS for task-list (index.html)	
 
 
-// Main function to load tasks from array and append them to task-list 	
+/**
+ *Main function to load tasks from array and append them to task-list
+ */
 function showTasks() {
     loadAllTasks();
     // Load array of allTasks and access task-list
@@ -127,7 +133,9 @@ function compileListItemHTML(category, peopleAssigned, details, i) {
 
     return newTaskHTML;
 }
-// Deletes task from array and reloads page
+/**
+ * Deletes task from array and reloads page
+ * */
 function deleteTask(taskIndex) {
     alert('Task will be deleted');
     allTasks.splice(taskIndex, 1);
@@ -136,7 +144,9 @@ function deleteTask(taskIndex) {
     location.reload();
 }
 
-// Create first part of HTML-code for task-list-item
+/**
+ * Create first part of HTML-code for task-list-item
+ */
 function compileListItemStart(category) {
     specialCategory = categoryCheck(category);
     newTaskHTML = `	
@@ -147,7 +157,9 @@ function compileListItemStart(category) {
     return newTaskHTML;
 }
 
-// Check task-category to assign correct color for category-marker	
+/**
+ * Check task-category to assign correct color for category-marker	 
+ */
 function categoryCheck(category) {
     if (category == 'Marketing') {
         specialCategory = 'Marketing';
@@ -160,14 +172,18 @@ function categoryCheck(category) {
     };
     return specialCategory;
 }
-// compile pictures of assigned people for task and return it	
+/**
+ * compile pictures of assigned people for task and return it	
+ */
 function compilePicSection(personAssigned, picSectionHTML) {
     let taskContact = fetchContactData(personAssigned);
     let contactImg = taskContact[3];
     picSectionHTML += `<img src=${contactImg}>`;
     return picSectionHTML;
 }
-// compile contact data of assigned people
+/**
+ * Compile contact data of assigned people
+ */
 function compileContactData(personAssigned, contactDataHTML) {
     let taskContact = fetchContactData(personAssigned);
     let contactName = taskContact[1];
@@ -195,29 +211,28 @@ function fetchContactData(personAssigned) {
 
 // JS for the matrix seite
 
-//Load all tasks to the different boxes in the matrix
+/**
+*Load all tasks to the different boxes in the matrix
+*/
 function loadTasksMatrix() {
     loadAllTasks();
-    if (allTasks.length != 0) {
-        document.getElementById('empty-task-list').classList.add('d-none');
-    } else {
-        document.getElementById('matrix-box').classList.add('d-none');
-    }
+    if (allTasks.length != 0){document.getElementById('empty-task-list').classList.add('d-none');}
     let urgency;
     let importance;
     for (i = 0; i < allTasks.length; i++) {
         urgency = checkUrgency(i);
         importance = allTasks[i].importance;
-        if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i,"Low");
+        if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i, "Low");
         else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i, "High");
         else if (urgency == "Low" && importance == "High") compileTaskMatrixHTML("schedule-blue-box", i + 1, i, "Low");
         else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("eliminate-blue-box", i + 1, i, "High");
-
         assignCategory(allTasks[i].category, i + 1, i);
     }
 }
 
-// Check and return urgency level
+/**
+ * Check and return urgency level
+ *  */
 function checkUrgency(i) {
     let currentDate = new Date();
     let taskDueDate = new Date(allTasks[i].dueDate);
@@ -238,7 +253,9 @@ function checkUrgency(i) {
     }
 }
 
-//HTML code for each task to add to the matrix
+/**
+ * HTML code for each task to add to the matrix
+ */
 function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
     let dueDate = new Date(allTasks[i].dueDate);
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
@@ -262,20 +279,25 @@ function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
         </select>
     </div>
     <div class='task-box-bottom-pictures'>`
-    + peopleAssignedPictures(allTasks[i]))
+        + peopleAssignedPictures(allTasks[i]))
 }
-//Changes importance of a task and locate in the corresponding box
-function changeImportance(i){
+/**
+ * Changes importance of a task and locate in the corresponding box
+ */
+function changeImportance(i) {
+    alert('Esto es un aviso');
     console.log(allTasks[i]);
-    if(allTasks[i].importance == "High"){
+    if (allTasks[i].importance == "High") {
         allTasks[i].importance == "Low";
-    } else if (allTasks[i].importance == "Low"){
+    } else if (allTasks[i].importance == "Low") {
         allTasks[i].importance == "High";
     }
     loadAllTasks();
     console.log(allTasks[i].importance);
 }
-//Fetches pictures of all assigned people for a task
+/**
+ * Fetches pictures of all assigned people for a task
+ */
 function peopleAssignedPictures(task) {
     let picturesHTML = "";
     for (j = 0; j < task.peopleAssigned.length; j++) {
@@ -283,8 +305,9 @@ function peopleAssignedPictures(task) {
     }
     return picturesHTML;
 }
-
-//Assings a color for the task border depending on the category
+/**
+ * Assings a color for the task border depending on the category
+ */
 function assignCategory(category, id, i) {
     let cssCategories = ['category-1', 'category-2', 'category-3', 'category-4'];
     for (i = 0; i < cssCategories.length; i++) {

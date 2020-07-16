@@ -326,8 +326,9 @@ div.task-category {
 }
 
 .importance-icon img {
-    width: 1.7em !important;
-    height:1.7em !important;
+    width: 1.5em !important;
+    height:1.5em !important;
+    margin-right: 5px;
 }
 div.task-category:hover {
     cursor: pointer;
