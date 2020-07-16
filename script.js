@@ -78,11 +78,11 @@ function loadAllTasks() {
 
 // Main function to load tasks from array and append them to task-list 	
 function showTasks() {
+    loadAllTasks();
     // Load array of allTasks and access task-list
     if (allTasks.length != 0) {
         document.getElementById('empty-task-list').classList.add('d-none');
     }
-    loadAllTasks();
     let list = document.getElementById('list-box');
 
     // Load data of each specific task and add it to task-list	
@@ -198,6 +198,11 @@ function fetchContactData(personAssigned) {
 //Load all tasks to the different boxes in the matrix
 function loadTasksMatrix() {
     loadAllTasks();
+    if (allTasks.length != 0) {
+        document.getElementById('empty-task-list').classList.add('d-none');
+    } else {
+        document.getElementById('matrix-box').classList.add('d-none');
+    }
     let urgency;
     let importance;
     for (i = 0; i < allTasks.length; i++) {
@@ -238,18 +243,26 @@ function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
     let dueDate = new Date(allTasks[i].dueDate);
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
     <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()}-${dueDate.getFullYear()}</div>
+    <button type="button" class="close delete-task" onclick="deleteTask(${i})">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+    </button>
     <div class='task-title'>${allTasks[i].title}</div>
+    <div class='edit-title'>Edit</div>
     <div class='task-description'>${allTasks[i].details}</div>
-    <div class='task-box-bottom'>
-        <div class='task-box-bottom-btns'>
-            <div class='task-category'>${allTasks[i].category}</div>
-            <select id="task-importance" class="task-importance" onchange='changeImportance(${i})'>
-                <option selected>${allTasks[i].importance}</option>
-                <option>${importanceNonSelected}</option>
-            </select>
-        </div>
-        <div class='task-box-bottom-pictures'>`
-        + peopleAssignedPictures(allTasks[i]))
+    <div class='edit-description'>Edit</div>
+    <div class='task-category'>${allTasks[i].category}</div>
+    <div id="task-importance" class="task-importance">
+        <div id="importance-mark" class="importance-icon"><img src='./img/importance-icon.png'></div>
+        <select onchange='changeImportance(${i})'>
+            <option selected>${allTasks[i].importance}</option>
+            <option>${importanceNonSelected}</option>
+        </select>
+    </div>
+    <div class='task-box-bottom-pictures'>`
+    + peopleAssignedPictures(allTasks[i]))
 }
 //Changes importance of a task and locate in the corresponding box
 function changeImportance(i){

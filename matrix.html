@@ -14,7 +14,6 @@
 </head>
 
 <body onload="loadTasksMatrix()">
-
     <div class="side-bar">
         <img src="img/logo.png">
         <div class="align-center">
@@ -46,7 +45,15 @@
             <h4>LOW</h4>
 
         </div>
-        <div class='matrix-box'>
+        <div class="empty-task-list" id="empty-task-list">
+            <img src="img/task.png">
+            <p>
+                Your task list is empty. <br>
+                Create your first task now!
+            </p>
+            <button class="btn - btn-primary" onclick="window.location.href='add-task.html'">Add new task</button>
+        </div>
+        <div class='matrix-box' id='matrix-box'>
             <div class='do-box'>
                 <h3>DO</h3>
                 <div class='blue-box' id='do-blue-box'>
