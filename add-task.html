@@ -24,6 +24,9 @@
                 <p>Matrix</p>
             </a>
             <p class="page-selected">Add Task</p>
+            <a href="help.html">
+                <p>How to use</p>
+            </a>
         </div>
         <img src="img/profile1.jpg" class="profile-pic">
     </div>
@@ -34,18 +37,18 @@
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Title</label>
+                    <label>Title</label>
                     <input type="text" placeholder="Please add a task title" class="form-control" id="task-title">
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Due Date</label>
+                    <label>Due Date</label>
                     <input type="date" class="form-control" id="task-due-date">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Category</label>
+                    <label>Category</label>
                     <select id="task-category" class="form-control">
                         <option selected>Management</option>
                         <option>Marketing</option>
@@ -54,25 +57,23 @@
                     </select>
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Importance</label>
+                    <label>Importance</label>
                     <select id="task-importance" class="form-control">
                         <option selected>High</option>
-                <!--    <option>Medium</option>   -->
+                        <!--    <option>Medium</option>   -->
                         <option>Low</option>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Details</label>
-                    <textarea class="form-control" rows="3"
-                        placeholder="Please describe your task here". " id="task-details"
-                        required></textarea>
+                    <label>Details</label>
+                    <textarea class="form-control" rows="3" placeholder="Please describe your task here" id="task-details" required></textarea>
                 </div>
                 <div class="form-group col-md-6 custom-padding">
-                    <label >Assigned to</label>
+                    <label>Assigned to</label>
 
-                   <div class="form-group col-md-6 assigned-people-box" id='people-assigned'>
+                    <div class="form-group col-md-6 assigned-people-box" id='people-assigned'>
                         <img onclick='selectPerson(this.id)' class="assigned-pic" src="img/profile1.jpg" id='1'>
                         <img onclick='showMorePeople()' id='plus-btn' class="plus" src="img/icon plus.png">
                     </div>

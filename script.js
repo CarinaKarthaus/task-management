@@ -1,7 +1,7 @@
 let allTasks = [];
 let peopleAssigned = [];
 let morePeopleCount = 1;
-let categories= ['Marketing','Sales','Product','Management'];
+let categories = ['Marketing', 'Sales', 'Product', 'Management'];
 let contacts = [
     [1, 'Darrin S. Jones', 'Darrin@gmail.com', 'img/profile1.jpg'],
     [2, 'Robert D. Cover', 'robert@gmail.com', 'img/profile2.jpg'],
@@ -12,7 +12,9 @@ let contacts = [
 ];
 let newTaskHTML;
 let specialCategory;
-//When plus-button is clicked, more people will be shown	
+/**
+ * When plus-button is clicked, more people will be shown
+ */
 function showMorePeople() {
     if (contacts.length != null) {
         for (i = 0; i < 3; i++) {
@@ -23,7 +25,9 @@ function showMorePeople() {
         }
     }
 }
-//if person is already selected, remove selection and remove from peopleAssigned array; else select & add to array	
+/**
+ * if person is already selected, remove selection and remove from peopleAssigned array; else select & add to array	
+ */
 function selectPerson(id) {
     if (document.getElementById(id).classList.contains('selected-person-pic')) {
         document.getElementById(id).classList.remove('selected-person-pic');
@@ -76,10 +80,12 @@ function loadAllTasks() {
 //JS for task-list (index.html)	
 
 
-// Main function to load tasks from array and append them to task-list 	
+/**
+ *Main function to load tasks from array and append them to task-list
+ */
 function showTasks() {
-    // Load array of allTasks and access task-list
     loadAllTasks();
+    // Load array of allTasks and access task-list
     if (allTasks.length != 0) {
         document.getElementById('empty-task-list').classList.add('d-none');
     }
@@ -128,17 +134,20 @@ function compileListItemHTML(category, peopleAssigned, details, i) {
     return newTaskHTML;
 }
 
-/*   ** Old function to delete task directly -- replaced by modal & jQuery**
-// Deletes task from array and reloads page
+/**
+ * Deletes task from array and reloads page
+ * */       
 function deleteTask(taskIndex) {
-    // alert('Task will be deleted');
+    alert('Task will be deleted');
     allTasks.splice(taskIndex, 1);
     let allTasksAsString = JSON.stringify(allTasks);
-    localStorage.setItem('allTasks', allTasksAsString); 
+    localStorage.setItem('allTasks', allTasksAsString);
     location.reload();
-} */
-
-// Create first part of HTML-code for task-list-item
+    } 
+        
+/**
+ * Create first part of HTML-code for task-list-item
+ */
 function compileListItemStart(category) {
     specialCategory = categoryCheck(category);
     newTaskHTML = `	
@@ -149,7 +158,9 @@ function compileListItemStart(category) {
     return newTaskHTML;
 }
 
-// Check task-category to assign correct color for category-marker	
+/**
+ * Check task-category to assign correct color for category-marker	 
+ */
 function categoryCheck(category) {
     if (category == 'Marketing') {
         specialCategory = 'Marketing';
@@ -162,14 +173,18 @@ function categoryCheck(category) {
     };
     return specialCategory;
 }
-// compile pictures of assigned people for task and return it	
+/**
+ * compile pictures of assigned people for task and return it	
+ */
 function compilePicSection(personAssigned, picSectionHTML) {
     let taskContact = fetchContactData(personAssigned);
     let contactImg = taskContact[3];
     picSectionHTML += `<img src=${contactImg}>`;
     return picSectionHTML;
 }
-// compile contact data of assigned people
+/**
+ * Compile contact data of assigned people
+ */
 function compileContactData(personAssigned, contactDataHTML) {
     let taskContact = fetchContactData(personAssigned);
     let contactName = taskContact[1];
@@ -184,10 +199,10 @@ function compileContactData(personAssigned, contactDataHTML) {
 
 function fetchContactData(personAssigned) {
     let personAssignedInt = parseInt(personAssigned);
- 
-    for (k = 1; k <= contacts.length; k++){
+
+    for (k = 1; k <= contacts.length; k++) {
         if (personAssignedInt == k) {
-            taskContact = contacts[k-1];
+            taskContact = contacts[k - 1];
         } else {
             continue
         }
@@ -197,31 +212,41 @@ function fetchContactData(personAssigned) {
 
 // JS for the matrix seite
 
-//Load all tasks to the different boxes in the matrix
+/**
+* Load all tasks to the different boxes in the matrix
+*/
 function loadTasksMatrix() {
     loadAllTasks();
+    if (allTasks.length != 0){
+        document.getElementById('empty-task-list').classList.add('d-none');
+        document.getElementById('do-blue-box').classList.remove('d-none');
+        document.getElementById('schedule-blue-box').classList.remove('d-none');
+        document.getElementById('delegate-blue-box').classList.remove('d-none');
+        document.getElementById('eliminate-blue-box').classList.remove('d-none');
+    };
     let urgency;
     let importance;
     for (i = 0; i < allTasks.length; i++) {
         urgency = checkUrgency(i);
         importance = allTasks[i].importance;
-        if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i);
-        else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i);
-        else if (urgency == "Low" && importance == "High") compileTaskMatrixHTML("schedule-blue-box", i + 1, i);
-        else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("eliminate-blue-box", i + 1, i);
-
+        if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i, "Low");
+        else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i, "High");
+        else if (urgency == "Low" && importance == "High") compileTaskMatrixHTML("schedule-blue-box", i + 1, i, "Low");
+        else if (urgency == "Low" && importance == "Low") compileTaskMatrixHTML("eliminate-blue-box", i + 1, i, "High");
         assignCategory(allTasks[i].category, i + 1, i);
     }
 }
 
-// Check and return urgency level
+/**
+ * Check and return urgency level
+ *  */
 function checkUrgency(i) {
     let currentDate = new Date();
     let taskDueDate = new Date(allTasks[i].dueDate);
     console.log(taskDueDate);
 
     // Transfer dates and times into millisecond-value
-    let sevenDaysInMs = 7*24*60*60*1000;
+    let sevenDaysInMs = 7 * 24 * 60 * 60 * 1000;
     let currentDateInMs = currentDate.getTime();
     let taskDueDateInMs = taskDueDate.getTime();
 
@@ -235,30 +260,61 @@ function checkUrgency(i) {
     }
 }
 
-//HTML code for each task to add to the matrix
-function compileTaskMatrixHTML(id, taskId, i) {
+/**
+ * HTML code for each task to add to the matrix
+ */
+function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
     let dueDate = new Date(allTasks[i].dueDate);
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
     <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()}-${dueDate.getFullYear()}</div>
+    <button type="button" class="close delete-task" onclick="deleteTask(${i})">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+    </button>
     <div class='task-title'>${allTasks[i].title}</div>
+    <div class='edit-title'>Edit</div>
     <div class='task-description'>${allTasks[i].details}</div>
-    <div class='task-box-bottom'>
-        <div class='task-box-bottom-category'>
-            <div class='task-category'>${allTasks[i].category}</div></div>
-        <div class='task-box-bottom-pictures'>`
+    <div class='edit-description'>Edit</div>
+    <div class='task-category'>${allTasks[i].category}</div>
+    <div id="task-importance" class="task-importance">
+        <div id="importance-mark" class="importance-icon"><img src='./img/importance-icon.png'></div>
+        <select onchange='changeImportance(${i})'>
+            <option selected>${allTasks[i].importance}</option>
+            <option>${importanceNonSelected}</option>
+        </select>
+    </div>
+    <div class='task-box-bottom-pictures'>`
         + peopleAssignedPictures(allTasks[i]))
-
 }
-//Fetches pictures of all assigned people for a task
+/**
+ * Changes importance of a task and locate in the corresponding box
+ */
+function changeImportance(i) {
+    alert('Esto es un aviso');
+    console.log(allTasks[i]);
+    if (allTasks[i].importance == "High") {
+        allTasks[i].importance == "Low";
+    } else if (allTasks[i].importance == "Low") {
+        allTasks[i].importance == "High";
+    }
+    loadAllTasks();
+    console.log(allTasks[i].importance);
+}
+/**
+ * Fetches pictures of all assigned people for a task
+ */
 function peopleAssignedPictures(task) {
     let picturesHTML = "";
     for (j = 0; j < task.peopleAssigned.length; j++) {
-        picturesHTML += `<img src='${contacts[task.peopleAssigned[j]-1][3]}'>`;
+        picturesHTML += `<img src='${contacts[task.peopleAssigned[j] - 1][3]}'>`;
     }
     return picturesHTML;
 }
-
-//Assings a color for the task border depending on the category
+/**
+ * Assings a color for the task border depending on the category
+ */
 function assignCategory(category, id, i) {
     let cssCategories = ['category-1', 'category-2', 'category-3', 'category-4'];
     for (i = 0; i < cssCategories.length; i++) {

@@ -25,6 +25,9 @@
             <a href="add-task.html">
                 <p>Add Task</p>
             </a>
+            <a href="help.html">
+                <p>How to use</p>
+            </a>
         </div>
         <img src="img/profile1.jpg" class="profile-pic">
     </div>
@@ -41,13 +44,7 @@
             <button class="btn - btn-primary"><a href="add-task.html">Add new task </a></button>
         </div>
 
-       
-        <!-- Button trigger modal -->
-       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteConfirmation" id="opener">
-            Launch demo modal
-        </button>  -->
-
-        <!-- Modal for task deletion -->
+        <!-- Modal for task delete confirmation -->
         <div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -67,24 +64,6 @@
                 </div>
             </div>
         </div>
-
-
-    
-    <div id="myModal" class="modal hide">
-        <div class="modal-header">
-            <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
-             <h3>Delete</h3>
-        </div>
-        <div class="modal-body">
-            <p>You are about to delete.</p>
-            <p>Do you want to proceed?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#" id="btnYes" class="btn danger">Yes</a>
-          <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary">No</a>
-        </div>
-    </div>
-
 
         <div class="list-box" id="list-box">
             <label>Assigned to</label>
@@ -119,18 +98,18 @@
                 </div>
                 <p class="task-category">Marketing</p>
                 <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <button type="button" class="close" onclick="deleteTask()">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                    </svg>
-                </button>
+                <button type="button" class="close" data-target="#deleteConfirmation" id="${i}" data-toggle="modal" data-placement="top" title="Delete task" >
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </button>
             </div>  -->
 
         </div>
     </div>
-<script src="jquery.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="jquery.js"></script>
 <script src="Script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

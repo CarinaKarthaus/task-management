@@ -14,7 +14,6 @@
 </head>
 
 <body onload="loadTasksMatrix()">
-
     <div class="side-bar">
         <img src="img/logo.png">
         <div class="align-center">
@@ -24,6 +23,9 @@
             <p class="page-selected">Matrix</p>
             <a href="add-task.html">
                 <p>Add Task</p>
+            </a>
+            <a href="help.html">
+                <p>How to use</p>
             </a>
         </div>
         <img src="img/profile1.jpg" class="profile-pic">
@@ -46,25 +48,33 @@
             <h4>LOW</h4>
 
         </div>
-        <div class='matrix-box'>
+        <div class="empty-task-list" id="empty-task-list" style="left: 30vw; top: 21vh;">
+            <img src="img/task.png">
+            <p>
+                Your task list is empty. <br>
+                Create your first task now!
+            </p>
+            <button class="btn - btn-primary" onclick="window.location.href='add-task.html'">Add new task</button>
+        </div>
+        <div class='matrix-box' id='matrix-box'>
             <div class='do-box'>
                 <h3>DO</h3>
-                <div class='blue-box' id='do-blue-box'>
+                <div class='blue-box d-none' id='do-blue-box'>
                 </div>
             </div>
             <div class='schedule-box'>
                 <h3>SCHEDULE</h3>
-                <div class='blue-box' id='schedule-blue-box'>
+                <div class='blue-box d-none' id='schedule-blue-box'>
                 </div>
             </div>
             <div class="delegate-box">
                 <h3>DELEGATE</h3>
-                <div class='blue-box' id='delegate-blue-box'>
+                <div class='blue-box d-none' id='delegate-blue-box'>
                 </div>
             </div>
             <div class='eliminate-box'>
                 <h3>ELIMINATE</h3>
-                <div class='blue-box' id='eliminate-blue-box'>
+                <div class='blue-box d-none' id='eliminate-blue-box'>
                 </div>
             </div>
         </div>
