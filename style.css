@@ -345,7 +345,7 @@ div.task-category:hover {
     grid-area: assignees;
     display: flex;
     justify-content: left;
-    overflow-x: scroll;
+    overflow: auto;
     align-items: center;
 }
 
