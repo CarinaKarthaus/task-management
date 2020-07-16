@@ -12,6 +12,15 @@ let contacts = [
 ];
 let newTaskHTML;
 let specialCategory;
+let allTasksSelected = [];
+
+
+function reloadAllTasks(){
+    let allTasksAsString = JSON.stringify(allTasks);
+    localStorage.setItem('allTasks', allTasksAsString); 
+    location.reload();
+}
+
 /**
  * When plus-button is clicked, more people will be shown
  */
@@ -81,7 +90,7 @@ function loadAllTasks() {
 
 
 /**
- *Main function to load tasks from array and append them to task-list
+ * Main function to load tasks from array and append them to task-list
  */
 function showTasks() {
     loadAllTasks();
@@ -133,17 +142,6 @@ function compileListItemHTML(category, peopleAssigned, details, i) {
 
     return newTaskHTML;
 }
-
-/**
- * Deletes task from array and reloads page
- * */       
-function deleteTask(taskIndex) {
-    alert('Task will be deleted');
-    allTasks.splice(taskIndex, 1);
-    let allTasksAsString = JSON.stringify(allTasks);
-    localStorage.setItem('allTasks', allTasksAsString);
-    location.reload();
-    } 
         
 /**
  * Create first part of HTML-code for task-list-item
@@ -213,9 +211,49 @@ function fetchContactData(personAssigned) {
 // JS for the matrix seite
 
 /**
+ * Selects tasks to allow assigning new values for urgency and/or importance (see assignParameter())
+ */
+
+function selectTask(taskId) {
+    let id = taskId-1;
+    let selectedTaskHTML = document.getElementById('task' + taskId).classList;
+    if (selectedTaskHTML.contains('selected-task')) {
+        selectedTaskHTML.remove('selected-task');
+        for (s = 0; s < allTasksSelected.length; s++) {
+            if (allTasksSelected[s] == id) {
+                allTasksSelected.splice(s, 1);
+            };
+        }
+    } else if (!selectedTaskHTML.contains('selected-task')) {
+        selectedTaskHTML.add('selected-task');
+        allTasksSelected.push(id);
+    };
+    console.log('allTasksSelected: ', allTasksSelected);
+}
+/**
+ * Assigns importance and urgency manually by clicking the arrows in matrix.html
+ */
+function assignParameter(property, value){
+    for (n=0; n < allTasksSelected.length; n++) {
+        let taskId = allTasksSelected[n];
+        let taskSelected = allTasks[taskId];
+        document.getElementById('task' + (taskId+1)).classList.remove('selected-task');
+        if (property == 'urgency'){
+            taskSelected.urgency = value;
+        } else if (property == 'importance') {
+            taskSelected.importance = value;
+        }
+    };
+    allTasksSelected = [];
+    reloadAllTasks();
+}
+
+/**
 * Load all tasks to the different boxes in the matrix
 */
 function loadTasksMatrix() {
+    let urgency;
+    let importance;
     loadAllTasks();
     if (allTasks.length != 0){
         document.getElementById('empty-task-list').classList.add('d-none');
@@ -224,10 +262,12 @@ function loadTasksMatrix() {
         document.getElementById('delegate-blue-box').classList.remove('d-none');
         document.getElementById('eliminate-blue-box').classList.remove('d-none');
     };
-    let urgency;
-    let importance;
     for (i = 0; i < allTasks.length; i++) {
+        if (allTasks[i].urgency == null ){
         urgency = checkUrgency(i);
+        } else { 
+            urgency = allTasks[i].urgency;
+        }
         importance = allTasks[i].importance;
         if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i, "Low");
         else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i, "High");
@@ -265,7 +305,7 @@ function checkUrgency(i) {
  */
 function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
     let dueDate = new Date(allTasks[i].dueDate);
-    document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}'>
+    document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}' onclick="selectTask(${taskId})">
     <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()}-${dueDate.getFullYear()}</div>
     <button type="button" class="close" data-target="#deleteConfirmation" id="${i}" data-toggle="modal" data-placement="top" title="Delete task">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -295,9 +335,9 @@ function changeImportance(i) {
     alert('Esto es un aviso');
     console.log(allTasks[i]);
     if (allTasks[i].importance == "High") {
-        allTasks[i].importance == "Low";
+        allTasks[i].importance = "Low";
     } else if (allTasks[i].importance == "Low") {
-        allTasks[i].importance == "High";
+        allTasks[i].importance = "High";
     }
     loadAllTasks();
     console.log(allTasks[i].importance);

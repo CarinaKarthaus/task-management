@@ -176,11 +176,15 @@ h4 {
     /* Horizontal and vertical lines and arrows */	
 .line-horizontal {	
     width: 80%;	
-    border: black  1px solid;	
+    border: black  3px solid;	
 }	
+.line-horizontal:hover, .line-vertical:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
 .line-vertical {	
     height: 80%;	
-    border: black  1px solid;	
+    border: black  3px solid;	
 }	
 .arrow {	
     border-left: transparent 10px solid;	
@@ -348,13 +352,16 @@ div.task-category:hover {
     overflow: auto;
     align-items: center;
 }
+.selected-task {
+    border: 4px solid green;
+}
 
 
 /* Styles for task-list (index.html) */
 .empty-task-list {
     position: absolute;
     top: 30vh;
-    left: 14vw;
+    left: 20vw;
     font-size: larger;
     width: 35vw;
     display: flex;
@@ -478,6 +485,9 @@ button.close {
 .d-none {
     display: none !important;
 }
+.align-center label {
+    text-align: center;
+}
 
 .selected-person-pic {
     border: 2px #28a745 solid;
@@ -496,7 +506,6 @@ button.close {
 .category-4 {
     border-left:   #e83e8c 5px solid;
 }
-
 
 
 /* For Smartphones (landscape phones, less than 768px) */

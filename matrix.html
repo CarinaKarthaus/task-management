@@ -33,17 +33,17 @@
         <div class='urgency-arrow'>
             <h4>HIGH</h4>
             <div class='arrow'></div>
-            <div class='line-horizontal'>
+            <div class='line-horizontal' onclick="assignParameter('urgency', 'High')">
             </div>
             <h4>URGENCY</h4>
-            <div class='line-horizontal'></div>
+            <div class='line-horizontal' onclick="assignParameter('urgency', 'Low')"></div>
             <h4>LOW</h4>
         </div>
         <div class='importance-arrow'>
             <div class='arrow' style='transform: rotate(90deg);'></div>
-            <div class='line-vertical'></div>
+            <div class='line-vertical' id="urgency-high-arrow" onclick="assignParameter('importance', 'High')"></div>
             <h4>IMPORTANCE</h4>
-            <div class='line-vertical'></div>
+            <div class='line-vertical' id="urgency-low-arrow" onclick="assignParameter('importance', 'Low')"></div>
             <h4>LOW</h4>
 
         </div>
@@ -84,7 +84,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="DeleteConfirmationTitle">Delete Task</h5>
+                    <h5 class="modal-title" id="DeleteConfirmationTitle">Delete Confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" >
                         <span aria-hidden="true">&times;</span>
                     </button>
