@@ -280,6 +280,16 @@ div.task-category {
     width: fit-content;
     height: fit-content;
     padding: 4px 16px 4px 16px;
+    border: black solid;
+}
+.task-box-bottom-btns {
+    display: flex;
+    border: black solid;
+}
+.task-importance {
+    width: inherit;
+    height: inherit;
+    
 }
 div.task-category:hover {
     cursor: pointer;
