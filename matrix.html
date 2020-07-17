@@ -29,7 +29,7 @@
         </div>
         <img src="img/profile1.jpg" class="profile-pic">
     </div>
-   
+
     <div class="matrix-main-box">
         <div class="matrix-do">Do</div>
         <div class="matrix-schedule">Schedule</div>
@@ -37,20 +37,20 @@
         <div class="matrix-eliminate">Eliminate</div>
         <div class='urgency-arrow'>
             <h4>HIGH</h4>
-            <div class='arrow'></div>
-            <div class='line-horizontal' onclick="changeKeyValuePair('urgency', 'High')">
+            <div id="urgency-high-arrow" class='arrow'></div>
+            <div id="urgency-high-line" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'High')">
             </div>
             <h4>URGENCY</h4>
-            <div class='line-horizontal' onclick="changeKeyValuePair('urgency', 'Low')"></div>
-            <div class='arrow' style='transform: rotate(180deg);'></div>
+            <div id="urgency-low-line" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'Low')"></div>
+            <div id="urgency-low-arrow" class='arrow' style='transform: rotate(180deg);'></div>
             <h4>LOW</h4>
         </div>
         <div class='importance-arrow'>
-            <div class='arrow' style='transform: rotate(90deg);'></div>
-            <div class='line-vertical' id="urgency-high-arrow" onclick="changeKeyValuePair('importance', 'High')"></div>
+            <div id="importance-high-arrow" class='arrow' style='transform: rotate(90deg);'></div>
+            <div id="importance-high-line" class='line-vertical' onclick="changeKeyValuePair('importance', 'High')"></div>
             <h4>IMPORTANCE</h4>
-            <div class='line-vertical' id="urgency-low-arrow" onclick="changeKeyValuePair('importance', 'Low')"></div>
-            <div class='arrow' style='transform: rotate(-90deg);'></div>
+            <div id="importance-low-line" class='line-vertical' onclick="changeKeyValuePair('importance', 'Low')"></div>
+            <div id="importance-low-arrow" class='arrow' style='transform: rotate(-90deg);'></div>
             <h4>LOW</h4>
 
         </div>

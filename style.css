@@ -139,7 +139,7 @@ form {
 }
 .matrix-main-box {
     position: absolute;
-    left: 15vh;
+    left: 10vw;
     padding: 15px;
     width: 88vw;
     height: 100%;
@@ -156,7 +156,7 @@ h4 {
     font-size: 4vh;
     color: grey;	
     font-weight: lighter;	
-    margin: 3%;	
+    margin: 0.5em;
 }	
 .urgency-arrow {	
     grid-area: urgency;	
@@ -174,26 +174,30 @@ h4 {
 }	
 .importance-arrow h4:nth-child(3) {	
     writing-mode: vertical-rl;	
-    transform: rotate(180deg);	
+    transform: rotate(180deg);
+
 }	
     /* Horizontal and vertical lines and arrows */	
 .line-horizontal {	
     width: 80%;	
-    border: black  0.1em solid;	
+    border: #4c5aa7 0.3em solid;		
+    transition-delay: all 225ms ease-in-out;
 }	
 .line-horizontal:hover, .line-vertical:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    border: #D8D8D8 0.3em solid;
 }
 .line-vertical {	
     height: 80%;	
-    border: black  0.1em solid;	
+    border: #4c5aa7 0.3em solid;
+    transition-delay: all 225ms ease-in-out;		
 }	
 .arrow {	
-    border-left: transparent 0.5em solid;	
-    border-top: transparent 0.5em solid;	
-    border-right: black 0.5em solid;	
-    border-bottom: transparent 0.5em solid;	
+    border-left: transparent 1.5em solid;	
+    border-top: transparent 1.5em solid;	
+    border-right: #4c5aa7 1.5em solid;	
+    border-bottom: transparent 1.5em solid;	
+    transition-delay: all 225ms ease-in-out;
 }	
     /* Content inside the matrix */	
 h3 {	
@@ -213,7 +217,7 @@ h3 {
                         "three four"; 
 }	
 .blue-box {	
-    height: 40vh;
+    height: 37vh;
     min-height: 30vh;
     width: 100%;	
     background-color: #F4F3FB;	
