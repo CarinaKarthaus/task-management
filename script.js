@@ -213,7 +213,6 @@ function fetchContactData(personAssigned) {
 /**
  * Selects tasks to allow assigning new values for urgency and/or importance (see assignParameter())
  */
-
 function selectTask(taskId) {
     let id = taskId-1;
     let selectedTaskHTML = document.getElementById('task' + taskId).classList;
@@ -233,14 +232,14 @@ function selectTask(taskId) {
 /**
  * Assigns importance and urgency manually by clicking the arrows in matrix.html
  */
-function assignParameter(property, value){
+function changeKeyValuePair(key, value){
     for (n=0; n < allTasksSelected.length; n++) {
         let taskId = allTasksSelected[n];
         let taskSelected = allTasks[taskId];
         document.getElementById('task' + (taskId+1)).classList.remove('selected-task');
-        if (property == 'urgency'){
+        if (key == 'urgency'){
             taskSelected.urgency = value;
-        } else if (property == 'importance') {
+        } else if (key == 'importance') {
             taskSelected.importance = value;
         }
     };
