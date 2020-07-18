@@ -158,6 +158,9 @@ h4 {
     font-weight: lighter;	
     margin: 0.5em;
 }	
+.urgency-arrow.urgency-arrow-portrait,.importance-arrow.importance-arrow-portrait {
+    display: none;
+}
 .urgency-arrow {	
     grid-area: urgency;	
     display: flex;	
@@ -175,7 +178,6 @@ h4 {
 .importance-arrow h4:nth-child(3) {	
     writing-mode: vertical-rl;	
     transform: rotate(180deg);
-
 }	
     /* Horizontal and vertical lines and arrows */	
 .line-horizontal {	
@@ -523,61 +525,88 @@ button.close {
         flex-direction: column;
     }
     .side-bar {
-        position: fixed;
+        position: inherit;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 90px;
         width: 100%;
+        height: 10%;
         z-index: 1;
     }
     .side-bar div {
         display: none;
     }
+    .side-bar img {
+        transform: scale(0.7);
+        margin: 0;
+    }
     
     /* Matrix specific adaptation */
     .matrix-main-box {
-        position: relative;
+        padding: 0;        
+        width:100%;
         left: 0;
-        top: 90px;
-        display: grid;
-        width: 100%;
-        height: 100%;
-        grid-template-columns: 5% 48% 48%;	
-        grid-template-rows: 3% 5% 5%  80% 80% 80% 80%;	
-        grid-template-areas:"urgency urgency urgency" 
-                            "importance do-btn schedule-btn"	
-                            "importance delegate-btn eliminate-btn"	
-                            "main main main"
-                            "main main main"
-                            "main main main"
-                            "main main main";	
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
     h4 {	
-        font-size: 0.3em;
+        font-size: 0.7em;
         color: grey;	
         font-weight: lighter;	
-        margin: 1%;	
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;	
     }
-    .urgency-arrow {	
+    .portrait-matrix-map {
+        padding: 0.5em;
+        position: sticky;
+        top: 0;
+        background-color: rgb(255, 255, 255);
+        display: grid;
+        width: 100%;
+        z-index: 2;
+        margin: 0;
+        grid-template-columns: 20% 40% 40%;	
+        grid-template-rows: 12% 44% 44%;	
+        grid-template-areas:"urgency urgency urgency" 
+                            "importance do-btn schedule-btn"	
+                            "importance delegate-btn eliminate-btn";
+
+    }
+    .urgency-arrow.desktop, .importance-arrow.desktop {
+        display: none;
+    }
+    .urgency-arrow-portrait {	
         grid-area: urgency;	
-        display: flex;	
+        display: flex !important;	
         justify-content: space-between;	
         align-items: center;	
     }	
-    .importance-arrow {	
+    .importance-arrow-portrait {	
         grid-area: importance;	
-        display: flex;
+        display: flex !important;
         flex-direction: column;	
         justify-content: space-between;	
         align-items: center;	
     }
-    .importance-arrow h4:nth-child(3) {	
+    .importance-arrow-portrait h4:nth-child(3) {	
         writing-mode: horizontal-tb;	
-        transform: rotate(0deg);	
-        margin: 0.1em;
+        transform: rotate(0deg);
+    }
+    .line-vertical {	
+        height: 80%;	
+        border: #4c5aa7 0.3em solid;
+        transition-delay: all 225ms ease-in-out;		
     }	
-    	
+    .arrow {
+        cursor: pointer;
+        border: #D8D8D8 0.3em solid;	
+        border-left: transparent 1em solid;	
+        border-top: transparent 1em solid;	
+        border-right: #4c5aa7 1em solid;	
+        border-bottom: transparent 1em solid;	
+        transition-delay: all 225ms ease-in-out;
+    }	
     .matrix-do {
         grid-area: do-btn;
         display: flex;
@@ -595,18 +624,19 @@ button.close {
         display: flex;
     }
     .matrix-do,.matrix-schedule,.matrix-delegate,.matrix-eliminate {
-        margin: 1em;
-        position: relative;
+        background-color: #4c5aa7;
+        box-shadow: 2px 2px black solid;
+        display: flex;
+        margin: 0.5em;
         height: fit-content;
         justify-content: center;
-        align-items: center;
-        z-index: 1;
+        align-self: center;
     }
     .blue-box {
         height: auto;
     }
     .matrix-box {
-        grid-area: main;
+        position: relative;
         width: 100%;
         display: grid;
         grid-template-columns: 100%;
@@ -615,6 +645,16 @@ button.close {
                             "two"	
                             "three"
                             "four"; 
+    }
+    .do-box,.schedule-box,.delegate-box,.eliminate-box {
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        width: 5em;
+        background-color: rgb(255, 255, 255);
+        border: 2px grey solid;
+        box-shadow: 2px 2px grey;
     }
 
 }
