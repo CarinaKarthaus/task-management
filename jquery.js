@@ -9,20 +9,6 @@ $('#deleteConfirmation').on('click', '.btn-ok', function() {
     location.reload();
 });
 
-$(function() {
-    let taskClassification = ['urgency-high', 'urgency-low', 'importance-high', 'importance-low'];
-     for (m =0; m< taskClassification.length; m++){
-        $('#' + taskClassification[m] + '-line').hover(function() {
-            $('#' + taskClassification[m] + '-arrow').css('background-color', 'black')
-            $('#' + taskClassification[m] + '-arrow').css('transition', 'scale(1.05)');
-            console.log(taskClassification[m]);
-          }, function() {
-            // on mouseout, reset the background colour
-            $('#' + taskClassification[m] + '-arrow').css('background-color', '');
-          });
-    }
-  });
-
   /**
    * Change arrow-color when hovering over arrow-line 
    */

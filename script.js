@@ -131,7 +131,7 @@ function compileListItemHTML(category, peopleAssigned, details, i) {
                         </div>
                     </div> 	
                     <p class="task-category">${category}</p> 	
-                    <p class="details">${details}</p> 	
+                    <p id="details${i}" contenteditable="true" class="details" onkeyup="changeDetails(this.id, ${i})"{ >${details}</p> 	
                     <button type="button" class="close" data-target="#deleteConfirmation" id="${i}" data-toggle="modal" data-placement="top" title="Delete task" >
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -207,6 +207,18 @@ function fetchContactData(personAssigned) {
         return taskContact;
     }
 }
+/**
+ * Saves changes of task-details
+ */
+function changeDetails(detailsId, taskIndex){
+    let details = document.getElementById(detailsId).innerHTML;
+    let task = allTasks[taskIndex];
+    task.details = details;
+    console.log(task.details);
+    let allTasksAsString = JSON.stringify(allTasks);
+    localStorage.setItem('allTasks', allTasksAsString);
+}
+
 
 // JS for the matrix seite
 
@@ -246,14 +258,10 @@ function changeKeyValuePair(key, value){
     allTasksSelected = [];
     reloadAllTasks();
 }
-
 /**
-* Load all tasks to the different boxes in the matrix
-*/
-function loadTasksMatrix() {
-    let urgency;
-    let importance;
-    loadAllTasks();
+ * Removes empty-task-list notification and unhides blue matrix-boxes
+ */
+function loadMatrixArea(){
     if (allTasks.length != 0){
         document.getElementById('empty-task-list').classList.add('d-none');
         document.getElementById('do-blue-box').classList.remove('d-none');
@@ -261,12 +269,26 @@ function loadTasksMatrix() {
         document.getElementById('delegate-blue-box').classList.remove('d-none');
         document.getElementById('eliminate-blue-box').classList.remove('d-none');
     };
+}
+
+/**
+* Load all tasks, the matrix area (blue boxes) and assign them to the different boxes in the matrix
+*/
+function loadTasksMatrix() {
+    loadAllTasks();
+    loadMatrixArea();
+    assignTaskToBox();
+}
+/**
+ * Check urgency & importance and assign the tasks to the correct box 
+ */
+function assignTaskToBox() {
+    let urgency;
+    let importance;
     for (i = 0; i < allTasks.length; i++) {
-        if (allTasks[i].urgency == null ){
-        urgency = checkUrgency(i);
-        } else { 
-            urgency = allTasks[i].urgency;
-        }
+        if (allTasks[i].urgency == null ) urgency = checkUrgency(i);
+        else urgency = allTasks[i].urgency;
+
         importance = allTasks[i].importance;
         if (urgency == "High" && importance == "High") compileTaskMatrixHTML("do-blue-box", i + 1, i, "Low");
         else if (urgency == "High" && importance == "Low") compileTaskMatrixHTML("delegate-blue-box", i + 1, i, "High");
@@ -275,7 +297,7 @@ function loadTasksMatrix() {
         assignCategory(allTasks[i].category, i + 1, i);
     }
 }
-
+    
 /**
  * Check and return urgency level
  *  */
