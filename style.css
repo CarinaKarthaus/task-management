@@ -482,6 +482,7 @@ p.task-category, label.task-category {
 .details {
     word-break: break-word;
     padding: 2% 2%;
+    cursor: pointer;
 }
 button.close {
     margin: 0 auto;
@@ -631,12 +632,13 @@ button.close {
         margin: 2%;
     }
     .task-listed {
-        /* display: flex; */
-        grid-template-columns: 1.5% 40.5% 50% 8%;
+        grid-template-columns: 1.5% 34.5% 54% 10%;
         grid-template-areas:   "marker assignee category delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete";
+                                "marker assignee details details"
+                                "marker assignee details details"
+                                "marker assignee details details";
+        max-height: 200px;
+        grid-template-rows: 42px 1fr;
      
     }
     p.task-category {
@@ -651,6 +653,7 @@ button.close {
         align-items: flex-start;
         padding-left: 5%;
         font-size: medium;
+        overflow: auto;
     }
     .category-marker {
         grid-area: marker;
@@ -672,6 +675,9 @@ button.close {
     }
     .contact-data  {
         font-size: medium;
+    }
+    button.close {
+        margin: unset;
     }
 }
 
@@ -755,7 +761,7 @@ button.close {
     .line-vertical {	
         height: 80%;	
         border: #4c5aa7 0.3em solid;
-        transition-delay: all 225ms ease-in-out;		
+        transition: all 225ms ease-in-out;		
     }	
     .arrow {
         cursor: pointer;
@@ -764,7 +770,7 @@ button.close {
         border-top: transparent 1em solid;	
         border-right: #4c5aa7 1em solid;	
         border-bottom: transparent 1em solid;	
-        transition-delay: all 225ms ease-in-out;
+        transition: all 225ms ease-in-out;
     }	
     .matrix-do {
         grid-area: do-btn;
