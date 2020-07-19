@@ -534,7 +534,7 @@ button.close {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 90px;
+        height: auto;
         width: 100%;
         z-index: 1;
     }
@@ -542,10 +542,10 @@ button.close {
         display: none;
     }
     .side-bar img {
-        margin: 0 24px;
+        margin: 1%;
         object-fit: contain;
-        height: 64px;
-        width: 64px;
+        height: 5em;
+        width: 5em;
     }    
     .profile-pic {
         width: 64px;
@@ -580,17 +580,31 @@ button.close {
     /* Matrix specific adaptation */
    
     .matrix-main-box {
-        padding-top: 1.5em;
-        position: relative;
+        margin: 0;
+        padding-top: 1.2em;
+        position: sticky;
+        top:0;
         left: 0;
         width: 100%;
         display: grid;
-        overflow-x: scroll;
-        height: auto;
+        grid-template-columns: 5% 40% 40% auto;	
+        grid-template-rows: 2.5% 40% 40% auto;	
+        grid-template-areas: "urgency urgency urgency urgency"	
+                            "importance main main main"	
+                            'importance main main main'	
+                            'importance main main main';
+        z-index: 2;
     }
     .blue-box {	
         height: 80vh;
     }
+    h3 {
+        width: 5em;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 2px grey;
+        margin: 1em;
+    }
+
 
     /* index.html specific adaption */
     .empty-task-list {
@@ -677,25 +691,24 @@ button.close {
         justify-content: space-between;
         width: 100%;
         height: 10%;
-        z-index: 1;
     }
     .side-bar div {
         display: none;
     }
     .side-bar img {
-        transform: scale(0.7);
-        margin: 0;
+        width: 10em;
+        height: 10em;
+        margin: 2em;
     }
 
     /* Matrix specific adaptation */
     .matrix-main-box {
         position: relative;
-        height: auto;
         width:100%;
         display: flex;
         flex-direction: column;
-        overflow-x: visible;
         padding: 0;
+        z-index: -1;
     }
     h4 {	
         font-size: 0.7em;
@@ -705,15 +718,15 @@ button.close {
         margin-bottom: 0.5em;	
     }
     .portrait-matrix-map {
+        position: sticky;
+        top: 0;
         background-color: rgb(255, 255, 255);
         width: 100%;
-        height: auto;
-        position: sticky;
-        top:0;
         display: grid;
-        z-index: 2;
         margin: 0;
-        grid-template-columns: 20% 40% 40%;	
+        padding-top: 0.5em;
+        padding-left: 1.5em;
+        grid-template-columns: 10% 45% 45%;	
         grid-template-rows: 15% 44% 44%;	
         grid-template-areas:"urgency urgency urgency" 
                             "importance do-btn schedule-btn"	
@@ -775,7 +788,8 @@ button.close {
         margin: 0.5em;
         height: fit-content;
         justify-content: center;
-        align-self: center;
+        align-items: center;
+        border-radius: 12%;
     }
     .blue-box {
         height: auto;
@@ -785,20 +799,26 @@ button.close {
         width: 100%;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-columns: auto;
+        grid-template-rows: auto;
         grid-template-areas: "one"
                             "two"	
                             "three"
                             "four"; 
     }
     .do-box,.schedule-box,.delegate-box,.eliminate-box {
+        background-color: rgb(255, 255, 255);
         margin: 0;
-        padding: 0;
+        padding: 0.5em;
+        scroll-margin-top: 10em;
+    }
+    .do-box {
+        scroll-margin-top: 20em !important;
     }
     h3 {
+        height: auto;
+        margin: 0;
         width: 5em;
         background-color: rgb(255, 255, 255);
-        border: 2px grey solid;
         box-shadow: 2px 2px grey;
     }
 }
