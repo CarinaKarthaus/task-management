@@ -1,8 +1,9 @@
-/* Style for all sites */
+ /* Style for all sites */
 * {
     box-sizing: border-box;
 }
 body {
+    margin:0;
     font-family: 'PT Sans', sans-serif;
     display: flex;
     height: 100vH;
@@ -11,7 +12,6 @@ a:hover, a, a:active{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.685);
 }
-
 h2 {
     font-weight: bold;
 }
@@ -76,7 +76,6 @@ label {
     padding-left: 3% !important;
 } 
 
-
 /* Style for Add-Task site */
 .form-control {
     font-size: 1.2rem;
@@ -131,7 +130,6 @@ form {
     float: right;
     font-size: large;
 }
-
 
 /* Style for the Matrix Site */
 .matrix-do,.matrix-schedule,.matrix-delegate,.matrix-eliminate {
@@ -366,7 +364,6 @@ div.task-category:hover {
     border: 4px solid green;
 }
 
-
 /* Styles for task-list (index.html) */
 .empty-task-list {
     position: absolute;
@@ -516,16 +513,164 @@ button.close {
 .category-4 {
     border-left:   #e83e8c 5px solid;
 }
-
-/* For Smartphones (vertical view, less than 768px) */
-@media (max-width: 320px) {
+   
+/* For Smartphones (landscape view, less than 768px) */
+@media (max-width: 768px) {
     body {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
+   
+    form {
+        width: 92vw;
+        height: unset;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
     .side-bar {
-        position: inherit;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        z-index: 1;
+    }
+    .side-bar div {
+        display: none;
+    }
+    .side-bar img {
+        margin: 0 24px;
+        object-fit: contain;
+        height: 64px;
+        width: 64px;
+    }    
+    .profile-pic {
+        width: 64px;
+    }
+    .main-box {
+        left: 2vw;
+        width: unset;
+    }
+    .main-box h2 {
+        z-index: 2;
+        position: absolute;
+        margin: 20px auto 20px 80px;
+        color: white;
+        font-size: x-large;
+    }
+    .subheading {
+        position: relative;
+        margin: 90px auto 10px auto;
+        text-align: center;
+    }
+    .assigned-people-box {
+        display: block;
+    }
+    .assigned-pic {
+        width: 30%;
+    }
+    .plus {
+        margin-bottom: 12px;
+        margin-left: 6px;
+    }
+
+    /* Matrix specific adaptation */
+   
+    .matrix-main-box {
+        padding-top: 1.5em;
+        position: relative;
+        left: 0;
+        width: 100%;
+        display: grid;
+        overflow-x: scroll;
+        height: auto;
+    }
+    .blue-box {	
+        height: 80vh;
+    }
+
+    /* index.html specific adaption */
+    .empty-task-list {
+        width: 85vw;
+        left: 7.5vw;
+        padding: 16px 12px 42px 12px;
+    }   
+    .empty-task-list img {
+        width: 25vw;
+    }
+    .empty-task-list a {
+        font-size: large;
+        margin-bottom: 8px;
+    }
+    .list-box {
+        margin-top: 24px;
+        padding: unset;
+        grid-template-columns: 36% 31% 33%;
+        row-gap: 1%;
+        grid-template-rows: 4%;
+    }
+    .list-box label {
+        font-size: medium;
+        margin: 2%;
+    }
+    .task-listed {
+        /* display: flex; */
+        grid-template-columns: 1.5% 40.5% 50% 8%;
+        grid-template-areas:   "marker assignee category delete"
+                                "marker assignee details delete"
+                                "marker assignee details delete"
+                                "marker assignee details delete";
+     
+    }
+    p.task-category {
+        justify-content: left;
+        grid-area: category;
+        font-weight: bold;
+        align-items: center;
+        padding-left: 5%;
+    }
+    p.details {
+        grid-area: details;
+        align-items: flex-start;
+        padding-left: 5%;
+        font-size: medium;
+    }
+    .category-marker {
+        grid-area: marker;
+    }
+    .assignee-section {
+        grid-area: assignee;
+        flex-direction: column;
+        align-items: flex-start; 
+        padding: 4% 2%;
+        overflow: auto;
+    }
+    .assignee-pic-section {
+        flex-direction: row;
+    }
+    .assignee-pic-section img {
+        width: 46%;
+        padding: 2%;
+        margin-right: 1%;
+    }
+    .contact-data  {
+        font-size: medium;
+    }
+}
+
+/* Mobile portrait width <= 320px */
+@media (max-width: 320px) {
+    body {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .side-bar {
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -541,15 +686,16 @@ button.close {
         transform: scale(0.7);
         margin: 0;
     }
-    
+
     /* Matrix specific adaptation */
     .matrix-main-box {
-        padding: 0;        
-        width:100%;
-        left: 0;
         position: relative;
+        height: auto;
+        width:100%;
         display: flex;
         flex-direction: column;
+        overflow-x: visible;
+        padding: 0;
     }
     h4 {	
         font-size: 0.7em;
@@ -559,20 +705,19 @@ button.close {
         margin-bottom: 0.5em;	
     }
     .portrait-matrix-map {
-        padding: 0.5em;
-        position: sticky;
-        top: 0;
         background-color: rgb(255, 255, 255);
-        display: grid;
         width: 100%;
+        height: auto;
+        position: sticky;
+        top:0;
+        display: grid;
         z-index: 2;
         margin: 0;
         grid-template-columns: 20% 40% 40%;	
-        grid-template-rows: 12% 44% 44%;	
+        grid-template-rows: 15% 44% 44%;	
         grid-template-areas:"urgency urgency urgency" 
                             "importance do-btn schedule-btn"	
                             "importance delegate-btn eliminate-btn";
-
     }
     .urgency-arrow.desktop, .importance-arrow.desktop {
         display: none;
@@ -627,7 +772,6 @@ button.close {
     .matrix-do,.matrix-schedule,.matrix-delegate,.matrix-eliminate {
         background-color: #4c5aa7;
         box-shadow: 2px 2px black solid;
-        display: flex;
         margin: 0.5em;
         height: fit-content;
         justify-content: center;
@@ -647,120 +791,6 @@ button.close {
                             "three"
                             "four"; 
     }
-   
-    form {
-        width: 92vw;
-        height: unset;
-        margin-top: 24px;
-        margin-bottom: 24px;
-    }
-
-    
-    .main-box {
-        left: 2vw;
-        width: unset;
-    }
-    .main-box h2 {
-        z-index: 2;
-        position: absolute;
-        margin: 20px auto 20px 80px;
-        color: white;
-        font-size: x-large;
-    }
-    .subheading {
-        position: relative;
-        margin: 90px auto 10px auto;
-        text-align: center;
-    }
-    .assigned-people-box {
-        display: block;
-    }
-    .assigned-pic {
-        width: 30%;
-    }
-    .plus {
-        margin-bottom: 12px;
-        margin-left: 6px;
-    }
-
-    /* Matrix specific adaptation */
-
-    .matrix-main-box {
-        position: absolute;
-        top: 90px;
-        left:0;
-        width: 100%;
-        display: grid;
-        overflow-x: scroll;
-        height: auto;
-    }
-    .blue-box {	
-        height: 80vh;
-    }
-
-    /* index.html specific adaption */
-    .list-box {
-        margin-top: 24px;
-        padding: unset;
-        grid-template-columns: 36% 31% 33%;
-        row-gap: 1%;
-        grid-template-rows: 4%;
-    }
-    .list-box label {
-        font-size: medium;
-        margin: 2%;
-    }
-    .task-listed {
-        /* display: flex; */
-        grid-template-columns: 1.5% 40.5% 50% 8%;
-        grid-template-areas:   "marker assignee category delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete";
-     
-    }
-    p.task-category {
-        justify-content: left;
-        grid-area: category;
-        font-weight: bold;
-        align-items: center;
-        padding-left: 5%;
-    }
-    p.details {
-        grid-area: details;
-        align-items: flex-start;
-        padding-left: 5%;
-        font-size: medium;
-    }
-
-    .category-marker {
-        grid-area: marker;
-    }
-    .assignee-section {
-        grid-area: assignee;
-        flex-direction: column;
-        align-items: flex-start; 
-        padding: 4% 2%;
-        overflow: auto;
-    }
-    .assignee-pic-section {
-        flex-direction: row;
-    }
-    .assignee-pic-section img {
-        width: 46%;
-        padding: 2%;
-        margin-right: 1%;
-    }
-    .contact-data  {
-        font-size: medium;
-    }
-    
-
-
-}
-
-@media (max-height: 320px){
-    /* Matrix specific adaptation */
     .do-box,.schedule-box,.delegate-box,.eliminate-box {
         margin: 0;
         padding: 0;
@@ -771,153 +801,4 @@ button.close {
         border: 2px grey solid;
         box-shadow: 2px 2px grey;
     }
-
-    .matrix-main-box {
-        position: absolute;
-        top: 90px;
-        left:0;
-        width: 100%;
-        display: grid;
-        overflow-x: scroll;
-        height: auto;
-    }
-    .blue-box {	
-        height: 80vh;
-    }
-}
-
-/* For Smartphones (landscape view, less than 768px) */
-@media (max-width: 768px) {
-    
-    form {
-        width: 92vw;
-        height: unset;
-        margin-top: 24px;
-        margin-bottom: 24px;
-    }
-
-    .side-bar {
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 90px;
-        width: 100%;
-        z-index: 1;
-    }
-    .side-bar div {
-        display: none;
-    }
-    .side-bar img {
-        margin: 0 24px;
-        object-fit: contain;
-        height: 64px;
-        width: 64px;
-    }    
-    .profile-pic {
-        width: 64px;
-    }
-    .main-box {
-        left: 2vw;
-        width: unset;
-    }
-    .main-box h2 {
-        z-index: 2;
-        position: absolute;
-        margin: 20px auto 20px 80px;
-        color: white;
-        font-size: x-large;
-    }
-    .subheading {
-        position: relative;
-        margin: 90px auto 10px auto;
-        text-align: center;
-    }
-    .assigned-people-box {
-        display: block;
-    }
-    .assigned-pic {
-        width: 30%;
-    }
-    .plus {
-        margin-bottom: 12px;
-        margin-left: 6px;
-    }
-
-
-    /* index.html specific adaption */
-    .empty-task-list {
-        width: 85vw;
-        left: 7.5vw;
-        padding: 16px 12px 42px 12px;
-    }   
-    .empty-task-list img {
-        width: 25vw;
-
-    }
-    .empty-task-list a {
-        font-size: large;
-        margin-bottom: 8px;
-    }
-    
-    
-    .list-box {
-        margin-top: 24px;
-        padding: unset;
-        grid-template-columns: 36% 31% 33%;
-        row-gap: 1%;
-        grid-template-rows: 4%;
-    }
-    .list-box label {
-        font-size: medium;
-        margin: 2%;
-    }
-    .task-listed {
-        /* display: flex; */
-        grid-template-columns: 1.5% 40.5% 50% 8%;
-        grid-template-areas:   "marker assignee category delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete"
-                                "marker assignee details delete";
-     
-    }
-    p.task-category {
-        justify-content: left;
-        grid-area: category;
-        font-weight: bold;
-        align-items: center;
-        padding-left: 5%;
-    }
-    p.details {
-        grid-area: details;
-        align-items: flex-start;
-        padding-left: 5%;
-        font-size: medium;
-    }
-
-    .category-marker {
-        grid-area: marker;
-    }
-    .assignee-section {
-        grid-area: assignee;
-        flex-direction: column;
-        align-items: flex-start; 
-        padding: 4% 2%;
-        overflow: auto;
-    }
-    .assignee-pic-section {
-        flex-direction: row;
-    }
-    .assignee-pic-section img {
-        width: 46%;
-        padding: 2%;
-        margin-right: 1%;
-    }
-    .contact-data  {
-        font-size: medium;
-    }
-    
-
-
-
 }
