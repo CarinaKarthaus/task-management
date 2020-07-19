@@ -15,7 +15,7 @@
 <body onload="loadTasksMatrix()">
     <div class="side-bar">
         <img src="img/logo.png">
-        <div class="align-center">
+        <div class="align-center menu-desktop">
             <a href="index.html">
                 <p>List</p>
             </a>
@@ -27,8 +27,24 @@
                 <p>How to use</p>
             </a>
         </div>
+        <img class="menu-mobile" src="./img/3bars.png" onclick="showMenu()">
         <img src="img/profile1.jpg" class="profile-pic">
     </div>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <a href="index.html">
+            <p>List</p>
+        </a>
+        <p class="page-selected">Matrix</p>
+        <a href="add-task.html">
+            <p>Add Task</p>
+        </a>
+        <a href="help.html">
+            <p>How to use</p>
+        </a>
+        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn" >Close</button>
+    </div>
+
     <div class="portrait-matrix-map">
         <div class="matrix-do btn-secondary"><a href="#">DO</a></div>
         <div class="matrix-schedule btn-secondary"><a href="#schedule-box">SCHEDULE</a></div>

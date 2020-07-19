@@ -14,6 +14,19 @@ let newTaskHTML;
 let specialCategory;
 let allTasksSelected = [];
 
+/**
+ * Lets overlay-menu slide in 
+ */
+function showMenu() {
+    document.getElementById('menu-overlay').classList.add('show-menu-overlay');
+}
+/**
+ * Lets overlay menu slide out
+ */
+function closeMenu() {
+    document.getElementById('menu-overlay').classList.remove('show-menu-overlay');
+}
+
 
 function reloadAllTasks(){
     let allTasksAsString = JSON.stringify(allTasks);

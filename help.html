@@ -16,7 +16,7 @@
 <body>
     <div class="side-bar">
         <img src="img/logo.png">
-        <div class="align-center">
+        <div class="align-center menu-desktop">
             <a href="index.html">
                 <p>List</p>
             </a>
@@ -28,8 +28,24 @@
             </a>
             <p class="page-selected">How to use</p>
         </div>
+        <img class="menu-mobile" src="./img/3bars.png" onclick="showMenu()">
         <img src="img/profile1.jpg" class="profile-pic">
     </div>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <a href="index.html">
+            <p>List</p>
+        </a>
+        <a href="matrix.html">
+            <p>Matrix</p>
+        </a>
+        <a href="add-task.html">
+            <p>Add Task</p>
+        </a>
+        <p class="page-selected">How to use</p>
+        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn" >Close</button>
+    </div>
+
     <div class=main-box>
         <h2>User Guide - Help</h2>
         <p class="subheading">JOIN - The Task Management System</p>
