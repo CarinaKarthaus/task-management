@@ -342,7 +342,7 @@ function checkUrgency(i) {
 function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
     let dueDate = new Date(allTasks[i].dueDate);
     document.getElementById(id).insertAdjacentHTML('beforeend', `<div class='task-box' id='task${taskId}' onclick="selectTask(${taskId})">
-    <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()}-${dueDate.getFullYear()}</div>
+    <div class='task-date'>${dueDate.getDate()}-${dueDate.getMonth()+1}-${dueDate.getFullYear()}</div>
     <button type="button" class="close delete-task" data-target="#deleteConfirmation" id="${i}" data-toggle="modal" data-placement="top" title="Delete task">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -368,7 +368,7 @@ function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
  * Changes importance of a task and locate in the corresponding box
  */
 function changeImportance(i) {
-    alert("Alert","Importance has been changed, task will be relocated!");
+    alert("Importance has been changed, task will be relocated!");
     console.log(allTasks[i]);
     if (allTasks[i].importance == "High") {
         allTasks[i].importance = "Low";

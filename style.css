@@ -296,7 +296,7 @@ h3 {
     grid-template-areas: 'date importance importance'	
                         'title title edit-title'	
                         'description description edit-description'	
-                        'category category delete-task'
+                        'category category delete'
                         'assignees assignees assignees';
     margin: 5px;
     padding: 10px 5px 5px 5px;
@@ -313,7 +313,7 @@ h3 {
     color: grey;  
 }
 .delete-task {
-    grid-area: delete-task;
+    grid-area: delete;
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -622,9 +622,7 @@ button.close {
     .assigned-people-box {
         display: block;
     }
-    .assigned-pic {
-        width: 30%;
-    }
+    
     .plus {
         margin-bottom: 12px;
         margin-left: 6px;
@@ -727,13 +725,14 @@ button.close {
         flex-direction: column;
     }
     .assignee-pic-section img {
-        width: 3em !important;
+        width: 3em;
         padding: 2%;
         margin-right: 1%;
     }
     .assigned-pic {
-        transform: scale(1.2);
-        height: 1em;
+        transform: scale(1);
+        height: 4em;
+        width: 4em;
     }
     .contact-data  {
         font-size: medium;
@@ -744,7 +743,7 @@ button.close {
     }
 }
 
-/* Mobile portrait width <= 320px */
+/* Mobile portrait width <= 420px */
 @media (max-width: 420px) {
     body {
         width: 100%;
@@ -760,6 +759,7 @@ button.close {
         justify-content: space-between;
         width: 100%;
         height: 10%;
+        overflow-x: visible;
     }
     .side-bar div {
         display: none;
@@ -826,13 +826,15 @@ button.close {
         margin-right: 1%;
     }
     .assigned-pic {
-        transform: scale(1.2);
-        height: 1em;
+        transform: scale(1);
+        height: 3em;
+        width: 3em;
     }
     .contact-data {
         width: fit-content;
     }
     .close {
+        grid-area: delete;
         align-self: center;
         margin: 2em;
     }
@@ -849,7 +851,6 @@ button.close {
         display: flex;
         flex-direction: column;
         padding: 0;
-        z-index: -1;
     }
     h4 {	
         font-size: 0.7em;
@@ -860,7 +861,8 @@ button.close {
     }
     .portrait-matrix-map {
         position: sticky;
-        top: 0;
+        top: 0%;
+        z-index: 3;
         background-color: rgb(255, 255, 255);
         width: 100%;
         display: grid;
