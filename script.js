@@ -254,6 +254,8 @@ function selectTask(taskId) {
     };
     console.log('allTasksSelected: ', allTasksSelected);
 }
+
+
 /**
  * Assigns importance and urgency manually by clicking the arrows in matrix.html
  */
@@ -366,14 +368,14 @@ function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
  * Changes importance of a task and locate in the corresponding box
  */
 function changeImportance(i) {
-    alert('Esto es un aviso');
+    alert("Alert","Importance has been changed, task will be relocated!");
     console.log(allTasks[i]);
     if (allTasks[i].importance == "High") {
         allTasks[i].importance = "Low";
     } else if (allTasks[i].importance == "Low") {
         allTasks[i].importance = "High";
     }
-    loadAllTasks();
+    reloadAllTasks();
     console.log(allTasks[i].importance);
 }
 /**
