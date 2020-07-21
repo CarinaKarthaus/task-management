@@ -70,6 +70,13 @@ label {
     right: 16px;
     top: 16px;
 }
+.menu-backdrop {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    background-color: black;
+    opacity: 0.2;
+}
 
 .side-bar img {
     margin: auto;

@@ -15,16 +15,18 @@ let specialCategory;
 let allTasksSelected = [];
 
 /**
- * Lets overlay-menu slide in 
+ * Lets overlay-menu slide in and sets black backdrop 
  */
 function showMenu() {
     document.getElementById('menu-overlay').classList.add('show-menu-overlay');
+    document.getElementById('menu-backdrop').classList.remove('d-none');
 }
 /**
- * Lets overlay menu slide out
+ * Lets overlay menu slide out and removes backdrop
  */
 function closeMenu() {
     document.getElementById('menu-overlay').classList.remove('show-menu-overlay');
+    document.getElementById('menu-backdrop').classList.add('d-none');
 }
 
 
