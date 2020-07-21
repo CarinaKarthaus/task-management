@@ -76,6 +76,8 @@ label {
     z-index: 9;
     background-color: black;
     opacity: 0.2;
+    transition: all 225ms ease-in-out;
+    position: absolute;
 }
 
 .side-bar img {
