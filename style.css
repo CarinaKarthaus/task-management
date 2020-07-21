@@ -47,19 +47,20 @@ label {
 
 .menu-overlay {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     z-index: 20;
     flex-direction: column;
     background: #1E3190;
-    width: 200px;
+    width: 250px;
     height: 100vh;
     padding-left: 8px;
     padding-top: 90px;
     border-left: 1px solid white;
+    border-radius: 8px 0 0 8px;
     text-align: left;
-    transform: translateX(200px);
+    transform: translateX(250px);
     transition: all 225ms ease-in-out;
 }
 .menu-overlay a {
@@ -79,7 +80,9 @@ label {
     transition: all 225ms ease-in-out;
     position: absolute;
 }
-
+.mobile-pics {
+    display: flex;
+}
 .side-bar img {
     margin: auto;
     width: 8vh;
@@ -587,7 +590,6 @@ button.close {
         z-index: 1;
     }
     .mobile-pics {
-        display: flex;
         margin-right: 12px;
     }
     .menu-desktop {
@@ -606,6 +608,34 @@ button.close {
     .show-menu-overlay {
         transform: translateX(0);
     }
+    .current-user {
+        margin: 8px;
+        position: absolute;
+        bottom: 2vh;
+        width: 90%;
+        font-size: large;
+    }
+    .current-user h4 {
+        margin: 0 !important;
+    }
+    .user-details {
+        display: flex;
+        color: white;
+        font-size: small;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        margin-left: 12px;
+        }
+    
+    .user-details a {
+        padding-left: 0 !important;
+        text-decoration: underline;
+        font-weight: lighter;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.685);
+    }
+
     .page-selected {
         text-align: left;
         padding-left: 16px;
@@ -781,7 +811,6 @@ button.close {
     }
     .menu-mobile {
         right: 12em;
-
     }
     .main-box h2 {
         margin-left: 18vw;
