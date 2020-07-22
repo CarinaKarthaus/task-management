@@ -241,6 +241,7 @@ function changeDetails(detailsId, taskIndex){
  * Selects tasks to allow assigning new values for urgency and/or importance (see assignParameter())
  */
 function selectTask(taskId) {
+    highlightAllArrows();
     let id = taskId-1;
     let selectedTaskHTML = document.getElementById('task' + taskId).classList;
     if (selectedTaskHTML.contains('selected-task')) {
@@ -400,4 +401,34 @@ function assignCategory(category, id, i) {
             document.getElementById(`task${id}`).classList.add(cssCategories[i]);
         }
     }
+}
+/**
+ * Highlights Arrows
+ */
+ function arrowHighlight(arrowId){
+    document.getElementById(arrowId).firstElementChild.classList.add('arrow-line-highlight');
+    document.getElementById(arrowId).lastElementChild.classList.add('arrow-end-highlight');
+ }
+ function arrowStopHighlight (arrowId) {   
+    document.getElementById(arrowId).firstElementChild.classList.remove('arrow-line-highlight');
+    document.getElementById(arrowId).lastElementChild.classList.remove('arrow-end-highlight');
+ }
+ function highlightAllArrows(){
+     let arrowsDesktop = ['urgency-high-arrow-desktop','urgency-low-arrow-desktop','importance-high-arrow-desktop','importance-low-arrow-desktop'];
+     let arrowsPortrait = ['urgency-high-arrow-portrait','urgency-low-arrow-portrait','importance-high-arrow-portrait','importance-low-arrow-portrait'];
+     for(i=0;i<4;i++){
+        document.getElementById(arrowsDesktop[i]).firstElementChild.classList.add('arrow-line-highlight');
+        document.getElementById(arrowsDesktop[i]).lastElementChild.classList.add('arrow-end-highlight');
+        document.getElementById(arrowsPortrait[i]).firstElementChild.classList.add('arrow-line-highlight');
+        document.getElementById(arrowsPortrait[i]).lastElementChild.classList.add('arrow-end-highlight');
+     }
+     setTimeout(function(){
+        for(i=0;i<4;i++){
+            document.getElementById(arrowsDesktop[i]).firstElementChild.classList.remove('arrow-line-highlight');
+            document.getElementById(arrowsDesktop[i]).lastElementChild.classList.remove('arrow-end-highlight');
+            document.getElementById(arrowsPortrait[i]).firstElementChild.classList.remove('arrow-line-highlight');
+            document.getElementById(arrowsPortrait[i]).lastElementChild.classList.remove('arrow-end-highlight');
+         }
+     },500);
+    
 }
