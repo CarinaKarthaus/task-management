@@ -203,7 +203,7 @@ h4 {
     font-weight: lighter;	
     margin: 0.5em;
 }	
-.urgency-arrow.urgency-arrow-portrait,.importance-arrow.importance-arrow-portrait {
+.urgency-arrow.portrait,.importance-arrow.portrait {
     display: none;
 }
 .urgency-arrow {	
@@ -220,32 +220,58 @@ h4 {
     justify-content: space-between;	
     align-items: center;	
 }	
-.importance-arrow h4:nth-child(3) {	
+.importance-arrow h4:nth-child(2) {	
     writing-mode: vertical-rl;	
     transform: rotate(180deg);
 }	
     /* Horizontal and vertical lines and arrows */	
-.line-horizontal {	
-    width: 80%;	
-    border: #4c5aa7 0.3em solid;		
-    transition: all 125ms ease-in-out;
-}	
-.line-horizontal:hover, .line-vertical:hover {
-    cursor: pointer;
-    border: #D8D8D8 0.3em solid;
+.arrow-horizontal {
+    display: flex;
+    width: 100%;
+    margin: 0;
 }
-.line-vertical {	
-    height: 80%;	
+.arrow-vertical {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+}
+.horizontal-arrow-line {	
+    width: 80%;
+    height: 1%;
+    margin: auto 0;
     border: #4c5aa7 0.3em solid;
-    transition: all 125ms ease-in-out;		
 }	
-.arrow {	
-    border-left: transparent 1.5em solid;	
-    border-top: transparent 1.5em solid;	
-    border-right: #4c5aa7 1.5em solid;	
-    border-bottom: transparent 1.5em solid;	
-    transition: all 125ms ease-in-out;
-}	
+.horizontal-arrow-line.left {
+    order: 2;
+}
+.arrow-end.left {
+    order: 1;
+}
+.vertical-arrow-line.top {
+    order: 2;
+}
+.arrow-end.up {
+    order: 1;
+}
+.vertical-arrow-line {	
+    height: 80%;
+    width: 1%;
+    margin: auto;
+    border: #4c5aa7 0.3em solid;
+}
+.arrow-line-highlight{
+    border: #D8D8D8 0.3em solid;
+
+}
+.arrow-end {	
+    border: transparent 1em solid;	
+    border-right: #4c5aa7 2em solid;	
+}
+.arrow-end-highlight{
+    border-right: #D8D8D8 2em solid;	
+}
+
     /* Content inside the matrix */	
 h3 {	
     font-size: 4vh;	
@@ -572,7 +598,9 @@ button.close {
         overflow-x: hidden;
         position: relative;
     }
-   
+   .profile-pic.sidebar {
+       display: none;
+   }
     form {
         width: 92vw;
         height: unset;
@@ -587,7 +615,7 @@ button.close {
         justify-content: space-between;
         height: 80px;
         width: 100%;
-        z-index: 1;
+        z-index: 9;
     }
     .mobile-pics {
         margin-right: 12px;
@@ -805,6 +833,9 @@ button.close {
 
 /* Mobile portrait width <= 420px */
 @media (max-width: 420px) {
+    .profile-pic.sidebar {
+        display: none;
+    }
     body {
         width: 100%;
         height: 100vh;
@@ -813,6 +844,7 @@ button.close {
     }
     .side-bar {
         position: fixed;
+        height: 10vh;
     }
     .side-bar img {
         width: 56px;
@@ -930,14 +962,14 @@ button.close {
     }
     .portrait-matrix-map {
         position: fixed;
-        top: 90px;
+        top: 10vh;
         z-index: 3;
         background-color: rgb(255, 255, 255);
         width: 100%;
         height: 15vh;
         display: grid;
         margin: 0;
-        padding-top: 0.5em;
+        padding-top: 1em;
         padding-left: 1.5em;
         padding-right: 1em;
         grid-template-columns: 10% 45% 45%;	
@@ -949,37 +981,34 @@ button.close {
     .urgency-arrow.desktop, .importance-arrow.desktop {
         display: none;
     }
-    .urgency-arrow-portrait {	
+    .urgency-arrow.portrait {	
         grid-area: urgency;	
         display: flex !important;	
         justify-content: space-between;	
         align-items: center;	
     }	
-    .importance-arrow-portrait {	
+    .importance-arrow.portrait {	
         grid-area: importance;	
         display: flex !important;
         flex-direction: column;	
         justify-content: space-between;	
         align-items: center;	
     }
-    .importance-arrow-portrait h4:nth-child(3) {	
+    .importance-arrow.portrait h4:nth-child(2) {	
         writing-mode: horizontal-tb;	
         transform: rotate(0deg);
     }
-    .line-vertical {	
-        height: 80%;	
-        border: #4c5aa7 0.3em solid;
-        transition: all 225ms ease-in-out;		
-    }	
-    .arrow {
-        cursor: pointer;
-        border: #D8D8D8 0.3em solid;	
-        border-left: transparent 1em solid;	
-        border-top: transparent 1em solid;	
-        border-right: #4c5aa7 1em solid;	
-        border-bottom: transparent 1em solid;	
-        transition: all 225ms ease-in-out;
-    }	
+    .horizontal-arrow-line {
+        border: #4c5aa7 0.2em solid;
+    }
+    .vertical-arrow-line {	
+        border: #4c5aa7 0.2em solid;
+    }
+    .arrow-end {
+        border: transparent 0.7em solid;	
+        border-right: #4c5aa7 0.7em solid;
+    }
+    	
     .matrix-do {
         grid-area: do-btn;
         display: flex;

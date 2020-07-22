@@ -29,7 +29,7 @@
         </div>
         <div class="mobile-pics">
             <img class="menu-mobile" src="./img/3bars.png" onclick="showMenu()">
-            <img src="img/profile1.jpg" class="profile-pic">
+            <img src="img/profile1.jpg" class="profile-pic sidebar">
         </div>
     </div>
 
@@ -44,7 +44,7 @@
         <a href="help.html">
             <p>How to use</p>
         </a>
-        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn" >Close</button>
+        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn">Close</button>
         <div class="current-user">
             <h4>Your account</h4>
             <div class="user-details">
@@ -57,48 +57,76 @@
         </div>
     </div>
     <div class="menu-backdrop d-none" id="menu-backdrop"></div>
-
     <div class="portrait-matrix-map">
         <div class="matrix-do btn-secondary"><a href="#do-box">DO</a></div>
         <div class="matrix-schedule btn-secondary"><a href="#schedule-box">SCHEDULE</a></div>
         <div class="matrix-delegate btn-secondary"><a href="#delegate-box">DELEGATE</a></div>
         <div class="matrix-eliminate btn-secondary"><a href="#eliminate-box">ELIMINATE</a></div>
-        <div class='urgency-arrow urgency-arrow-portrait'>
+        <div class='urgency-arrow portrait'>
             <h4>HIGH</h4>
-            <div id="urgency-high-arrow" class='arrow'></div>
-            <div id="urgency-high-line" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'High')">
+            <div class="arrow arrow-horizontal" id="urgency-high-arrow-portrait"
+                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('urgency', 'High')">
+                <div class='horizontal-arrow-line arrow-line left'></div>
+                <div class='left arrow-end'></div>
             </div>
             <h4>URGENCY</h4>
-            <div id="urgency-low-line" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'Low')"></div>
-            <div id="urgency-low-arrow" class='arrow' style='transform: rotate(180deg);'></div>
+            <div class="arrow arrow-horizontal" id="urgency-low-arrow-portrait"
+                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('urgency', 'Low')">
+                <div class='horizontal-arrow-line arrow-line right'></div>
+                <div class='right arrow-end' style='transform: rotate(180deg);'></div>
+            </div>
             <h4>LOW</h4>
         </div>
-        <div class='importance-arrow importance-arrow-portrait'>
-            <div id="importance-high-arrow" class='arrow' style='transform: rotate(90deg);'></div>
-            <div id="importance-high-line" class='line-vertical' onclick="changeKeyValuePair('importance', 'High')"></div>
+        <div class='importance-arrow portrait'>
+            <div class="arrow arrow-vertical" id="importance-high-arrow-portrait"
+                onmouseout="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('importance','High')">
+                <div class='vertical-arrow-line arrow-line top'></div>
+                <div class='top arrow-end' style='transform: rotate(90deg);'></div>
+            </div>
             <h4>IMPORTANCE</h4>
-            <div id="importance-low-line" class='line-vertical' onclick="changeKeyValuePair('importance', 'Low')"></div>
-            <div id="importance-low-arrow" class='arrow' style='transform: rotate(-90deg);'></div>
+            <div class="arrow arrow-vertical" id="importance-low-arrow-portrait"
+                onmouseout="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('importance','Low')">
+                <div class='vertical-arrow-line arrow-line bottom'></div>
+                <div class='bottom arrow-end' style='transform: rotate(270deg);'></div>
+            </div>
             <h4>LOW</h4>
         </div>
     </div>
     <div class="matrix-main-box">
         <div class='urgency-arrow desktop'>
             <h4>HIGH</h4>
-            <div id="urgency-high-arrow-desktop" class='arrow'></div>
-            <div id="urgency-high-line-desktop" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'High')">
+            <div class="arrow arrow-horizontal" id="urgency-high-arrow-desktop"
+                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('urgency', 'High')">
+                <div class='horizontal-arrow-line arrow-line left'></div>
+                <div class='left arrow-end'></div>
             </div>
             <h4>URGENCY</h4>
-            <div id="urgency-low-line-desktop" class='line-horizontal' onclick="changeKeyValuePair('urgency', 'Low')"></div>
-            <div id="urgency-low-arrow-desktop" class='arrow' style='transform: rotate(180deg);'></div>
+            <div class="arrow arrow-horizontal" id="urgency-low-arrow-desktop"
+                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('urgency', 'Low')">
+                <div class='horizontal-arrow-line arrow-line right'></div>
+                <div class='right arrow-end' style='transform: rotate(180deg);'></div>
+            </div>
             <h4>LOW</h4>
         </div>
         <div class='importance-arrow desktop'>
-            <div id="importance-high-arrow-desktop" class='arrow' style='transform: rotate(90deg);'></div>
-            <div id="importance-high-line-desktop" class='line-vertical' onclick="changeKeyValuePair('importance', 'High')"></div>
+            <div class="arrow arrow-vertical" id="importance-high-arrow-desktop"
+                onmouseout="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
+                onclick="changeKeyValuePair('importance','High')">
+                <div class='vertical-arrow-line arrow-line top'></div>
+                <div class='top arrow-end' style='transform: rotate(90deg);'></div>
+            </div>
             <h4>IMPORTANCE</h4>
-            <div id="importance-low-line-desktop" class='line-vertical' onclick="changeKeyValuePair('importance', 'Low')"></div>
-            <div id="importance-low-arrow-desktop" class='arrow' style='transform: rotate(-90deg);'></div>
+            <div class="arrow arrow-vertical" id="importance-low-arrow-desktop" onmouseout="arrowStopHighlight(this.id)"
+                onmouseover="arrowHighlight(this.id)" onclick="changeKeyValuePair('importance','Low')">
+                <div class='vertical-arrow-line arrow-line bottom'></div>
+                <div class='bottom arrow-end' style='transform: rotate(270deg);'></div>
+            </div>
             <h4>LOW</h4>
 
         </div>
