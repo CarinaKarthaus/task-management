@@ -45,7 +45,7 @@
             <p>Add Task</p>
         </a>
         <p class="page-selected">How to use</p>
-        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn" >Close</button>
+        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn">Close</button>
         <div class="current-user">
             <h4>Your account</h4>
             <div class="user-details">
@@ -62,14 +62,101 @@
     <div class=main-box>
         <h2>User Guide - Help</h2>
         <p class="subheading">JOIN - The Task Management System</p>
-        <p class='p1'>Welcome to Join! Here you will find a Helpful Guide to use our site. </p>
-        <br><br>
-        <p class='p1'>Welcome to Join! Here you will find a Helpful Guide to use our site. </p>
-        <br><br>
-        <p class='p1'>Welcome to Join! Here you will find a Helpful Guide to use our site. </p>
+        <div class="help">
+            <div>
+                <h4>What is JOIN?</h4>
+                <p>
+                    JOIN is a smart tool to organize and priorize your to-dos easily.
+                    <br>
+                    It's based on the <strong>Eisenhower-principle</strong> which categorizes tasks based on both their
+                    <strong>importance and urgency</strong>.
+                </p>
+                <img src="img/eisenhower-principle.png" style="width: 50%; border: unset;">
+            </div>
+            <div>
+                <h4>How it works</h4>
+                <ol class="help-nav">
+                    <a href="#help-create-task"><li>Create a new task</li></a>
+                    <a href="#help-matrix-view"><li>Check pending tasks in Matrix view</li></a>
+                    <a href="#help-change-urgency-importance"><li>Change task urgency / importance</li></a>
+                    <a href="#help-task-list"><li>View and edit task list</li></a>
+                </ol>
+                <p>
+                <ol>
+                    <li id="help-create-task">Create a new task</li>
+                        <img src="img/add-task.png">
+                        <p>
+                            Fill out the form with all the required details.
+                            <br>
+                            No worries: you can <strong>change the info later</strong> if needed. 
+                        </p>
+                    <li id="help-matrix-view">Check pending tasks in Matrix-view</li>
+                        <img src="img/matrix-view.png" >
+                        <p>
+                            Check how and when to handle your tasks best.
+                            <br>
+                            The tool will <strong>automatically assign</strong> your task to the correct category based on the provided details.
+                            <br>
+                        </p>
+                            <h5>The classification works as follows:</h5>
+                            <table>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Importance</th>
+                                    <th>Urgency</th>
+                                </tr>
+                                <tr>
+                                    <td>DO</td>
+                                    <td>High</td>
+                                    <td>High <br>(or due date in &lt; 7 days)</td>
+                                </tr>
+                                <tr>
+                                    <td>SCHEDULE</td>
+                                    <td>High</td>
+                                    <td>Low <br>(or due date in &ge; 7 days)</td>
+                                </tr>
+                                <tr>
+                                    <td>DELEGATE</td>
+                                    <td>Low</td>
+                                    <td>High <br>(or due date in &lt; 7 days)</td>
+                                </tr>
+                                <tr>
+                                    <td>ELIMINATE</td>
+                                    <td>Low</td>
+                                    <td>Low <br>(or due date in &ge; 7 days)</td>
+                                </tr>
+                            </td>
+                            </table>
+                        
+                    <li id="help-change-urgency-importance">Change task urgency / importance</li>
+                        <img src="img/matrix.png">
+                        <p>
+                            Of course you can <strong>change urgency and/or importance manually</strong> if needed.
+                            <br>
+                            Just click on a task and shift it to a new box by pressing the arrows.
+                        </p>
 
+                    <li id="help-task-list">View and edit task list</li>
+                        <p>
+                            Find a list with all your tasks.
+                        </p>
+                        <img src="img/task-list.png" >
+                        <p>
+                            <strong>Edit your task</strong> details by clicking on the text area.
+                            <br>
+                            <strong>Delete tasks</strong> by pressing the trash button.
+                        </p>
+                        <img src="img/edit-task.png" >
+                </ol>
+                <h2>HAVE FUN exploring JOIN! </h2>
+                </p>
+                
+            </div>
+            
+            
+
+        </div>
     </div>
-
 </body>
 
 </html>

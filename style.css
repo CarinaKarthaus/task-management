@@ -568,6 +568,52 @@ button.close {
     margin: 0 auto;
 }
 
+/* Styles for help.html */
+html {
+    scroll-behavior: smooth;
+}
+
+.help div {
+    margin: 5vh 0;
+}
+.help h4, .help li {
+    font-weight: bold;
+    margin: 5vh 0 1vh 0;
+}
+.help-nav a, .help-nav li {
+    color: black;
+    margin: 0;
+    font-size: medium;
+}
+.help img {
+    width: 80%;
+    margin: 2vh 0;
+    margin-left: 3vw;
+    border: 2px solid ghostwhite;
+}
+.help p{
+    font-size: large;
+    margin-left: 3vw;
+}
+.help h5 {
+    margin-left: 3vw;
+}
+.help table {
+    margin-left: 5vw;
+    width: 50%;
+    font-size: large;
+}
+.help th {
+    padding: 1vh 0;
+    border-bottom: 2px solid;
+}
+.help td {
+    padding: 1vh 0;
+    border-bottom: 1px dashed;
+}
+
+
+
 /* Easy access classes */
 
 .d-none {
