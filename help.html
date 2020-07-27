@@ -8,8 +8,8 @@
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/help-style.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/help.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <script src="Script.js"></script>
 </head>
@@ -77,86 +77,122 @@
             <div>
                 <h4>How it works</h4>
                 <ol class="help-nav">
-                    <a href="#help-create-task"><li>Create a new task</li></a>
-                    <a href="#help-matrix-view"><li>Check pending tasks in Matrix view</li></a>
-                    <a href="#help-change-urgency-importance"><li>Change task urgency / importance</li></a>
-                    <a href="#help-task-list"><li>View and edit task list</li></a>
-                </ol>
+                    <a href="#help-create-task">
+                        <li>Create a new task</li>
+                    </a>
+                    <a href="#help-matrix-view">
+                        <li>Check pending tasks in Matrix view</li>
+                    </a>
+                    <a href="#help-change-urgency-importance">
+                        <li>Change task urgency / importance</li>
+                    </a>
+                    <a href="#help-task-list">
+                        <li>View and edit task list</li>
+                    </a>
+                </ol><br>
+                <div class="open-menu-overlay">
+                    <div class="menu-hint mobile">
+                        <p>Tap on
+                            <img src="./img/3bars.png" style="width:25px; height:20px">
+                            at the top-right corner to open the Navigation Menu</p>
+                    </div>
+                </div><br>
                 <p>
-                <ol>
-                    <li id="help-create-task">Create a new task</li>
-                        <img src="img/add-task.png">
+                <ol class="help-list">
+                    <li id="help-create-task">Create a new task
+                        <div class="add-task desktop"><img src="img/add-task.png"></div>
+                        <div class="add-task mobile"><img src="img/add-task-mobile.jpeg"></div>
+                        <div class="add-task landscape"><img src="img/add-task-landscape.png" ></div>
                         <p>
                             Fill out the form with all the required details.
                             <br>
-                            No worries: you can <strong>change the info later</strong> if needed. 
+                            No worries: you can <strong>change the info later</strong> if needed.
                         </p>
-                    <li id="help-matrix-view">Check pending tasks in Matrix-view</li>
-                        <img src="img/matrix-view.png" >
+                    </li>
+                    <li id="help-matrix-view">Check pending tasks in Matrix-view
+                        <div class="matrix-view desktop"><img src="img/matrix-view.png"></div>
+                        <div class="matrix-view mobile"><img src="img/matrix-view-mobile.jpeg"></div>
                         <p>
                             Check how and when to handle your tasks best.
                             <br>
-                            The tool will <strong>automatically assign</strong> your task to the correct category based on the provided details.
+                            The tool will <strong>automatically assign</strong> your task to the correct category based
+                            on
+                            the provided details.
                             <br>
                         </p>
-                            <h5>The classification works as follows:</h5>
-                            <table>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Importance</th>
-                                    <th>Urgency</th>
-                                </tr>
-                                <tr>
-                                    <td>DO</td>
-                                    <td>High</td>
-                                    <td>High <br>(or due date in &lt; 7 days)</td>
-                                </tr>
-                                <tr>
-                                    <td>SCHEDULE</td>
-                                    <td>High</td>
-                                    <td>Low <br>(or due date in &ge; 7 days)</td>
-                                </tr>
-                                <tr>
-                                    <td>DELEGATE</td>
-                                    <td>Low</td>
-                                    <td>High <br>(or due date in &lt; 7 days)</td>
-                                </tr>
-                                <tr>
-                                    <td>ELIMINATE</td>
-                                    <td>Low</td>
-                                    <td>Low <br>(or due date in &ge; 7 days)</td>
-                                </tr>
+                        <h5>The classification works as follows:</h5>
+                        <table>
+                            <tr>
+                                <th>Category</th>
+                                <th>Importance</th>
+                                <th>Urgency</th>
+                            </tr>
+                            <tr>
+                                <td>DO</td>
+                                <td>High</td>
+                                <td>High <br>(or due date in &lt; 7 days)</td>
+                            </tr>
+                            <tr>
+                                <td>SCHEDULE</td>
+                                <td>High</td>
+                                <td>Low <br>(or due date in &ge; 7 days)</td>
+                            </tr>
+                            <tr>
+                                <td>DELEGATE</td>
+                                <td>Low</td>
+                                <td>High <br>(or due date in &lt; 7 days)</td>
+                            </tr>
+                            <tr>
+                                <td>ELIMINATE</td>
+                                <td>Low</td>
+                                <td>Low <br>(or due date in &ge; 7 days)</td>
+                            </tr>
                             </td>
-                            </table>
-                        
-                    <li id="help-change-urgency-importance">Change task urgency / importance</li>
-                        <img src="img/matrix.png">
+                        </table>
+                    </li>
+
+                    <li id="help-change-urgency-importance">Change task urgency / importance
+                        <div class="matrix desktop"><img src="img/matrix.png"></div>
+                        <div class="matrix mobile"><img src="img/matrix.png"></div>
+                        <div class="matrix landscape"><img src="img/matrix-landscape.png"></div>
                         <p>
                             Of course you can <strong>change urgency and/or importance manually</strong> if needed.
                             <br>
-                            Just click on a task and shift it to a new box by pressing the arrows.
+                            Just select a task and shift it to a new box by pressing the arrows.
                         </p>
+                    </li>
 
-                    <li id="help-task-list">View and edit task list</li>
+                    <li id="help-task-list">View and edit task list
                         <p>
                             Find a list with all your tasks.
                         </p>
-                        <img src="img/task-list.png" >
+                        <div class="task-list desktop"><img src="img/task-list.png"></div>
+                        <div class="task-list mobile"><img src="img/task-list-mobile.png"></div>
+                        <div class="task-list landscape"><img src="img/task-list-landscape.png"></div>
                         <p>
                             <strong>Edit your task</strong> details by clicking on the text area.
                             <br>
                             <strong>Delete tasks</strong> by pressing the trash button.
                         </p>
-                        <img src="img/edit-task.png" >
+                        <div class="edit-task desktop"><img src="img/edit-task.png"></div>
+                        <div class="edit-task mobile"><img src="img/edit-task-mobile.png"></div>
+                    </li>
                 </ol>
-                <h2>HAVE FUN exploring JOIN! </h2>
+                <p id="have-fun">HAVE FUN exploring JOIN! </p>
                 </p>
-                
-            </div>
-            
-            
 
+            </div>
         </div>
+        <footer>
+            <div class="footer-row-1"><a href="legal-notice.html">
+                    <h5>Legal Notice</h5>
+                </a><a href="privacy-policy.html">
+                    <h5>Privacy Policy</h5>
+                </a></div>
+            <div class="footer-row-2">
+                <h5>© Developer Akademie 2020</h5>
+            </div>
+        </footer>
     </div>
 </body>
 

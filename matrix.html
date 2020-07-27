@@ -8,8 +8,8 @@
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/matrix-style.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/matrix.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 
@@ -66,14 +66,12 @@
         <div class='urgency-arrow portrait'>
             <h4>HIGH</h4>
             <div class="arrow arrow-horizontal" id="urgency-high-arrow-portrait"
-                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
                 onclick="changeKeyValuePair('urgency', 'High')">
                 <div class='horizontal-arrow-line arrow-line left'></div>
                 <div class='left arrow-end'></div>
             </div>
             <h4>URGENCY</h4>
             <div class="arrow arrow-horizontal" id="urgency-low-arrow-portrait"
-                onmouseleave="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
                 onclick="changeKeyValuePair('urgency', 'Low')">
                 <div class='horizontal-arrow-line arrow-line right'></div>
                 <div class='right arrow-end' style='transform: rotate(180deg);'></div>
@@ -82,14 +80,12 @@
         </div>
         <div class='importance-arrow portrait'>
             <div class="arrow arrow-vertical" id="importance-high-arrow-portrait"
-                onmouseout="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
                 onclick="changeKeyValuePair('importance','High')">
                 <div class='vertical-arrow-line arrow-line top'></div>
                 <div class='top arrow-end' style='transform: rotate(90deg);'></div>
             </div>
             <h4>IMPORTANCE</h4>
             <div class="arrow arrow-vertical" id="importance-low-arrow-portrait"
-                onmouseout="arrowStopHighlight(this.id)" onmouseover="arrowHighlight(this.id)"
                 onclick="changeKeyValuePair('importance','Low')">
                 <div class='vertical-arrow-line arrow-line bottom'></div>
                 <div class='bottom arrow-end' style='transform: rotate(270deg);'></div>
@@ -129,7 +125,6 @@
                 <div class='bottom arrow-end' style='transform: rotate(270deg);'></div>
             </div>
             <h4>LOW</h4>
-
         </div>
         <div class="empty-task-list" id="empty-task-list" style="left: 30vw; top: 21vh;">
             <img src="img/task.png">
@@ -161,6 +156,16 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="footer-row-1"><a href="legal-notice.html">
+                    <h5>Legal Notice</h5>
+                </a><a href="privacy-policy.html">
+                    <h5>Privacy Policy</h5>
+                </a></div>
+            <div class="footer-row-2">
+                <h5>© Developer Akademie 2020</h5>
+            </div>
+        </footer>
     </div>
 
     <!-- Modal for task delete confirmation -->

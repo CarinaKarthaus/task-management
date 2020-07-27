@@ -1,4 +1,4 @@
- /* Style for all sites */
+ /* General styling for all sites */
 * {
     box-sizing: border-box;
 }
@@ -13,7 +13,7 @@ a:hover, a, a:active{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.685);
 }
-h2 {
+.main-box h2 {
     font-weight: bold;
 }
 label {
@@ -66,6 +66,9 @@ label {
 .menu-overlay a {
     padding-left: 21px;
 }
+.menu-overlay h4 {
+    color: gray;
+}
 .menu-close-btn {
     position: absolute;
     right: 16px;
@@ -94,7 +97,6 @@ label {
     width: 4rem;
     height: 4rem;
 } 
-
 .page-selected {
     text-align: center;
     font-weight: bold;
@@ -112,7 +114,8 @@ label {
     font-size: x-large;
     width: 88vw;
     position: absolute;
-    height: 100%;
+    height: auto;
+    padding-bottom: 0;
     right: 0;
     left: 10vw;
 }
@@ -123,7 +126,45 @@ label {
 .custom-padding {
     padding-right: 3% !important;
     padding-left: 3% !important;
-} 
+}
+/* Policy style */
+.main-box-policy {
+    padding: 10px 10px;
+}
+.main-box-policy h2 {
+    font-size: 1em;
+}
+/* footer styling for all sites */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0 5px 0;
+    font-size: 1em;
+}
+.footer-row-1 {
+    display: flex;
+    flex-direction: row;
+}
+footer a{
+    color: grey;
+    border-right: 2px solid grey;
+    height: fit-content;
+}
+footer h5 {
+    color: grey;
+    margin: 2px 5px;
+    transition: all 225ms ease-in-out;
+}
+footer h5:hover {
+    text-decoration: underline;
+}
+.matrix-main-box footer {
+    grid-area: footer;
+}
+.main-box footer {
+    display: flex;
+}
 
 /* Easy access classes */
 
@@ -154,7 +195,6 @@ label {
    
 /* For Smartphones (landscape view, less than 820px) */
 @media (max-width: 830px) {
-       
     html, body {
         flex-direction: column;
         overflow-x: hidden;
@@ -163,7 +203,6 @@ label {
    .profile-pic.sidebar {
        display: none;
    }
-    
     .side-bar {
         position: absolute;
         display: flex;
@@ -212,7 +251,6 @@ label {
         text-align: left;
         margin-left: 12px;
     }
-    
     .user-details a {
         padding-left: 0 !important;
         text-decoration: underline;
@@ -220,14 +258,12 @@ label {
         cursor: pointer;
         color: rgba(255, 255, 255, 0.685);
     }
-
     .sign-out-btn {
         color: gray;
         text-decoration: underline;
         cursor: pointer;
         margin-left: 12px;
     }
-
     .page-selected {
         text-align: left;
         padding-left: 16px;
@@ -251,11 +287,9 @@ label {
         margin: 70px auto 10px auto;
         text-align: center;
         margin-top: 85px;
-    }
-    .plus {
-        margin-bottom: 12px;
-        margin-left: 6px;
-    }
+    }   
+
+    
 }
 
 /* Mobile portrait width <= 420px */
@@ -282,5 +316,15 @@ label {
     .main-box h2 {
         margin-left: 18vw;
     }
-
+    /*footer style */
+    footer h5 {
+        font-size: 0.5em;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer a:nth-child(2){
+        border-right: none;
+    }
 }

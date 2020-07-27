@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/general.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="Script.js"></script>
+</head>
+
+<body>
+    <div class="side-bar">
+        <img src="img/logo.png">
+        <div class="align-center menu-desktop">
+            <a href="index.html">
+                <p>List</p>
+            </a>
+            <a href="matrix.html">
+                <p>Matrix</p>
+            </a>
+            <a href="add-task.html">
+                <p>Add Task</p>
+            </a>
+            <p class="page-selected">How to use</p>
+        </div>
+        <div class="mobile-pics">
+            <img class="menu-mobile" src="./img/3bars.png" onclick="showMenu()">
+            <img src="img/profile1.jpg" class="profile-pic sidebar">
+        </div>
+    </div>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <a href="index.html">
+            <p>List</p>
+        </a>
+        <a href="matrix.html">
+            <p>Matrix</p>
+        </a>
+        <a href="add-task.html">
+            <p>Add Task</p>
+        </a>
+        <a href="help.html">
+            <p>How to use</p>
+        </a>
+        <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn">Close</button>
+        <div class="current-user">
+            <h4>Your account</h4>
+            <div class="user-details">
+                <p>Darrin S. Jones <br>
+                    <a>darrin@gmail.com</a>
+                </p>
+                <img src="img/profile1.jpg" class="profile-pic">
+            </div>
+            <p class="sign-out-btn">Sign out</p>
+        </div>
+    </div>
+    <div class="menu-backdrop d-none" id="menu-backdrop" onclick="closeMenu()"></div>
+
+    <div class="main-box-policy">
+        <br><br><br>
+        <h1>Privacy Policy</h1>
+        <div class="privacy-policy">
+            <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO),
+                ist:</p>
+            <p>Carina Karthaus & Leonardo Michilena</p>
+            <h2>Ihre Betroffenenrechte</h2>
+            <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte
+                ausüben:</p>
+            <ul>
+                <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),</li>
+                <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),</li>
+                <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),</li>
+                <li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch
+                    nicht löschen dürfen (Art. 18 DSGVO),</li>
+                <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und</li>
+                <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit
+                    uns abgeschlossen haben (Art. 20 DSGVO).</li>
+            </ul>
+            <p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft
+                widerrufen.</p>
+            <p>Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige
+                Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an die für uns als verantwortliche Stelle
+                zuständige Behörde.</p>
+            <p>Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich) mit Anschrift finden Sie unter: <a
+                    href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
+                    target="_blank"
+                    rel="nofollow noopener">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
+            </p>
+            <p></p>
+            <h2>Verwendung von Scriptbibliotheken (Google Webfonts)</h2>
+            <h3>Art und Zweck der Verarbeitung:</h3>
+            <p>Um unsere Inhalte browserübergreifend korrekt und grafisch ansprechend darzustellen, verwenden wir auf
+                dieser Website „Google Web Fonts“ der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043,
+                USA; nachfolgend „Google“) zur Darstellung von Schriften.</p>
+            <p>Die Datenschutzrichtlinie des Bibliothekbetreibers Google finden Sie hier: <a
+                    href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a></p>
+            <h3>Rechtsgrundlage:</h3>
+            <p>Rechtsgrundlage für die Einbindung von Google Webfonts und dem damit verbundenen Datentransfer zu Google
+                ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). </p>
+            <h3>Empfänger:</h3>
+            <p>Der Aufruf von Scriptbibliotheken oder Schriftbibliotheken löst automatisch eine Verbindung zum Betreiber
+                der Bibliothek aus. Dabei ist es theoretisch möglich – aktuell allerdings auch unklar ob und ggf. zu
+                welchen Zwecken – dass der Betreiber in diesem Fall Google Daten erhebt.</p>
+            <h3>Speicherdauer:</h3>
+            <p>Wir erheben keine personenbezogenen Daten, durch die Einbindung von Google Webfonts.</p>
+            <p>Weitere Informationen zu Google Web Fonts finden Sie unter <a
+                    href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> und in
+                der Datenschutzerklärung von Google: <a
+                    href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>.</p>
+            <h3>Drittlandtransfer:</h3>
+            <p>Google verarbeitet Ihre Daten in den USA und hat sich dem EU_US Privacy Shield unterworfen <a
+                    href="https://www.privacyshield.gov/EU-US-Framework">https://www.privacyshield.gov/EU-US-Framework</a>.
+            </p>
+            <h3>Bereitstellung vorgeschrieben oder erforderlich:</h3>
+            <p>Die Bereitstellung der personenbezogenen Daten ist weder gesetzlich, noch vertraglich vorgeschrieben.
+                Allerdings kann ggfs. die korrekte Darstellung der Inhalte durch Standardschriften nicht möglich sein.
+            </p>
+            <h3>Widerruf der Einwilligung:</h3>
+            <p>Zur Darstellung der Inhalte wird regelmäßig die Programmiersprache JavaScript verwendet. Sie können der
+                Datenverarbeitung daher widersprechen, indem Sie die Ausführung von JavaScript in Ihrem Browser
+                deaktivieren oder einen JavaScript-Blocker installieren. Bitte beachten Sie, dass es hierdurch zu
+                Funktionseinschränkungen auf der Website kommen kann.</p>
+            <p></p>
+            <h2>Änderung unserer Datenschutzbestimmungen</h2>
+            <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen
+                Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen,
+                z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue
+                Datenschutzerklärung.</p>
+            <h2>Fragen an den Datenschutzbeauftragten</h2>
+            <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an
+                die für den Datenschutz verantwortliche Person in unserer Organisation:</p>
+            <p></p>
+            <p><em>Die Datenschutzerklärung wurde mithilfe der activeMind AG erstellt, den Experten für <a
+                        href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank"
+                        rel="noopener" style="color: blue;">externe Datenschutzbeauftragte</a> (Version #2019-04-10).</em></p>
+        </div>
+        <footer>
+            <div class="footer-row-1"><a href="legal-notice.html">
+                    <h5>Legal Notice</h5>
+                </a><a href="privacy-policy.html">
+                    <h5>Privacy Policy</h5>
+                </a></div>
+            <div class="footer-row-2">
+                <h5>© Developer Akademie 2020</h5>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

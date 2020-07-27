@@ -1,12 +1,16 @@
+
 /* Style for Add-Task site */
 .form-control {
     font-size: 1.2rem;
 }
 .form-control:hover {
-    cursor: pointer;
+    cursor: text;
 }
 .form-group {
     margin-bottom: 2rem;
+}
+#task-category.form-control:hover, #task-importance.form-control:hover {
+    cursor: pointer;
 }
 form {
     background-color: #F4F3FB;
@@ -58,12 +62,14 @@ form {
 }
 /* For Smartphones (landscape view, less than 820px) */
 @media (max-width: 830px) {
-
     form {
         width: 92vw;
         height: unset;
         margin-top: 24px;
         margin-bottom: 24px;
     }
-
+    .plus {
+        margin-bottom: 12px;
+        margin-left: 6px;
+    }
 }
