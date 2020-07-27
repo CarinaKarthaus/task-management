@@ -1,0 +1,407 @@
+/* Style for the Matrix Site */
+.matrix-do,.matrix-schedule,.matrix-delegate,.matrix-eliminate {
+    display: none;
+}
+.matrix-main-box {
+    position: absolute;
+    left: 10vw;
+    padding: 15px;
+    width: 88vw;
+    height: 100%;
+    display: grid;	
+    grid-template-columns: 10% 40% 40% auto;	
+    grid-template-rows: 5% 40% 40% auto;	
+    grid-template-areas: "urgency urgency urgency urgency"	
+                        "importance main main main"	
+                        'importance main main main'	
+                        'importance main main main';	
+}	
+    /* Importance, urgency and low letter styles */	
+h4 {	
+    font-size: 4vh;
+    color: grey;	
+    font-weight: lighter;	
+    margin: 0.5em;
+}	
+.urgency-arrow.portrait,.importance-arrow.portrait {
+    display: none;
+}
+.urgency-arrow {	
+    grid-area: urgency;	
+    display: flex;	
+    justify-content: space-between;	
+    align-items: center;	
+}	
+.importance-arrow {	
+    grid-area: importance;	
+    height: 100%;
+    display: flex;
+    flex-direction: column;	
+    justify-content: space-between;	
+    align-items: center;	
+}	
+.importance-arrow h4:nth-child(2) {	
+    writing-mode: vertical-rl;	
+    transform: rotate(180deg);
+}	
+    /* Horizontal and vertical lines and arrows */	
+.arrow-horizontal {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+.arrow-vertical {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+}
+.horizontal-arrow-line {	
+    width: 100%;
+    height: 1%;
+    margin: auto;
+    border: #4c5aa7 0.3em solid;
+}	
+.horizontal-arrow-line.left {
+    order: 2;
+}
+.arrow-end.left {
+    order: 1;
+}
+.vertical-arrow-line.top {
+    order: 2;
+}
+.arrow-end.up {
+    order: 1;
+}
+.vertical-arrow-line {	
+    height: 80%;
+    width: 1%;
+    margin: auto;
+    border: #4c5aa7 0.3em solid;
+}
+.arrow-line-highlight{
+    border: #D8D8D8 0.3em solid;
+
+}
+.arrow-end {	
+    border: transparent 1em solid;	
+    border-right: #4c5aa7 2em solid;	
+}
+.arrow-end-highlight{
+    border-right: #D8D8D8 2em solid;	
+}
+
+    /* Content inside the matrix */	
+h3 {	
+    font-size: 4vh;	
+    position: sticky;
+    top: 10px;
+}	
+.matrix-box {	
+    text-align: center;	
+    grid-area: main;
+    overflow: auto;
+    height: 100%;	
+    display: grid;
+    grid-template-columns: 1fr 1fr;	
+    grid-template-areas: "one two"	
+                        "three four"; 
+}	
+.blue-box {	
+    height: 37vh;
+    min-height: 30vh;
+    width: 100%;	
+    background-color: #F4F3FB;	
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 4px solid #F4F3FB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}	
+.do-box, .schedule-box, .delegate-box, .eliminate-box {
+    width: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+.do-box {	
+    margin-right: 5%;	
+    grid-area: one;	
+}	
+.schedule-box {	
+    margin-left: 5%;	
+    grid-area: two;	
+}	
+.delegate-box {	
+    margin-right: 5%;	
+    grid-area: three;	
+}	
+.eliminate-box {	
+    margin-left: 5%;	
+    grid-area: four;	
+}
+.task-box {
+    background-color: white;
+    width: 90%;
+    border-radius: 3%;
+    display: grid;	
+    grid-template-columns: 47.5% 40% 7,5%;	
+    grid-template-rows: 7.5% 10% 25% 15% 35%;	
+    grid-template-areas: 'date importance importance'	
+                        'title title edit-title'	
+                        'description description edit-description'	
+                        'category category delete'
+                        'assignees assignees assignees';
+    margin: 5px;
+    padding: 10px 5px 5px 5px;
+    gap: 5px;
+    box-shadow: 2px 2px grey;
+}
+.task-box:hover {
+    transform: scale(1.01);
+}
+.task-date {
+    justify-self: left;
+    grid-area: date;
+    font-size: small;
+    color: grey;  
+}
+.delete-task {
+    grid-area: delete;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 2px;
+}
+.edit-title {
+    grid-area: edit-title;
+    justify-self: right;
+    align-self: center;
+    font-size: small;
+    color: lightgray;
+}
+.edit-description {
+    grid-area: edit-description;
+    justify-self: right;
+    align-self: center;
+    font-size: small;
+    color: lightgray;
+}
+.task-title {
+    justify-self: left;
+    grid-area: title;
+    font-weight: bold;
+    font-size: medium;
+}
+.task-description {
+    grid-area: description;
+    color: grey;
+    justify-self: left;
+    text-align: left;
+    word-break: break-all;
+}
+div.task-category {
+    grid-area: category;
+    justify-self: left;
+    align-self: center;
+    font-size: small;
+    background-color: #5279FC;
+    color: white;
+    font-size: small;
+    border-radius: 8%;
+    bottom: 0px;
+    left: 10px;
+    width: 10em;
+    height: fit-content;
+    margin: 5px;
+    padding: 3px;
+}
+
+.task-importance {
+    grid-area: importance;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: small;
+    margin-top: 5px;
+}
+
+.importance-icon img {
+    width: 1.5em !important;
+    height:1.5em !important;
+    margin-right: 5px;
+}
+div.task-category:hover {
+    cursor: pointer;
+}
+.task-box-bottom-pictures img {
+    width: 6vh;
+    height: 6vh;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    margin:2px;
+}
+.task-box-bottom-pictures {
+    grid-area: assignees;
+    display: flex;
+    justify-content: left;
+    overflow: auto;
+    align-items: center;
+}
+.selected-task {
+    border: 4px solid green;
+}
+
+
+/* For Smartphones (landscape view, less than 820px) */
+@media (max-width: 830px) {
+   
+.matrix-main-box {
+    margin: 0;
+    padding-top: 1.2em;
+    position: absolute;
+    top:90px;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 40% 40% auto;	
+    grid-template-rows: 2.5% 40% 40% auto;	
+    grid-template-areas: "urgency urgency urgency urgency"	
+                        "importance main main main"	
+                        'importance main main main'	
+                        'importance main main main';
+    z-index: 2;
+}
+.blue-box {	
+    height: 80vh;
+}
+h3 {
+    width: 5em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px grey;
+    margin: 1em;
+}
+}
+
+/* Mobile portrait width <= 420px */
+@media (max-width: 420px) {
+
+/* Matrix specific adaptation */
+.matrix-main-box {
+    position: fixed;
+    top: 26%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    }
+h4 {	
+    font-size: 0.7em;
+    color: grey;	
+    font-weight: lighter;	
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;	
+}
+.portrait-matrix-map {
+    position: fixed;
+    top: 10vh;
+    z-index: 3;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 20vh;
+    display: grid;
+    margin: 0;
+    padding-top: 1em;
+    padding-left: 1.5em;
+    padding-right: 1em;
+    grid-template-columns: 10% 45% 45%;	
+    grid-template-rows: 15% 44% 44%;	
+    grid-template-areas:"urgency urgency urgency" 
+                        "importance do-btn schedule-btn"	
+                        "importance delegate-btn eliminate-btn";
+}
+.urgency-arrow.desktop, .importance-arrow.desktop {
+    display: none;
+}
+.urgency-arrow.portrait {	
+    grid-area: urgency;	
+    display: flex !important;	
+    justify-content: space-between;	
+    align-items: center;	
+}	
+.importance-arrow.portrait {	
+    grid-area: importance;	
+    display: flex !important;
+    flex-direction: column;	
+    justify-content: space-between;	
+    align-items: center;	
+}
+.importance-arrow.portrait h4:nth-child(2) {	
+    writing-mode: horizontal-tb;	
+    transform: rotate(0deg);
+}
+.vertical-arrow-line {	
+    border: #4c5aa7 0.2em solid;
+}
+.arrow-end {
+    border: transparent 0.7em solid;	
+    border-right: #4c5aa7 0.7em solid;
+}
+    
+.matrix-do {
+    grid-area: do-btn;
+    display: flex;
+}
+.matrix-schedule {
+    grid-area: schedule-btn;
+    display: flex;
+}
+.matrix-delegate {
+    grid-area: delegate-btn;
+    display: flex;
+}
+.matrix-eliminate {
+    grid-area: eliminate-btn;
+    display: flex;
+}
+.matrix-do,.matrix-schedule,.matrix-delegate,.matrix-eliminate {
+    background-color: #4c5aa7;
+    box-shadow: 2px 2px black solid;
+    margin: 0.5em;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12%;
+}
+.blue-box {
+    height: auto;
+}
+.matrix-box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "one"
+                        "two"	
+                        "three"
+                        "four"; 
+}
+.do-box,.schedule-box,.delegate-box,.eliminate-box {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0.5em;
+}
+h3 {
+    height: auto;
+    margin: 0;
+    width: 5em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px grey;
+}
+
+}

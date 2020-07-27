@@ -1,0 +1,284 @@
+/* Styles for task-list (index.html) */
+.empty-task-list {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    font-size: larger;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #F4F3FB;
+    padding: 1% 3% 3% 3%;
+    border-radius: 50%;
+    z-index: 5;
+}
+.empty-task-list a, button {
+    font-size: x-large;
+    color: white;
+    padding: 4%;
+    width: fit-content;
+}
+.empty-task-list img {
+    justify-self: center;
+    width: 8vw;
+}
+.list-box {
+    width: 100%;	
+    height: 100%;
+    display: grid;	
+    grid-template-columns: 25% 20% 55%;
+    grid-template-rows: 5%;   
+    grid-auto-rows: min-content; 
+    grid-template-areas: "label label label"
+                        "task task task";
+    align-items: center;
+    row-gap: 1.5%;
+    padding: 0.5em; 
+}
+.list-box label {
+    text-transform: uppercase;
+}
+
+    /* Style for row in task-list */
+.task-listed {
+    grid-area: task;
+    display: grid;
+    grid-template-columns: 1.5% 23.5% 20% 50% 5%;
+    grid-row: auto;
+    background-color: #F4F3FB;
+    border-radius: 8px;
+    height: 100%;
+    transition: all 125ms ease-in-out;
+} 
+.task-listed:hover {
+    transform: scale(1.005);
+}
+.task-listed p {
+    margin: unset;
+    display: flex;
+    align-items: center;
+}
+.assignee-section {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.assignee-pic-section {
+    display: flex;
+    margin-right: 0.5rem;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+.assignee-pic-section img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 2px 0 0 0;
+    border-radius: 50%;
+}
+.contact-data-section {
+    display: flex;
+    /* height: 3.35rem; */
+    margin: 4px 0 0 0;
+    flex-direction: column;
+}
+    /* color indicating task-category; default is Marketing (orange) */
+.category-marker {
+    width: 0.3em;
+    background-color: #FFB071;
+    border-radius: 8px 0 0 8px;
+}
+.ctg-product {
+    background-color: #E271FF;
+}
+.ctg-sales {
+    background-color: #58AF69;
+}
+.ctg-mgmt {
+    background-color: #e83e8c;
+}
+.email {
+    color: #5279FC;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+}
+.email:hover {
+    text-decoration: underline;
+}
+p.task-category, label.task-category {
+        display: flex;
+        justify-content: center; 
+}
+.details {
+    word-break: break-word;
+    padding: 2% 2%;
+    cursor: pointer;
+}
+button.close {
+    margin: 0 auto;
+}
+
+/* For Smartphones (landscape view, less than 820px) */
+@media (max-width: 830px) {
+
+.list-box label {
+    text-align: center;
+}
+.empty-task-list {        
+    width: 40vw;
+    height: 52vh;
+    left: 21.5vw;
+    padding: 8px;
+    position: absolute;
+    top: 44vh;
+}   
+.empty-task-list img {
+    width: 8vw;
+}
+.empty-task-list a, .empty-task-list p {
+    font-size: medium;
+   /* margin-bottom: 8px; */    }
+
+
+.list-box {
+    width: 100%;	
+    height: 100%;
+    display: grid;	
+    grid-template-columns: 31.5% 15% 40% auto;
+    grid-auto-rows: min-content; 
+    grid-template-areas: "task task task task";
+    align-items: center;
+
+}
+.list-box label {
+    font-size: medium;
+    margin: 2%;
+}
+.task-listed {
+    grid-template-columns: 1.5% 28.5% 20% 42% 8%;
+    grid-template-areas:    "marker assignee category details delete"
+                            "marker assignee category details delete"
+                            "marker assignee category details delete"
+                            "marker assignee category details delete";
+    max-height: 200px;
+    grid-template-rows: 42px 1fr;
+ 
+}
+p.task-category {
+    justify-content: center;
+    grid-area: category;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 5%;
+    font-size: large;
+}
+p.details {
+    grid-area: details;
+    align-items: center;
+    padding-left: 5%;
+    font-size: medium;
+    overflow: auto;
+}
+.category-marker {
+    grid-area: marker;
+}
+.assignee-section {
+    grid-area: assignee;
+    align-items: flex-start; 
+    padding: 4% 2%;
+    overflow: auto;
+}
+.assignee-pic-section {
+    flex-direction: column;
+}
+.contact-data  {
+    font-size: medium;
+}
+button.close {
+    grid-area: delete;
+    margin: unset;
+}
+}
+
+/* Mobile portrait width <= 420px */
+@media (max-width: 420px) {
+    
+.empty-task-list {
+    width: 85vw;
+    height: auto;
+    left: 7.5vw !important;
+    top: 30vh;
+    padding: 16px 12px 24px 12px
+}   
+.empty-task-list img {
+    width: 25vw;
+}
+.empty-task-list a {
+    font-size: large;
+    margin-bottom: 8px;
+}
+
+
+.list-box label {
+    text-align: left;
+}
+label.task-category {
+    display: none;
+}
+p.task-category {
+    justify-content: left;
+    margin-top: 0.5em;
+}
+.list-box {
+    margin: 0;
+    padding: 0;
+    width: 100%;	
+    height: 100%;
+    display: grid;	
+    grid-template-columns: 41.5% auto;
+    grid-auto-rows: min-content; 
+    grid-template-areas: "task task";
+    align-items: center;
+
+}
+.task-listed {
+    margin-bottom: 0.2em;
+    max-height: 10em;
+    height: auto;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1.5% 40% auto 10%;
+    grid-template-areas:   "marker  assignee category delete"
+                            "marker assignee  details details"
+                            "marker assignee details details";
+}
+.assignee-section {
+    grid-area: assignee;
+    flex-direction: row;
+    align-items: flex-start; 
+    padding: 4% 2%;
+    overflow: auto;
+}
+.assignee-pic-section {
+    flex-direction: column;
+}
+.contact-data {
+    width: fit-content;
+}
+.close {
+    grid-area: delete;
+    align-self: center;
+    margin: 2em;
+}
+p.details {
+    justify-content: start;
+    align-items: center;
+}
+
+
+}
