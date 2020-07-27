@@ -1,0 +1,75 @@
+
+/* Style for Add-Task site */
+.form-control {
+    font-size: 1.2rem;
+}
+.form-control:hover {
+    cursor: text;
+}
+.form-group {
+    margin-bottom: 2rem;
+}
+#task-category.form-control:hover, #task-importance.form-control:hover {
+    cursor: pointer;
+}
+form {
+    background-color: #F4F3FB;
+    height: auto;
+    width: 80vW;
+    border-radius: 8px;
+    margin-top: 4%;
+    padding: 4%;
+}
+.col-md-6 {
+    max-width: none;
+}
+.assigned-pic {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    transition: all 125ms ease-out;
+    opacity: 0.5;
+}
+.assigned-people-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.assigned-pic:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    cursor: pointer;
+}
+.plus {
+    width: 2em;
+    object-fit: contain;
+    transition: all 125ms ease-out;
+}
+.plus:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.btn-row {
+    display: block;
+    justify-content: right;
+    margin-top: 5%;
+}
+.btn-row button {
+    float: right;
+    font-size: large;
+}
+/* For Smartphones (landscape view, less than 820px) */
+@media (max-width: 830px) {
+    form {
+        width: 92vw;
+        height: unset;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .plus {
+        margin-bottom: 12px;
+        margin-left: 6px;
+    }
+}

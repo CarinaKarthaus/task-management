@@ -353,9 +353,7 @@ function compileTaskMatrixHTML(id, taskId, i, importanceNonSelected) {
         </svg>
     </button>
     <div class='task-title'>${allTasks[i].title}</div>
-    <div class='edit-title'>Edit</div>
-    <div class='task-description'>${allTasks[i].details}</div>
-    <div class='edit-description'>Edit</div>
+    <div class='task-description'><p contenteditable="true" onkeyup="changeDetails(this.id,${i})">${allTasks[i].details}<p></div>
     <div class='task-category'>${allTasks[i].category}</div>
     <div id="task-importance" class="task-importance">
         <div id="importance-mark" class="importance-icon"><img src='./img/importance-icon.png'></div>
@@ -423,11 +421,11 @@ function assignCategory(category, id, i) {
         document.getElementById(arrowsPortrait[i]).lastElementChild.classList.add('arrow-end-highlight');
      }
      setTimeout(function(){
-        for(i=0;i<4;i++){
-            document.getElementById(arrowsDesktop[i]).firstElementChild.classList.remove('arrow-line-highlight');
-            document.getElementById(arrowsDesktop[i]).lastElementChild.classList.remove('arrow-end-highlight');
-            document.getElementById(arrowsPortrait[i]).firstElementChild.classList.remove('arrow-line-highlight');
-            document.getElementById(arrowsPortrait[i]).lastElementChild.classList.remove('arrow-end-highlight');
+        for(j=0;j<4;j++){
+            document.getElementById(arrowsDesktop[j]).firstElementChild.classList.remove('arrow-line-highlight');
+            document.getElementById(arrowsDesktop[j]).lastElementChild.classList.remove('arrow-end-highlight');
+            document.getElementById(arrowsPortrait[j]).firstElementChild.classList.remove('arrow-line-highlight');
+            document.getElementById(arrowsPortrait[j]).lastElementChild.classList.remove('arrow-end-highlight');
          }
      },500);
     

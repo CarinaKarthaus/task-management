@@ -1,0 +1,83 @@
+/* Desktop view */
+
+div.mobile {
+    display: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+.help h4, .help li {
+    font-weight: bold;
+    margin: 5vh 0 1vh 0;
+}
+.help-nav a, .help-nav li {
+    color: black;
+    margin: 0;
+    font-size: medium;
+}
+.help img {
+    width: 80%;
+    margin: 2vw;
+    border: 2px solid ghostwhite;
+}
+.help p{
+    font-size: large;
+    margin-left: 3vw;
+}
+.help h5 {
+    margin-left: 3vw;
+}
+.help table {
+    margin-left: 5vw;
+    width: 80%;
+    font-size: large;
+}
+.help th {
+    padding: 5px 5px 5px 0;
+    border-bottom: 2px solid;
+}
+.help td {
+    padding: 1vh 0;
+    border-bottom: 1px dashed;
+}
+.open-menu-overlay {
+    display: flex;
+}
+.help-list {
+    padding-left: 1em;
+}
+#have-fun {
+    font-size: 2em;
+    text-align: center;
+}
+
+/* For Smartphones (landscape view, less than 820px) */
+@media (max-width: 830px) {
+   .help h4, help li {
+    font-size: x-large;
+  }
+  .help td:nth-child(2n+0){
+      text-align: center;
+  }
+  div.mobile {
+      display:flex;
+  }
+  div.desktop{
+      display: none;
+  }
+}
+
+/* Mobile portrait width <= 420px */
+@media (max-width: 420px) {
+    table {
+        width: 100% !important;
+        margin: 0 0 0 -20px !important;
+    }
+    #have-fun {
+        font-size: 1em !important;
+    }
+    .help-list {
+        padding: 0;
+        margin: 0 20px !important;
+    }
+}
