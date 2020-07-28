@@ -15,11 +15,12 @@ a:hover, a, a:active{
 }
 .main-box h2 {
     font-weight: bold;
+    font-size: 2rem;
 }
 label {
     color: #1E3190;
     font-weight: bolder;
-    font-size: larger;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 .side-bar {
@@ -27,7 +28,7 @@ label {
     height: 100%;
     position: fixed;
     background-color: #1E3190;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     display: grid;
     grid-template-rows: 20% 65% 15%;
     overflow-x: hidden;
@@ -106,12 +107,12 @@ label {
 }
 .subheading {
     color: #1E3190;
-    font-size: large;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 .main-box {
     padding: 2%;
-    font-size: x-large;
+    font-size: 2rem;
     width: 88vw;
     position: absolute;
     height: auto;
@@ -140,7 +141,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     margin: 1em 0 5px 0;
-    font-size: 1em;
+    font-size: 2em;
 }
 .footer-row-1 {
     display: flex;
@@ -193,7 +194,7 @@ footer h5:hover {
     border-left:   #e83e8c 5px solid;
 }
    
-/* For Smartphones (landscape view, less than 820px) */
+/* For Smartphones (landscape view, less than 830px) */
 @media (max-width: 830px) {
     html, body {
         flex-direction: column;
@@ -237,15 +238,16 @@ footer h5:hover {
         position: absolute;
         bottom: 2vh;
         width: 90%;
-        font-size: large;
+        font-size: 2rem;
     }
     .current-user h4 {
         margin: 0 !important;
+        font-size: 1.2rem;
     }
     .user-details {
         display: flex;
         color: white;
-        font-size: small;
+        font-size: 1rem;
         justify-content: space-between;
         align-items: center;
         text-align: left;
@@ -263,6 +265,7 @@ footer h5:hover {
         text-decoration: underline;
         cursor: pointer;
         margin-left: 12px;
+        font-size: 1.2rem;
     }
     .page-selected {
         text-align: left;
@@ -280,13 +283,14 @@ footer h5:hover {
         position: absolute;
         margin: 20px auto 20px 80px;
         color: white;
-        font-size: x-large;
+        font-size: 3rem;
     }
     .subheading {
         position: relative;
         margin: 70px auto 10px auto;
         text-align: center;
         margin-top: 85px;
+        font-size: 1.2rem;
     }   
 
     
@@ -318,7 +322,7 @@ footer h5:hover {
     }
     /*footer style */
     footer h5 {
-        font-size: 0.5em;
+        font-size: 1rem;
     }
     footer {
         flex-direction: column;
@@ -327,4 +331,8 @@ footer h5:hover {
     footer a:nth-child(2){
         border-right: none;
     }
+    .subheading { 
+        font-size: 1rem;
+    }
+    
 }

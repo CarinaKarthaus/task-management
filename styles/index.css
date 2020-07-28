@@ -1,10 +1,9 @@
-
 /* Desktop view */
 .empty-task-list {
     position: absolute;
     top: 30vh;
     left: 20vw;
-    font-size: larger;
+    font-size: 1.5rem;
     width: 35vw;
     display: flex;
     flex-direction: column;
@@ -16,7 +15,7 @@
     z-index: 5;
 }
 .empty-task-list a, button {
-    font-size: x-large;
+    font-size: 1.5rem;
     color: white;
     padding: 4%;
     width: fit-content;
@@ -28,9 +27,9 @@
 .list-box {
     width: 100%;
     height: auto;	
+    margin-top: 2rem;
     display: grid;	
-    grid-template-columns: 25% 20% auto 5%;
-    grid-template-rows: 10%;   
+    grid-template-columns: 25% 20% auto 5%;  
     grid-auto-rows: min-content; 
     grid-template-areas: "label label label label"
                         "task task task task";
@@ -59,16 +58,17 @@
     margin: unset;
     display: flex;
     align-items: center;
+    font-size: 1.3rem;
 }
 .assignee-section {
     display: flex;
     align-items: center;
     height: 100%;
-    overflow: auto;
+    /* overflow: auto; */
 }
 .assignee-pic-section {
     display: flex;
-    margin-right: 0.5rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
     flex-direction: column;
     height: 100%;
     justify-content: space-evenly;
@@ -90,7 +90,7 @@
 }
     /* color indicating task-category; default is Marketing (orange) */
 .category-marker {
-    width: 0.3em;
+    width: 0.3rem;
     background-color: #FFB071;
     border-radius: 8px 0 0 8px;
 }
@@ -105,7 +105,7 @@
 }
 p.email {
     text-align: left;    
-    font-size: 0.8em;
+    font-size: 1.1rem;
     color: #5279FC;
     cursor: pointer;
     transition: all 125ms ease-in-out;
@@ -126,12 +126,15 @@ p.task-category, label.task-category {
 }
 button.close {
     margin: auto;
+    font-size: 1.7rem;
 }
 
-/* For Smartphones (landscape view, less than 820px) */
+/* For Smartphones (landscape view, less than 830px) */
 @media (max-width: 830px) {
     .list-box label {
         text-align: center;
+        font-size: 1.2rem;
+        margin: 2%;
     }
     .empty-task-list {        
         width: 40vw;
@@ -145,7 +148,7 @@ button.close {
         width: 8vw;
     }
     .empty-task-list a, .empty-task-list p {
-        font-size: medium;
+        font-size: 1rem;
        /* margin-bottom: 8px; */    }
     .list-box {
         width: 100%;	
@@ -156,19 +159,18 @@ button.close {
         grid-template-areas: "task task task task";
         align-items: center;
     }
-    .list-box label {
-        font-size: medium;
-        margin: 2%;
-    }
     .task-listed {
         grid-template-columns: 1.5% 28.5% 20% 42% 8%;
         grid-template-areas:    "marker assignee category details delete"
+                               "marker assignee category details delete"
                                 "marker assignee category details delete"
-                                "marker assignee category details delete"
-                                "marker assignee category details delete";
+                                "marker assignee category details delete" ;
         max-height: 200px;
         grid-template-rows: 42px 1fr;
      
+    }
+    .task-listed p {
+        font-size: 1.2rem;
     }
     p.task-category {
         justify-content: center;
@@ -176,13 +178,11 @@ button.close {
         font-weight: bold;
         align-items: center;
         padding-left: 5%;
-        font-size: large;
     }
     p.details {
         grid-area: details;
         align-items: center;
         padding-left: 5%;
-        font-size: medium;
         overflow: auto;
     }
     .category-marker {
@@ -190,16 +190,19 @@ button.close {
     }
     .assignee-section {
         grid-area: assignee;
-        align-items: flex-start; 
+        align-items: center; 
         padding: 4% 2%;
         overflow: auto;
     }
     .assignee-pic-section {
         flex-direction: column;
+        margin: 0.5rem;
     }
-    .contact-data  {
-        font-size: medium;
+    .assignee-pic-section img {
+        width: 3rem;
+        height: 3rem;
     }
+   
     button.close {
         grid-area: delete;
     }
@@ -220,11 +223,9 @@ button.close {
         width: 25vw;
     }
     .empty-task-list a {
-        font-size: large;
+        font-size: 1rem;
         margin-bottom: 8px;
     }
-    
-    
     .list-box label {
         text-align: left;
     }
@@ -254,16 +255,20 @@ button.close {
                                 "marker assignee  details details"
                                 "marker assignee details details";
     }
-    .assignee-section {
+    .task-listed p {
+        font-size: 1rem;
+    }
+   
+    /* .assignee-section {
         grid-area: assignee;
         flex-direction: row;
         align-items: flex-start; 
         padding: 4% 2%;
         overflow: auto;
-    }
+    } 
     .assignee-pic-section {
         flex-direction: column;
-    }
+    } */
     .contact-data {
         width: fit-content;
     }
@@ -275,5 +280,8 @@ button.close {
     p.details {
         justify-content: start;
         align-items: center;
+    }
+    button.close {
+        font-size: 1.5rem;
     }
 }

@@ -58,7 +58,7 @@ form {
 }
 .btn-row button {
     float: right;
-    font-size: large;
+    font-size: 1.5rem;
 }
 /* For Smartphones (landscape view, less than 820px) */
 @media (max-width: 830px) {
