@@ -111,15 +111,19 @@ label {
     text-transform: uppercase;
 }
 .main-box {
-    padding: 2%;
+    padding: 1% 2% 0% 2%;
     font-size: 2rem;
     width: 88vw;
     position: absolute;
-    height: auto;
+    height: 100%;
     padding-bottom: 0;
     right: 0;
     left: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .btn-primary {
     background-color: #1E3190;
     border-color: #1E3190;
@@ -129,11 +133,21 @@ label {
     padding-left: 3% !important;
 }
 /* Policy style */
-.main-box-policy {
-    padding: 10px 10px;
-}
 .main-box-policy h2 {
     font-size: 1em;
+}
+.main-box-policy {
+    position: absolute;
+    left: 10vw;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.main-box-policy a {
+    color: black !important;
 }
 /* footer styling for all sites */
 footer {
@@ -163,7 +177,7 @@ footer h5:hover {
 .matrix-main-box footer {
     grid-area: footer;
 }
-.main-box footer {
+.main-box footer, .main-box-policy footer{
     display: flex;
 }
 
@@ -318,7 +332,7 @@ footer h5:hover {
         right: 12em;
     }
     .main-box h2 {
-        margin-left: 18vw;
+        display: none;
     }
     /*footer style */
     footer h5 {

@@ -27,7 +27,7 @@
                 <p>Add Task</p>
             </a>
             <a href="help.html">
-                <p>How to use</p>
+                <p>Help</p>
             </a>
         </div>
         <div class="mobile-pics">
@@ -45,7 +45,7 @@
             <p>Add Task</p>
         </a>
         <a href="help.html">
-            <p>How to use</p>
+            <p>Help</p>
         </a>
         <button onclick="closeMenu()" class="btn btn-secondary menu-close-btn">Close</button>
         <div class="current-user">
@@ -62,45 +62,47 @@
     <div class="menu-backdrop d-none" id="menu-backdrop" onclick="closeMenu()"></div>
 
     <div class="main-box">
-        <h2>Your project</h2>
-        <p class="subheading">Learning Management System Project</p>
+        <div>
+            <h2>Your project</h2>
+            <p class="subheading">Learning Management System Project</p>
 
-        <div class="empty-task-list" id="empty-task-list">
-            <img src="img/task.png">
-            <p>
-                Your task list is empty. <br>
-                Create your first task now!
-            </p>
-            <button class="btn - btn-primary"><a href="add-task.html">Add new task </a></button>
-        </div>
+            <div class="empty-task-list" id="empty-task-list">
+                <img src="img/task.png">
+                <p>
+                    Your task list is empty. <br>
+                    Create your first task now!
+                </p>
+                <button class="btn - btn-primary"><a href="add-task.html">Add new task </a></button>
+            </div>
 
-        <!-- Modal for task delete confirmation -->
-        <div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="DeleteConfirmationTitle">Delete Confirmation</h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete this task?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, cancel.</button>
-                        <button type="button" class="btn btn-primary btn-ok">Yes, delete.</button>
+            <!-- Modal for task delete confirmation -->
+            <div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="DeleteConfirmationTitle">Delete Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete this task?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, cancel.</button>
+                            <button type="button" class="btn btn-primary btn-ok">Yes, delete.</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="list-box" id="list-box">
+                <label>Assigned to</label>
+                <label class="task-category">Category</label>
+                <label class="align-center">Details</label>
+            </div>
         </div>
 
-        <div class="list-box" id="list-box">
-            <label>Assigned to</label>
-            <label class="task-category">Category</label>
-            <label class="align-center">Details</label>
-        </div>
-        
         <footer class="footer-index">
             <div class="footer-row-1"><a href="legal-notice.html">
                     <h5>Legal Notice</h5>
