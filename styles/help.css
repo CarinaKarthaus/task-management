@@ -16,7 +16,7 @@ html {
     font-size: medium;
 }
 .help img {
-    width: 80%;
+    width: 80% !important;
     margin: 2vw;
     border: 2px solid ghostwhite;
 }
