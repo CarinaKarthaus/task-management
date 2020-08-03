@@ -207,6 +207,9 @@ footer h5:hover {
 .main-box footer, .main-box-policy footer{
     display: flex;
 }
+.modal-body {
+    font-size: initial;
+}
 
 /* Easy access classes */
 

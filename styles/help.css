@@ -16,7 +16,7 @@ html {
     font-size: medium;
 }
 .help img {
-    width: 80% !important;
+    width: 80%;
     margin: 2vw;
     border: 2px solid ghostwhite;
 }
@@ -86,5 +86,8 @@ html {
     }
     div.landscape {
         display: none;
+    }
+    .help img{
+        width: 80% !important;
     }
 }
