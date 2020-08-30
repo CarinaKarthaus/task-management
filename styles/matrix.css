@@ -275,7 +275,7 @@ div.task-category:hover {
 }
 
 /* Mobile portrait width <= 420px */
-@media (max-width: 420px) {
+@media (max-width: 600px) {
 
     /* Matrix specific adaptation */
     .matrix-main-box {
@@ -294,7 +294,7 @@ div.task-category:hover {
     }
     .portrait-matrix-map {
         position: fixed;
-        top: 10vh;
+        top: 5rem;;
         z-index: 3;
         background-color: rgb(255, 255, 255);
         width: 100%;

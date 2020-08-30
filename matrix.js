@@ -176,16 +176,16 @@ function assignCategory(category, id, i) {
  }
 
  function highlightAllArrows(){
-     let arrowsDesktop = ['urgency-high-arrow-desktop','urgency-low-arrow-desktop','importance-high-arrow-desktop','importance-low-arrow-desktop'];
-     let arrowsPortrait = ['urgency-high-arrow-portrait','urgency-low-arrow-portrait','importance-high-arrow-portrait','importance-low-arrow-portrait'];
-     for(i=0;i<4;i++){
+    let arrowsDesktop = ['urgency-high-arrow-desktop','urgency-low-arrow-desktop','importance-high-arrow-desktop','importance-low-arrow-desktop'];
+    let arrowsPortrait = ['urgency-high-arrow-portrait','urgency-low-arrow-portrait','importance-high-arrow-portrait','importance-low-arrow-portrait'];
+    for(i=0;i<4;i++){
         addHighlightClass(arrowsDesktop, arrowsPortrait, i);
-     }
-     setTimeout(function(){
-        for(j=0;j<4;j++){
-            removeHighlightClass(arrowsDesktop, arrowsPortrait, j);
-        }
-     },500); 
+    }
+    setTimeout(function(){
+    for(j=0;j<4;j++){
+        removeHighlightClass(arrowsDesktop, arrowsPortrait, j);
+    }
+    },500); 
 }
 
 function addHighlightClass(arrowsDesktop, arrowsPortrait,i) {
