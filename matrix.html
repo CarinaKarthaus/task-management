@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIN - task matrix</title>
     <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/matrix.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
@@ -126,13 +125,15 @@
             </div>
             <h4>LOW</h4>
         </div>
-        <div class="empty-task-list" id="empty-task-list" style="left: 30vw; top: 21vh;">
-            <img src="img/task.png">
-            <p>
-                Your task list is empty. <br>
-                Create your first task now!
-            </p>
-            <button class="btn - btn-primary" onclick="window.location.href='add-task.html'">Add new task</button>
+        <div id="empty-task-list-box" class="empty-task-list-box" style="top: 2vh;">
+            <div class="empty-task-list" id="empty-task-list" style="left: 30vw; top: 21vh;">
+                <img src="img/task.png">
+                <p>
+                    Your task list is empty. <br>
+                    Create your first task now!
+                </p>
+                <button class="btn - btn-primary" onclick="window.location.href='add-task.html'">Add new task</button>
+            </div>
         </div>
         <div class='matrix-box' id='matrix-box' id="main-box">
             <div class='do-box' id="do-box">
@@ -193,10 +194,8 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="./jquery.js"></script>
+    <script src="./matrix.js"></script>
     <script src="./script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>

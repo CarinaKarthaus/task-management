@@ -17,8 +17,8 @@ form {
     height: auto;
     width: 80vW;
     border-radius: 8px;
-    margin-top: 4%;
-    padding: 4%;
+    /* margin-top: 4%; */
+    padding: 1rem;
 }
 .col-md-6 {
     max-width: none;

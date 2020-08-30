@@ -27,9 +27,9 @@
     margin-bottom: 10px;
     transition: all 125ms ease-in-out;
 } 
-.task-listed:hover {
+/* .task-listed:hover {
     transform: scale(1.005);
-}
+} */
 .task-listed p {
     margin: unset;
     display: flex;

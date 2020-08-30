@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIN - task list</title>
     <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
@@ -68,15 +67,16 @@
                 <p class="subheading">Learning Management System Project</p>
             </div>
 
-            <div class="empty-task-list" id="empty-task-list">
-                <img src="img/task.png">
-                <p>
-                    Your task list is empty. <br>
-                    Create your first task now!
-                </p>
-                <button class="btn - btn-primary"><a href="add-task.html">Add new task </a></button>
+            <div id="empty-task-list-box" class="empty-task-list-box" style="padding-right: 2%;">
+                <div class="empty-task-list" id="empty-task-list">
+                    <img src="img/task.png">
+                    <p>
+                        Your task list is empty. <br>
+                        Create your first task now!
+                    </p>
+                    <button class="btn - btn-primary"><a href="add-task.html">Add new task </a></button>
+                </div>
             </div>
-
             <!-- Modal for task delete confirmation -->
             <div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -121,9 +121,7 @@
         crossorigin="anonymous"></script>
     <script src="./jquery.js"></script>
     <script src="./script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
+    <script src="./task_list.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
