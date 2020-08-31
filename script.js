@@ -123,7 +123,6 @@ function changeDetails(detailsId, taskIndex){
 
 /**
  * Add HTML-Code to create a delete-btn in task-list and matrix
- * @param {*} i 
  */
 function createDeleteBtnHTML(i) {
     let deleteBtn =  `<button type="button" class="close" data-target="#deleteConfirmation" id="${i}" data-toggle="modal" data-placement="top" title="Delete task" >

@@ -47,6 +47,13 @@ html {
 .help-list {
     padding-left: 1em;
 }
+
+.eisenhower-matrix {
+    width: 40rem !important;
+    border: unset;
+    margin: 0 15vw;
+}
+
 #have-fun {
     font-size: 3rem;
     text-align: center;
@@ -66,6 +73,10 @@ html {
   div.landscape {
       display: flex;
   }
+ 
+  .eisenhower-matrix {
+    width: 90% !important;
+}
 }
 
 /* Mobile portrait width <= 420px */
@@ -74,9 +85,7 @@ html {
         width: 100% !important;
         margin: 0 0 0 -20px !important;
     }
-    #have-fun {
-        font-size: 1em !important;
-    }
+    
     .help-list {
         padding: 0;
         margin: 0 20px !important;
@@ -88,6 +97,10 @@ html {
         display: none;
     }
     .help img{
-        width: 80% !important;
+        width: 80%;
+    }
+
+    #have-fun {
+        font-size: 1em !important;
     }
 }
